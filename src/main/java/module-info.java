@@ -1,4 +1,4 @@
-module org.gruppo2.progetto_javaavanzato {
+module gruppo2 {
     requires javafx.controls;
     requires javafx.fxml;
 
