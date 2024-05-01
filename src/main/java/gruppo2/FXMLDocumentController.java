@@ -9,18 +9,18 @@ package gruppo2;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Map;
-import java.util.ResourceBundle;
-import java.util.Scanner;
-import java.util.TreeMap;
+import java.util.*;
+
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
 
@@ -39,7 +39,11 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TextField queryTf;
     
-    
+    @FXML
+    private TableView<Document> tableView;
+
+    @FXML
+    private TableColumn<Document, String> titleColumn;
     
     private static TreeMap<String, Integer> vocabolario = new TreeMap<>();
     
@@ -50,7 +54,8 @@ public class FXMLDocumentController implements Initializable {
     
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
+        titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
     }    
 
     @FXML
@@ -129,11 +134,22 @@ public class FXMLDocumentController implements Initializable {
         
         DirectoryChooser directoryChooser = new DirectoryChooser();
         directoryChooser.setTitle("Seleziona una cartella");
-        File selectedDirectory = directoryChooser.showDialog(null); // Non passo l'evento o la finestra di scena qui
+        File selectedDirectory = directoryChooser.showDialog(null);
         if (selectedDirectory != null) {
             System.out.println("Cartella selezionata: " + selectedDirectory.getAbsolutePath());
-            // Ora puoi eseguire le operazioni desiderate con la cartella selezionata
-            // Ad esempio, potresti iterare sui file all'interno di questa cartella e fare qualcosa con essi.
+            File [] files = selectedDirectory.listFiles();
+            if (files != null){
+                List<Document> documents = new ArrayList<>();
+                for(File file : files){
+                    if(file.isFile()){
+                        documents.add(new Document(file.getName()));
+                    }
+                }
+                ObservableList<Document> documentObservableList = FXCollections.observableArrayList(documents);
+                tableView.setItems(documentObservableList);
+            }
+
+// gestire eccezioni
             pane1.setVisible(false);
             pane2.setVisible(true);
         } else {
