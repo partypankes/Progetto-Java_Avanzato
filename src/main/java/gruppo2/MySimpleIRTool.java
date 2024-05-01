@@ -15,7 +15,7 @@ import java.util.Objects;
 
 /**
  *
- * @author francesco-daniele
+ * @author gruppo_02
  */
 public class MySimpleIRTool extends Application {
     

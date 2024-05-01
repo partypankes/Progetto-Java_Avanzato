@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="Progetto_JavaAvanzato" />
-        <module name="Progetto-Java_Avanzato" />
       </profile>
     </annotationProcessing>
   </component>

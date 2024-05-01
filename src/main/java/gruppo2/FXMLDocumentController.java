@@ -26,7 +26,7 @@ import javafx.stage.DirectoryChooser;
 
 /**
  *
- * @author francesco-daniele
+ * @author gruppo_02
  */
 public class FXMLDocumentController implements Initializable {
     
