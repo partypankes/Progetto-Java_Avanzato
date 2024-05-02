@@ -52,6 +52,8 @@ public class FXMLDocumentController implements Initializable {
     
     private static Map<String, Double> corrispondenzaSimiliarita = new TreeMap<>(Collections.reverseOrder());
 
+    private static Map<String, Map<String, Integer>> resultMapByDocument = new HashMap<>();
+
     private List<String> stopwords;
    
     
@@ -66,7 +68,9 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void handleQuery(ActionEvent event) {
-         
+        /*
+        System.out.println(vocabolario);
+
         Scanner scanner = new Scanner(System.in);
         System.out.println("Inserisci la prima stringa");
         String stringaUno = scanner.nextLine();
@@ -79,7 +83,7 @@ public class FXMLDocumentController implements Initializable {
         Map<String, Integer> vectorUno = textToVector(stringaUno);
         Map<String, Integer> vectorDue = textToVector(stringaDue);
         Map<String, Integer> queryVector = textToVector(queryTf.getText());
-        
+
         
         corrispondenzaSimiliarita.put("Documento 1 ", calculateCosineSimilarity(vectorUno, queryVector));
         corrispondenzaSimiliarita.put("Documento 2 ", calculateCosineSimilarity(vectorDue, queryVector));
@@ -88,7 +92,24 @@ public class FXMLDocumentController implements Initializable {
        
         
         System.out.println("Similarità in ordine decrescente: \n\n" + prova);
-        
+        */
+        Map<String, Integer> queryVector = textToVector(queryTf.getText());
+        for (Map.Entry<String, Map<String, Integer>> entry : resultMapByDocument.entrySet()) {
+            corrispondenzaSimiliarita.put(entry.getKey(), calculateCosineSimilarity(entry.getValue(), queryVector));
+        }
+        List<Map.Entry<String, Double>> verifica = corrispondenzaSimiliarita.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).toList();
+        System.out.println(verifica);
+        //per caricarli su ui dovrebbero diventare dei documenti prima mi sa
+
+        List<Document> documentiOrdinati = new ArrayList<>();
+
+        for(Map.Entry<String, Double> entry : verifica ){
+        documentiOrdinati.add(new Document(entry.getKey()));
+        }
+        ObservableList<Document> documentiOrdinatiList = FXCollections.observableArrayList(documentiOrdinati);
+        tableView.setItems(documentiOrdinatiList);
+
+
     }
     
     
@@ -183,6 +204,7 @@ public class FXMLDocumentController implements Initializable {
                     throw new RuntimeException(e);
                 }
 
+
                 for (Document document : documents) {
                     //In questa parte di codice vengono eliminate le stopwords e viene creato "il vettore" per ogni documento(per ora viene stampato). Da implementare la logica di vocabolario e rifinire questa per poi aggiustare il tutto con la query
 
@@ -191,9 +213,11 @@ public class FXMLDocumentController implements Initializable {
                     allWords.removeAll(stopwords);
 
                     String result = String.join(" ", allWords);
+                    aggiungiParoleAlVocabolario(result);
+                    Map<String, Integer> resultMap = textToVector(result);
+                    resultMapByDocument.put(document.getTitle(), resultMap);
 
-                    System.out.println(textToVector(result));
-                    //implementare l'aggiunta al vocabolario
+
                 }
 
 

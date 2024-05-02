@@ -15,6 +15,11 @@ public class Document {
         document_text = documentText;
     }
 
+    public Document(String title) { // l'ho inizializzato per fare la prova
+        this.title = title;
+        document_text = null;
+    }
+
     public String getTitle() {
         return title;
     }
