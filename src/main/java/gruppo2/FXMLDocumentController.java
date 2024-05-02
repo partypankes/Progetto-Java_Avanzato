@@ -63,67 +63,55 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
-
-    }    
-
-    @FXML
-    private void handleQuery(ActionEvent event) {
-        /*
-        System.out.println(vocabolario);
-
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Inserisci la prima stringa");
-        String stringaUno = scanner.nextLine();
-        System.out.println("Inserisci la seconda stringa");
-        String stringaDue = scanner.nextLine();
-        aggiungiParoleAlVocabolario(stringaUno);
-        aggiungiParoleAlVocabolario(stringaDue);
-        aggiungiParoleAlVocabolario(queryTf.getText());
-        
-        Map<String, Integer> vectorUno = textToVector(stringaUno);
-        Map<String, Integer> vectorDue = textToVector(stringaDue);
-        Map<String, Integer> queryVector = textToVector(queryTf.getText());
-
-        
-        corrispondenzaSimiliarita.put("Documento 1 ", calculateCosineSimilarity(vectorUno, queryVector));
-        corrispondenzaSimiliarita.put("Documento 2 ", calculateCosineSimilarity(vectorDue, queryVector));
-
-        List<Map.Entry<String, Double>> prova = corrispondenzaSimiliarita.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).toList();
-       
-        
-        System.out.println("Similarità in ordine decrescente: \n\n" + prova);
-        */
-        Map<String, Integer> queryVector = textToVector(queryTf.getText());
-        for (Map.Entry<String, Map<String, Integer>> entry : resultMapByDocument.entrySet()) {
-            corrispondenzaSimiliarita.put(entry.getKey(), calculateCosineSimilarity(entry.getValue(), queryVector));
+        try {
+            loadStopwords();  // Carica le stopwords subito
+        } catch (IOException e) {
+            e.printStackTrace();
         }
-        List<Map.Entry<String, Double>> verifica = corrispondenzaSimiliarita.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).toList();
-        System.out.println(verifica);
-        //per caricarli su ui dovrebbero diventare dei documenti prima mi sa
-
-        List<Document> documentiOrdinati = new ArrayList<>();
-
-        for(Map.Entry<String, Double> entry : verifica ){
-        documentiOrdinati.add(new Document(entry.getKey()));
-        }
-        ObservableList<Document> documentiOrdinatiList = FXCollections.observableArrayList(documentiOrdinati);
-        tableView.setItems(documentiOrdinatiList);
-
 
     }
-    
-    
-    
-    
+
+    @FXML
+    private void handleQuery() {
+        String queryText = queryTf.getText();
+        if (queryText == null || queryText.trim().isEmpty()) {
+            // mostra tutti i documenti senza filtro quando cancello la query e clicco invio
+            List<Document> allDocuments = resultMapByDocument.keySet().stream().map(Document::new).collect(Collectors.toList());
+            tableView.setItems(FXCollections.observableArrayList(allDocuments));
+        } else {
+
+            Map<String, Integer> queryVector = textToVector(removeStopwords(queryText), false);
+            corrispondenzaSimiliarita.clear();
+            for (Map.Entry<String, Map<String, Integer>> entry : resultMapByDocument.entrySet()) {
+                double similarity = calculateCosineSimilarity(entry.getValue(), queryVector);
+                if (similarity > 0) { // solo documenti con similarità maggiore di 0
+                    corrispondenzaSimiliarita.put(entry.getKey(), similarity);
+                }
+            }
+            List<Map.Entry<String, Double>> sortedSimilarities = corrispondenzaSimiliarita.entrySet().stream()
+                    .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                    .toList();
+            List<Document> filteredDocuments = sortedSimilarities.stream()
+                    .map(entry -> new Document(entry.getKey()))
+                    .collect(Collectors.toList());
+            tableView.setItems(FXCollections.observableArrayList(filteredDocuments));
+        }
+    }
+
+
+
+
+
     private static void aggiungiParoleAlVocabolario(String stringa) {
         Arrays.stream(stringa.split("\\s+"))
                 .forEach(parola -> vocabolario.putIfAbsent(parola, 0));
     }
     
-    private static Map<String, Integer> textToVector(String stringa) {
+    private static Map<String, Integer> textToVector(String stringa, boolean isTitle) {
         Map<String, Integer> textVector = new TreeMap<>(vocabolario);
+        int weight = isTitle ? 2 : 1;
         Arrays.stream(stringa.split("\\s+"))
-                .forEach(parola -> textVector.put(parola, textVector.getOrDefault(parola, 0) + 1));
+                .forEach(parola -> textVector.put(parola, textVector.getOrDefault(parola, 0) + weight));
         return textVector;
     }
     
@@ -158,93 +146,82 @@ public class FXMLDocumentController implements Initializable {
 
     // questo metodo attualmente inizializza le stopwords da noi decise
     public void loadStopwords() throws IOException {
-        this.stopwords = Files.readAllLines(Paths.get("stopwords-it.txt"));
+        File stopwordsFile = new File("stopwords-it.txt");
+        if (stopwordsFile.exists()) {
+            this.stopwords = Files.readAllLines(stopwordsFile.toPath());
+        } else {
+            this.stopwords = new ArrayList<>();
+            System.out.println("Stopwords file not found.");
+        }
     }
+
+    private String removeStopwords(String input) {
+        if (input == null || input.isEmpty()) {
+            return "";
+        }
+        
+        // TODO da rivedere, lo ha fatto chat per gestire gli apostrofi
+
+        List<String> words = Stream.of(input.toLowerCase().split("\\s+"))
+                .map(word -> word.replaceAll("^(nell'|dell'|l'|all'|sull')", ""))
+                .collect(Collectors.toList());
+        words.removeAll(stopwords);
+        return String.join(" ", words);
+    }
+
 
 
     @FXML
     private void folderSelection(ActionEvent event) throws IOException {
-        
         DirectoryChooser directoryChooser = new DirectoryChooser();
         directoryChooser.setTitle("Seleziona una cartella");
         File selectedDirectory = directoryChooser.showDialog(null);
         if (selectedDirectory != null) {
             System.out.println("Cartella selezionata: " + selectedDirectory.getAbsolutePath());
-            File [] files = selectedDirectory.listFiles();
+            File[] files = selectedDirectory.listFiles();
             if (files != null) {
                 List<Document> documents = new ArrayList<>();
                 for (File file : files) {
                     if (file.isFile() && file.getName().endsWith(".txt")) {
-
-
-                            StringBuilder result = new StringBuilder();
-                            try(BufferedReader bfr = new BufferedReader(new FileReader(file))){
-                                String line = bfr.readLine();
-                                while ((line = bfr.readLine()) != null) {
-                                    result.append(line).append("\n");
-                                    System.out.println(result);
-                                }
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
+                        String title = null;
+                        StringBuilder body = new StringBuilder();
+                        try (BufferedReader bfr = new BufferedReader(new FileReader(file))) {
+                            title = bfr.readLine(); // Assume la prima linea come titolo
+                            String line;
+                            while ((line = bfr.readLine()) != null) {
+                                body.append(line).append("\n");
                             }
-
-
-
-                        documents.add(new Document(readTitle(file.getAbsolutePath()),result.toString().replaceAll("[^\\s\\p{L}0-9]", "")));
-                        System.out.println(file.getAbsolutePath());
-                        System.out.println(documents.size());
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                        String cleanedTitle = removeStopwords(title);
+                        String cleanedBody = removeStopwords(body.toString());
+                        aggiungiParoleAlVocabolario(cleanedTitle + " " + cleanedBody);
+                        documents.add(new Document(title, body.toString().replaceAll("[^\\s\\p{L}0-9]", "")));
+                        Map<String, Integer> titleVector = textToVector(cleanedTitle, true);
+                        Map<String, Integer> bodyVector = textToVector(cleanedBody, false);
+                        Map<String, Integer> documentVector = mergeVectors(titleVector, bodyVector);
+                        resultMapByDocument.put(title, documentVector);
                     }
                 }
-                ObservableList<Document> documentObservableList = FXCollections.observableArrayList(documents);
-                tableView.setItems(documentObservableList);
-
-                try {
-                    loadStopwords();
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                }
-
-
-                for (Document document : documents) {
-                    //In questa parte di codice vengono eliminate le stopwords e viene creato "il vettore" per ogni documento(per ora viene stampato). Da implementare la logica di vocabolario e rifinire questa per poi aggiustare il tutto con la query
-
-
-                    ArrayList<String> allWords = Stream.of(document.getDocument_text().toLowerCase().split(" ")).collect(Collectors.toCollection(ArrayList<String>::new));
-                    allWords.removeAll(stopwords);
-
-                    String result = String.join(" ", allWords);
-                    aggiungiParoleAlVocabolario(result);
-                    Map<String, Integer> resultMap = textToVector(result);
-                    resultMapByDocument.put(document.getTitle(), resultMap);
-
-
-                }
-
-
-
-
-
-
-
+                tableView.setItems(FXCollections.observableArrayList(documents));
             }
-
-// gestire eccezioni
             pane1.setVisible(false);
             pane2.setVisible(true);
         } else {
             System.out.println("Operazione annullata dall'utente.");
         }
-        }
-
-
-        public String readTitle (String nomeFile){
-        try(BufferedReader bfr = new BufferedReader(new FileReader(nomeFile))){
-            return bfr.readLine(); //si dovrebbe verificare che il file abbia una riga
-            } catch (IOException ex) {
-            throw new RuntimeException(ex);
-        }
-        }
-
-
     }
+
+
+    private static Map<String, Integer> mergeVectors(Map<String, Integer> titleVector, Map<String, Integer> bodyVector) {
+        Map<String, Integer> mergedVector = new TreeMap<>(titleVector);
+        bodyVector.forEach((key, value) -> mergedVector.merge(key, value, Integer::sum));
+        return mergedVector;
+    }
+
+
+
+}
+
 
