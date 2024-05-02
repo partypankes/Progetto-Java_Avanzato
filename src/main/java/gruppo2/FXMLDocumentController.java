@@ -62,21 +62,6 @@ public class FXMLDocumentController implements Initializable {
 
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
 
-        /* Versione di prova implementativa del filtraggio delle parole, non funziona nel momento in cui il "Document_1.txt" non si trova nella dir del progetto. Va rivisto leggi contenuto
-        try {
-            loadStopwords();
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-        String prova = Document.leggiContenuto("Document_1.txt");
-        ArrayList<String> allWords = Stream.of(prova.toLowerCase().split(" ")).collect(Collectors.toCollection(ArrayList<String>::new));
-        allWords.removeAll(stopwords);
-
-        String result = String.join(" ", allWords);
-
-        System.out.println(allWords);
-
-         */
     }    
 
     @FXML
@@ -153,7 +138,6 @@ public class FXMLDocumentController implements Initializable {
     // questo metodo attualmente inizializza le stopwords da noi decise
     public void loadStopwords() throws IOException {
         this.stopwords = Files.readAllLines(Paths.get("stopwords-it.txt"));
-        System.out.println(stopwords);
     }
 
 
@@ -169,27 +153,47 @@ public class FXMLDocumentController implements Initializable {
             if (files != null) {
                 List<Document> documents = new ArrayList<>();
                 for (File file : files) {
-                    if (file.isFile()) {
-                        documents.add(new Document(readTitle(file.getAbsolutePath())));
+                    if (file.isFile() && file.getName().endsWith(".txt")) {
+
+
+                            StringBuilder result = new StringBuilder();
+                            try(BufferedReader bfr = new BufferedReader(new FileReader(file))){
+                                String line = bfr.readLine();
+                                while ((line = bfr.readLine()) != null) {
+                                    result.append(line).append("\n");
+                                    System.out.println(result);
+                                }
+                            } catch (IOException e) {
+                                throw new RuntimeException(e);
+                            }
+
+
+
+                        documents.add(new Document(readTitle(file.getAbsolutePath()),result.toString().replaceAll("[^\\s\\p{L}0-9]", "")));
                         System.out.println(file.getAbsolutePath());
+                        System.out.println(documents.size());
                     }
                 }
                 ObservableList<Document> documentObservableList = FXCollections.observableArrayList(documents);
                 tableView.setItems(documentObservableList);
 
-                //qui andrebbe la logica per la creazione dei vettori dei documenti e del vocabolario
+                try {
+                    loadStopwords();
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                }
 
                 for (Document document : documents) {
-                    //crea vettore, il metodo di raffi prende in ingresso una stringa, noi dobbiamo prima leggere tutto
-                   // il contenuto, salvarlo da qualche parte e poi richiamarlo.
+                    //In questa parte di codice vengono eliminate le stopwords e viene creato "il vettore" per ogni documento(per ora viene stampato). Da implementare la logica di vocabolario e rifinire questa per poi aggiustare il tutto con la query
 
-                   // String contenuto = Document.leggiContenuto(document.getTitle());
-                    /*
-                    la lista dei documenti contiene solo i titoli, quindi o facciamo due liste separate o nella table view faccioamo vedere
-                    tutto il documento, dobbiamo scegliere come caratterizzare la classe Document.
-                     */
-                  //  System.out.println(contenuto);
-                    //aggiungi al vocabolario
+
+                    ArrayList<String> allWords = Stream.of(document.getDocument_text().toLowerCase().split(" ")).collect(Collectors.toCollection(ArrayList<String>::new));
+                    allWords.removeAll(stopwords);
+
+                    String result = String.join(" ", allWords);
+
+                    System.out.println(textToVector(result));
+                    //implementare l'aggiunta al vocabolario
                 }
 
 

@@ -6,19 +6,24 @@ import java.io.IOException;
 
 public class Document {
     private final String title;
+    private final String document_text;
 
 
-    public Document(String title) {
+    public Document(String title, String documentText) {
         this.title = title;
 
+        document_text = documentText;
     }
 
     public String getTitle() {
         return title;
     }
 
+    public String getDocument_text() {
+        return document_text;
+    }
 
-    // Legge il contenuto del file con il nome passato a riferimento e lo trasforma in stringa eliminando la punteggiatura (dovrebbe valere anche per i testi unicode)
+    /* attualmente spostato nel controller, non lo cancello ancora per ora
     public static String leggiContenuto ( String nomeFile ){
         StringBuilder result = new StringBuilder();
         try(BufferedReader bfr = new BufferedReader(new FileReader( nomeFile ))){
@@ -35,6 +40,8 @@ public class Document {
         return result.toString().replaceAll("[^\\s\\p{L}0-9]", "");
     }
 
+
+     */
     @Override
     public String toString() {
         return "Document{" +
