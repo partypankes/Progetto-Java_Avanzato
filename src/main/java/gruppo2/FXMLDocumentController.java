@@ -137,15 +137,38 @@ public class FXMLDocumentController implements Initializable {
         if (selectedDirectory != null) {
             System.out.println("Cartella selezionata: " + selectedDirectory.getAbsolutePath());
             File [] files = selectedDirectory.listFiles();
-            if (files != null){
+            if (files != null) {
                 List<Document> documents = new ArrayList<>();
-                for(File file : files){
-                    if(file.isFile()){
+                for (File file : files) {
+                    if (file.isFile()) {
                         documents.add(new Document(readTitle(file.getAbsolutePath())));
+                        System.out.println(file.getAbsolutePath());
                     }
                 }
                 ObservableList<Document> documentObservableList = FXCollections.observableArrayList(documents);
                 tableView.setItems(documentObservableList);
+
+                //qui andrebbe la logica per la creazione dei vettori dei documenti e del vocabolario
+
+                for (Document document : documents) {
+                    //crea vettore, il metodo di raffi prende in ingresso una stringa, noi dobbiamo prima leggere tutto
+                   // il contenuto, salvarlo da qualche parte e poi richiamarlo.
+
+                   // String contenuto = Document.leggiContenuto(document.getTitle());
+                    /*
+                    la lista dei documenti contiene solo i titoli, quindi o facciamo due liste separate o nella table view faccioamo vedere
+                    tutto il documento, dobbiamo scegliere come caratterizzare la classe Document.
+                     */
+                  //  System.out.println(contenuto);
+                    //aggiungi al vocabolario
+                }
+
+
+
+
+
+
+
             }
 
 // gestire eccezioni
@@ -159,7 +182,7 @@ public class FXMLDocumentController implements Initializable {
 
         public String readTitle (String nomeFile){
         try(BufferedReader bfr = new BufferedReader(new FileReader(nomeFile))){
-            return bfr.readLine(); //gestire eccezioni tipo file == null
+            return bfr.readLine(); //si dovrebbe verificare che il file abbia una riga
             } catch (IOException ex) {
             throw new RuntimeException(ex);
         }
