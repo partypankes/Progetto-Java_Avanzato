@@ -8,7 +8,11 @@ package gruppo2;
 
 import java.io.*;
 import java.net.URL;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableArray;
@@ -47,6 +51,8 @@ public class FXMLDocumentController implements Initializable {
     private static TreeMap<String, Integer> vocabolario = new TreeMap<>();
     
     private static Map<String, Double> corrispondenzaSimiliarita = new TreeMap<>(Collections.reverseOrder());
+
+    private List<String> stopwords;
    
     
     
@@ -55,6 +61,22 @@ public class FXMLDocumentController implements Initializable {
     public void initialize(URL url, ResourceBundle rb) {
 
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+
+        /* Versione di prova implementativa del filtraggio delle parole, non funziona nel momento in cui il "Document_1.txt" non si trova nella dir del progetto. Va rivisto leggi contenuto
+        try {
+            loadStopwords();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        String prova = Document.leggiContenuto("Document_1.txt");
+        ArrayList<String> allWords = Stream.of(prova.toLowerCase().split(" ")).collect(Collectors.toCollection(ArrayList<String>::new));
+        allWords.removeAll(stopwords);
+
+        String result = String.join(" ", allWords);
+
+        System.out.println(allWords);
+
+         */
     }    
 
     @FXML
@@ -127,6 +149,13 @@ public class FXMLDocumentController implements Initializable {
 
 
     }
+
+    // questo metodo attualmente inizializza le stopwords da noi decise
+    public void loadStopwords() throws IOException {
+        this.stopwords = Files.readAllLines(Paths.get("stopwords-it.txt"));
+        System.out.println(stopwords);
+    }
+
 
     @FXML
     private void folderSelection(ActionEvent event) throws IOException {

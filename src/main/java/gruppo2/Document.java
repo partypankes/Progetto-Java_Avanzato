@@ -18,7 +18,7 @@ public class Document {
     }
 
 
-
+    // Legge il contenuto del file con il nome passato a riferimento e lo trasforma in stringa eliminando la punteggiatura (dovrebbe valere anche per i testi unicode)
     public static String leggiContenuto ( String nomeFile ){
         StringBuilder result = new StringBuilder();
         try(BufferedReader bfr = new BufferedReader(new FileReader( nomeFile ))){
@@ -30,7 +30,9 @@ public class Document {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
-        return result.toString();
+
+
+        return result.toString().replaceAll("[^\\s\\p{L}0-9]", "");
     }
 
     @Override
