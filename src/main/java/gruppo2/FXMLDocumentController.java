@@ -6,8 +6,7 @@
 package gruppo2;
 
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.net.URL;
 import java.util.*;
 
@@ -142,7 +141,7 @@ public class FXMLDocumentController implements Initializable {
                 List<Document> documents = new ArrayList<>();
                 for(File file : files){
                     if(file.isFile()){
-                        documents.add(new Document(file.getName()));
+                        documents.add(new Document(readTitle(file.getAbsolutePath())));
                     }
                 }
                 ObservableList<Document> documentObservableList = FXCollections.observableArrayList(documents);
@@ -156,5 +155,16 @@ public class FXMLDocumentController implements Initializable {
             System.out.println("Operazione annullata dall'utente.");
         }
         }
+
+
+        public String readTitle (String nomeFile){
+        try(BufferedReader bfr = new BufferedReader(new FileReader(nomeFile))){
+            return bfr.readLine(); //gestire eccezioni tipo file == null
+            } catch (IOException ex) {
+            throw new RuntimeException(ex);
+        }
+        }
+
+
     }
 
