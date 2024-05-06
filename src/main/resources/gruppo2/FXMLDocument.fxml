@@ -77,8 +77,11 @@
             </AnchorPane>
             <AnchorPane fx:id="paneDocumento" prefHeight="451.0" prefWidth="543.0">
                <children>
-                  <TextArea fx:id="corpoDocumento" layoutX="56.0" layoutY="193.0" prefHeight="451.0" prefWidth="543.0"/>
-                  <Button fx:id="chiudiDocumento" layoutX="291.0" layoutY="596.0" mnemonicParsing="false" onAction="#chiudiDocumento" text="CLOSE" />
+                  <TextArea fx:id="corpoDocumento" layoutX="57.0" layoutY="248.0" prefHeight="306.0" prefWidth="543.0" wrapText="true" prefColumnCount="20" />
+                  <Button fx:id="chiudiDocumento" layoutX="301.0" layoutY="516.0" mnemonicParsing="false" onAction="#chiudiDocumento" text="CLOSE">
+                     <font>
+                        <Font size="13.0" />
+                     </font></Button>
                </children>
             </AnchorPane>
          </children>
