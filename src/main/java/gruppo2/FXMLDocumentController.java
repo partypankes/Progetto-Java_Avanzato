@@ -20,9 +20,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
@@ -40,7 +38,16 @@ public class FXMLDocumentController implements Initializable {
     private AnchorPane pane2;
 
     @FXML
+    private AnchorPane paneDocumento;
+
+    @FXML
     private TextField queryTf;
+
+    @FXML
+    private TextArea corpoDocumento;
+
+    @FXML
+    private Button chiudiDocumento;
     
     @FXML
     private TableView<Document> tableView;
@@ -69,13 +76,20 @@ public class FXMLDocumentController implements Initializable {
             e.printStackTrace();
         }
 
+        paneDocumento.setVisible(false);
+        selezionaDocumento();
+
+        corpoDocumento.setEditable(false); //il corpo del documento selezionato non può essere modificato
+
     }
+
+
 
     @FXML
     private void handleQuery() {
         String queryText = queryTf.getText();
         if (queryText == null || queryText.trim().isEmpty()) {
-            // mostra tutti i documenti senza filtro quando cancello la query e clicco invio
+            // mostra tutti i documenti senza filtro quando cancello la query e clicco invio (quindi il text field è vuoto)
             List<Document> allDocuments = resultMapByDocument.keySet().stream().map(Document::new).collect(Collectors.toList());
             tableView.setItems(FXCollections.observableArrayList(allDocuments));
         } else {
@@ -173,6 +187,7 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void folderSelection(ActionEvent event) throws IOException {
+
         DirectoryChooser directoryChooser = new DirectoryChooser();
         directoryChooser.setTitle("Seleziona una cartella");
         File selectedDirectory = directoryChooser.showDialog(null);
@@ -220,7 +235,32 @@ public class FXMLDocumentController implements Initializable {
         return mergedVector;
     }
 
+    private void selezionaDocumento(){ //al doppio click su un documento della tableview, apre il documento selezionato
 
+        tableView.setOnMouseClicked(event -> {
+            if (event.getClickCount() == 2) {
+                pane2.setVisible(false);
+                paneDocumento.setVisible(true);
+                Document documentoSelezionato = tableView.getSelectionModel().getSelectedItem();
+                if (documentoSelezionato != null) {
+                    mostraContenutoDocumento(documentoSelezionato);
+                }
+            }
+        });
+
+    }
+
+    private void mostraContenutoDocumento(Document documentoSelezionato) { //mostra nella textArea il corpo del documento selezionato
+
+        String content = new String(documentoSelezionato.getDocument_text());
+        corpoDocumento.setText(content);
+
+    }
+    @FXML
+    public void chiudiDocumento(){
+        paneDocumento.setVisible(false);
+        pane2.setVisible(true);
+    }
 
 }
 
