@@ -274,6 +274,56 @@ public class FXMLDocumentController implements Initializable {
         pane2.setVisible(true);
     }
 
+    @FXML
+    public void viewStats(){
+        Document selectedDocument = tableView.getSelectionModel().getSelectedItem();
+        if (selectedDocument != null) {
+            String documentText = selectedDocument.getDocument_text();
+            Map<String, Integer> documentVector = textToVector(documentText.replaceAll("[^\\s\\p{L}0-9]", "").toLowerCase(), false);
+
+            int totalWords = documentVector.values().stream().mapToInt(Integer::intValue).sum(); //WORKA
+            int uniqueWords = (int) documentVector.entrySet().stream() // DA VERIFICARE
+                    .filter(entry -> entry.getValue() > 0)
+                    .count();
+
+            documentVector = textToVector(removeStopwords(documentText.replaceAll("[^\\s\\p{L}0-9]", "")), false);
+            int filteredWords = documentVector.values().stream().mapToInt(Integer::intValue).sum();
+            int stopWords = totalWords - filteredWords;
+            List<Map.Entry<String, Integer>> commonWords = documentVector.entrySet().stream()
+                    .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                    .limit(5)
+                    .toList();
+
+            StringBuilder statsMessage = new StringBuilder();
+            statsMessage.append("Statistiche per il documento \"").append(selectedDocument.getTitle()).append("\":\n");
+            statsMessage.append("Numero totale di parole: ").append(totalWords).append("\n");
+            statsMessage.append("Numero di parole uniche: ").append(uniqueWords).append("\n");
+            statsMessage.append("Numero di stopword presenti: ").append(stopWords).append("\n");
+            double percentage = ((double) stopWords / totalWords) * 100;
+            String formattedPercentage = String.format("%.2f", percentage);
+            statsMessage.append("Percentuale stopwords presenti pari a: ").append(formattedPercentage).append("%\n");            statsMessage.append("Le 5 parole più comuni:\n");
+            commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
+
+            // non sapevo dove mostrarle: è fatto da chat
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+            alert.setTitle("Statistiche del Documento");
+            alert.setHeaderText(null);
+            alert.setContentText(statsMessage.toString());
+            alert.showAndWait();
+        } else {
+            // Se nessun documento è selezionato, mostra un messaggio di avviso
+            Alert alert = new Alert(Alert.AlertType.WARNING);
+            alert.setTitle("Nessun Documento Selezionato");
+            alert.setHeaderText(null);
+            alert.setContentText("Seleziona un documento dalla tabella.");
+            alert.showAndWait();
+        }
+    }
+
+
+
+
+
 }
 
 
