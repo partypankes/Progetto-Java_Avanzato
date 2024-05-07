@@ -208,23 +208,29 @@ public class FXMLDocumentController implements Initializable {
                             while ((line = bfr.readLine()) != null) {
                                 body.append(line).append("\n");
                             }
+
+                            //aggiungo parole al vocabolario, pulite, no punteggiatura e no parole inutili
+                            aggiungiParoleAlVocabolario(removeStopwords(title + " " + body.toString().replaceAll("[^\\s\\p{L}0-9]", "")));
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
-                        String cleanedTitle = removeStopwords(title);
-                        String cleanedBody = removeStopwords(body.toString().replaceAll("[^\\s\\p{L}0-9]", ""));
-                        aggiungiParoleAlVocabolario(cleanedTitle + " " + cleanedBody);
-                        Document temp = new Document(title, body.toString());
-                        documents.add(temp);
-                        Map<String, Integer> titleVector = textToVector(cleanedTitle, true);
-                        Map<String, Integer> bodyVector = textToVector(cleanedBody, false);
-                        Map<String, Integer> documentVector = mergeVectors(titleVector, bodyVector);
-                        System.out.println(temp);
-                        resultMapByDocument.put(temp, documentVector);
-
+                        //aggiungo documento così com'è, con punteggiatura e stopwords
+                        documents.add(new Document(title, body.toString()));
                     }
                 }
-                System.out.println(documents);
+                for (Document documentVocab : documents){
+                    String cleanedTitle = removeStopwords(documentVocab.getTitle());
+                    String cleanedBody = removeStopwords(documentVocab.getDocument_text().replaceAll("[^\\s\\p{L}0-9]", ""));
+                    Map<String, Integer> titleVector = textToVector(cleanedTitle, true);
+                    Map<String, Integer> bodyVector = textToVector(cleanedBody, false);
+                    Map<String, Integer> documentVector = mergeVectors(titleVector, bodyVector);
+
+                    resultMapByDocument.put(documentVocab, documentVector);
+                }
+                System.out.println(resultMapByDocument.keySet());
+                // System.out.println(vocabolario);
+
+
                 tableView.setItems(FXCollections.observableArrayList(documents));
             }
             pane1.setVisible(false);

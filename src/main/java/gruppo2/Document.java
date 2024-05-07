@@ -16,10 +16,6 @@ public class Document implements Comparable<Document> {
         document_text = documentText;
     }
 
-    public Document(String title) { // l'ho inizializzato per fare la prova
-        this.title = title;
-        document_text = null;
-    }
 
     public String getTitle() {
         return title;
@@ -40,17 +36,25 @@ public class Document implements Comparable<Document> {
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
-        if (!(o instanceof Document document)) return false;
-        return Objects.equals(title, document.title) && Objects.equals(document_text, document.document_text);
-    }
+        if (o == null || getClass() != o.getClass()) return false;
+        Document document = (Document) o;
+        return Objects.equals(getTitle(), document.getTitle()) && Objects.equals(getDocument_text(), document.getDocument_text());
+
+}
 
     @Override
     public int hashCode() {
-        return Objects.hash(title, document_text);
+        return Objects.hash(getTitle(), getDocument_text());
     }
 
     @Override
-    public int compareTo(Document o) {
-        return 0;
+    public int compareTo(Document other) {
+        int titleComparison = this.title.compareTo(other.getTitle());
+        if (titleComparison != 0) {
+            return titleComparison;
+        } else {
+            return this.document_text.compareTo(other.getDocument_text());
+        }
     }
-}
+    }
+
