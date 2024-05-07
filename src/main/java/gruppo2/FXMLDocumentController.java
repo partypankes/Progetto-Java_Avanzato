@@ -57,9 +57,9 @@ public class FXMLDocumentController implements Initializable {
     
     private static TreeMap<String, Integer> vocabolario = new TreeMap<>();
     
-    private static Map<String, Double> corrispondenzaSimiliarita = new TreeMap<>(Collections.reverseOrder());
+    private static Map<Document, Double> corrispondenzaSimiliarita = new TreeMap<>(Collections.reverseOrder());
 
-    private static Map<String, Map<String, Integer>> resultMapByDocument = new HashMap<>();
+    private static Map<Document, Map<String, Integer>> resultMapByDocument = new HashMap<>();
 
     private List<String> stopwords;
    
@@ -90,25 +90,27 @@ public class FXMLDocumentController implements Initializable {
         String queryText = queryTf.getText();
         if (queryText == null || queryText.trim().isEmpty()) {
             // mostra tutti i documenti senza filtro quando cancello la query e clicco invio (quindi il text field è vuoto)
-            List<Document> allDocuments = resultMapByDocument.keySet().stream().map(Document::new).collect(Collectors.toList());
+            List<Document> allDocuments = resultMapByDocument.keySet().stream().toList();
             tableView.setItems(FXCollections.observableArrayList(allDocuments));
         } else {
 
             Map<String, Integer> queryVector = textToVector(removeStopwords(queryText), false);
             corrispondenzaSimiliarita.clear();
-            for (Map.Entry<String, Map<String, Integer>> entry : resultMapByDocument.entrySet()) {
+            for (Map.Entry<Document, Map<String, Integer>> entry : resultMapByDocument.entrySet()) {
                 double similarity = calculateCosineSimilarity(entry.getValue(), queryVector);
                 if (similarity > 0) { // solo documenti con similarità maggiore di 0
                     corrispondenzaSimiliarita.put(entry.getKey(), similarity);
                 }
             }
-            List<Map.Entry<String, Double>> sortedSimilarities = corrispondenzaSimiliarita.entrySet().stream()
-                    .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                    .toList();
-            List<Document> filteredDocuments = sortedSimilarities.stream()
-                    .map(entry -> new Document(entry.getKey()))
+
+            System.out.println(corrispondenzaSimiliarita.toString());
+            List<Map.Entry<Document, Double>> sortedSimilarities = corrispondenzaSimiliarita.entrySet().stream()
+                    .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).toList();
+            List<Document> sortedDocuments = sortedSimilarities.stream()
+                    .map(Map.Entry::getKey)
                     .collect(Collectors.toList());
-            tableView.setItems(FXCollections.observableArrayList(filteredDocuments));
+            tableView.setItems(FXCollections.observableArrayList(sortedDocuments));
+
         }
     }
 
@@ -210,15 +212,19 @@ public class FXMLDocumentController implements Initializable {
                             throw new RuntimeException(e);
                         }
                         String cleanedTitle = removeStopwords(title);
-                        String cleanedBody = removeStopwords(body.toString());
+                        String cleanedBody = removeStopwords(body.toString().replaceAll("[^\\s\\p{L}0-9]", ""));
                         aggiungiParoleAlVocabolario(cleanedTitle + " " + cleanedBody);
-                        documents.add(new Document(title, body.toString().replaceAll("[^\\s\\p{L}0-9]", "")));
+                        Document temp = new Document(title, body.toString());
+                        documents.add(temp);
                         Map<String, Integer> titleVector = textToVector(cleanedTitle, true);
                         Map<String, Integer> bodyVector = textToVector(cleanedBody, false);
                         Map<String, Integer> documentVector = mergeVectors(titleVector, bodyVector);
-                        resultMapByDocument.put(title, documentVector);
+                        System.out.println(temp);
+                        resultMapByDocument.put(temp, documentVector);
+
                     }
                 }
+                System.out.println(documents);
                 tableView.setItems(FXCollections.observableArrayList(documents));
             }
             pane1.setVisible(false);
@@ -252,7 +258,7 @@ public class FXMLDocumentController implements Initializable {
 
     private void mostraContenutoDocumento(Document documentoSelezionato) { //mostra nella textArea il corpo del documento selezionato
 
-        String content = new String(documentoSelezionato.getDocument_text());
+        String content = documentoSelezionato.getDocument_text();
         corpoDocumento.setText(content);
 
     }
