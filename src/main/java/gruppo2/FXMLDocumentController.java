@@ -178,13 +178,15 @@ public class FXMLDocumentController implements Initializable {
         if (input == null || input.isEmpty()) {
             return "";
         }
-        
-        // TODO da rivedere, lo ha fatto chat per gestire gli apostrofi
 
+        // Rimuove tutti gli apostrofi
+        input = input.replaceAll("'", " ");
+
+        // Dividi la stringa in parole e rimuovi le stopwords
         List<String> words = Stream.of(input.toLowerCase().split("\\s+"))
-                .map(word -> word.replaceAll("^(nell'|dell'|l'|all'|sull')", ""))
+                .filter(word -> !stopwords.contains(word))
                 .collect(Collectors.toList());
-        words.removeAll(stopwords);
+
         return String.join(" ", words);
     }
 
@@ -281,7 +283,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public void mostrastatisticheDocumento(Document documentoSelezionato){
             String testoDocumento = documentoSelezionato.getDocument_text();
-            Map<String, Integer> documentVector = textToVector(testoDocumento.replaceAll("[^\\s\\p{L}0-9']", "").toLowerCase(), false);
+        Map<String, Integer> documentVector = textToVector(testoDocumento.replaceAll("'", " ").toLowerCase(), false);
 
             int totalWords = documentVector.values().stream().mapToInt(Integer::intValue).sum(); //WORKA
             int uniqueWords = (int) documentVector.entrySet().stream() // DA VERIFICARE
