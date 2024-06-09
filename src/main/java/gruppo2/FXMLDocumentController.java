@@ -215,7 +215,7 @@ public class FXMLDocumentController implements Initializable {
                             }
 
                             //aggiungo parole al vocabolario, pulite, no punteggiatura e no parole inutili
-                            aggiungiParoleAlVocabolario(removeStopwords(title + " " + body.toString().replaceAll("[^\\s\\p{L}0-9]", "")));
+                            aggiungiParoleAlVocabolario(removeStopwords(title + " " + body.toString().replaceAll("[^\\s\\p{L}0-9]", " "))); // da controllare
                         } catch (IOException e) {
                             throw new RuntimeException(e);
                         }
@@ -225,15 +225,15 @@ public class FXMLDocumentController implements Initializable {
                 }
                 for (Document documentVocab : documents){
                     String cleanedTitle = removeStopwords(documentVocab.getTitle());
-                    String cleanedBody = removeStopwords(documentVocab.getDocument_text().replaceAll("[^\\s\\p{L}0-9]", ""));
+                    String cleanedBody = removeStopwords(documentVocab.getDocument_text().replaceAll("[^\\s\\p{L}0-9]", "")); //qui non mi torna
                     Map<String, Integer> titleVector = textToVector(cleanedTitle, true);
                     Map<String, Integer> bodyVector = textToVector(cleanedBody, false);
                     Map<String, Integer> documentVector = mergeVectors(titleVector, bodyVector);
 
                     resultMapByDocument.put(documentVocab, documentVector);
                 }
-                System.out.println(resultMapByDocument.keySet());
-                // System.out.println(vocabolario);
+                //System.out.println(resultMapByDocument.keySet());
+                 System.out.println(vocabolario);
 
 
                 tableView.setItems(FXCollections.observableArrayList(documents));
@@ -283,14 +283,15 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public void mostrastatisticheDocumento(Document documentoSelezionato){
             String testoDocumento = documentoSelezionato.getDocument_text();
-        Map<String, Integer> documentVector = textToVector(testoDocumento.replaceAll("'", " ").toLowerCase(), false);
-
+            Map<String, Integer> documentVector = textToVector(testoDocumento.replaceAll("[!\"()*,.:;'?]", " ").toLowerCase(), false);
+        // il problema resta nella creazione del vocabolario, perche le parole non sono correttamente separate!
+        // penso che la logica di suddivisione vada risolta già in creazione
+            System.out.println(documentVector);
             int totalWords = documentVector.values().stream().mapToInt(Integer::intValue).sum(); //WORKA
-            int uniqueWords = (int) documentVector.entrySet().stream() // DA VERIFICARE
-                    .filter(entry -> entry.getValue() > 0)
-                    .count();
+            int uniqueWords =  (int) documentVector.values().stream().filter(values -> values > 0).count();
 
-            documentVector = textToVector(removeStopwords(testoDocumento.replaceAll("[^\\s\\p{L}0-9']", "")), false);
+
+            documentVector = textToVector(removeStopwords(testoDocumento.replaceAll("[!\"()*,.:;'?]", " ").toLowerCase()), false);
             int filteredWords = documentVector.values().stream().mapToInt(Integer::intValue).sum();
             int stopWords = totalWords - filteredWords;
             List<Map.Entry<String, Integer>> commonWords = documentVector.entrySet().stream()
