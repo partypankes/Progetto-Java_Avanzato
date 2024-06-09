@@ -9,6 +9,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -16,6 +17,8 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
+
+import javax.print.Doc;
 
 import static javafx.collections.FXCollections.observableArrayList;
 
@@ -48,6 +51,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TableColumn<Document, String> titleColumn;
 
+    private final ObservableList<Document> documents = FXCollections.observableArrayList();
+
     private static ConcurrentMap<String, Integer> vocabolario = new ConcurrentHashMap<>();
 
     private static Map<Document, Double> corrispondenzaSimiliarita = new TreeMap<>(Collections.reverseOrder());
@@ -61,6 +66,7 @@ public class FXMLDocumentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+        tableView.setItems(documents);
         try {
             loadStopwords();
         } catch (IOException e) {
@@ -140,7 +146,7 @@ public class FXMLDocumentController implements Initializable {
             File[] files = selectedDirectory.listFiles();
 
             if (files != null) {
-                List<Document> documents = new ArrayList<>();
+
                 List<Future<Document>> futures = new ArrayList<>();
 
                 for (File file : files) {
@@ -161,7 +167,6 @@ public class FXMLDocumentController implements Initializable {
                 }
 
                 createVocabularyAndVectors(documents);
-                tableView.setItems(FXCollections.observableArrayList(documents));
                 pane1.setVisible(false);
                 pane2.setVisible(true);
             } else {
@@ -219,7 +224,7 @@ public class FXMLDocumentController implements Initializable {
 
     private void selezionaDocumento() {
         tableView.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 2) { // Doppio click
+            if (event.getClickCount() == 1) { // Doppio click
                 Document documentoSelezionato = tableView.getSelectionModel().getSelectedItem();
                 if (documentoSelezionato != null) {
                     mostraContenutoDocumento(documentoSelezionato);
