@@ -79,20 +79,13 @@
                   </SplitPane>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="paneDocumento" prefHeight="451.0" prefWidth="543.0">
+            <AnchorPane fx:id="paneDocumento" prefHeight="451.0" prefWidth="543.0" visible="false">
                <children>
                   <TextArea fx:id="corpoDocumento" editable="false" layoutX="56.0" layoutY="61.0" prefColumnCount="20" prefHeight="468.0" prefWidth="543.0" wrapText="true" />
-                  <Button fx:id="chiudiDocumento" layoutX="575.0" layoutY="16.0" mnemonicParsing="false" onAction="#chiudiDocumento" prefHeight="25.0" prefWidth="42.0" style="-fx-background-color: transparent;">
+                  <Button fx:id="chiudiDocumento" layoutX="553.0" layoutY="16.0" mnemonicParsing="false" onAction="#chiudiDocumento" prefHeight="29.0" prefWidth="64.0" style="-fx-background-color: transparent;" text="Close">
                      <font>
                         <Font size="13.0" />
-                     </font>
-                     <graphic>
-                        <ImageView fitHeight="48.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../../../../cross.jpg" />
-                           </image>
-                        </ImageView>
-                     </graphic></Button>
+                     </font></Button>
                   <TextArea fx:id="statisticheDocumento" editable="false" layoutX="56.0" layoutY="565.0" prefColumnCount="20" prefHeight="198.0" prefWidth="543.0" />
                   <Label layoutX="59.0" layoutY="540.0" prefHeight="25.0" prefWidth="210.0" style="-fx-font-weight: bold;" text="STATISTICHE DOCUMENTO" />
                   <Label layoutX="56.0" layoutY="36.0" prefHeight="25.0" prefWidth="164.0" style="-fx-font-weight: bold;" text="TESTO DOCUMENTO" />
