@@ -25,6 +25,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
 
+import static javafx.collections.FXCollections.observableArrayList;
+
 /**
  *
  * @author gruppo_02
@@ -66,24 +68,18 @@ public class FXMLDocumentController implements Initializable {
 
     private List<String> stopwords;
    
-    
-    
-    
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-
         titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
         try {
             loadStopwords();  // Carica le stopwords subito
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         paneDocumento.setVisible(false);
         selezionaDocumento();
-
         corpoDocumento.setEditable(false); //il corpo del documento selezionato non può essere modificato
-
     }
 
 
@@ -94,10 +90,9 @@ public class FXMLDocumentController implements Initializable {
         if (queryText == null || queryText.trim().isEmpty()) {
             // mostra tutti i documenti senza filtro quando cancello la query e clicco invio (quindi il text field è vuoto)
             List<Document> allDocuments = resultMapByDocument.keySet().stream().toList();
-            tableView.setItems(FXCollections.observableArrayList(allDocuments));
+            tableView.setItems(observableArrayList(allDocuments));
         } else {
-
-            Map<String, Integer> queryVector = textToVector(removeStopwords(queryText), false);
+            Map<String, Integer> queryVector = textToVector(removeStopwords(queryText), false); /*TODO NON VA BENE PER ERRORE 1*/
             corrispondenzaSimiliarita.clear();
             for (Map.Entry<Document, Map<String, Integer>> entry : resultMapByDocument.entrySet()) {
                 double similarity = calculateCosineSimilarity(entry.getValue(), queryVector);
@@ -112,7 +107,7 @@ public class FXMLDocumentController implements Initializable {
             List<Document> sortedDocuments = sortedSimilarities.stream()
                     .map(Map.Entry::getKey)
                     .collect(Collectors.toList());
-            tableView.setItems(FXCollections.observableArrayList(sortedDocuments));
+            tableView.setItems(observableArrayList(sortedDocuments));
 
         }
     }
@@ -125,7 +120,8 @@ public class FXMLDocumentController implements Initializable {
         Arrays.stream(stringa.split("\\s+"))
                 .forEach(parola -> vocabolario.putIfAbsent(parola, 0));
     }
-    
+
+    /* TODO DA RIFARE */
     private static Map<String, Integer> textToVector(String stringa, boolean isTitle) {
         Map<String, Integer> textVector = new TreeMap<>(vocabolario);
         int weight = isTitle ? 2 : 1;
@@ -191,7 +187,7 @@ public class FXMLDocumentController implements Initializable {
     }
 
 
-
+/*TODO VA MIGLIORATO TUTTO ERRORE 3*/
     @FXML
     private void folderSelection(ActionEvent event) throws IOException {
 
@@ -236,7 +232,7 @@ public class FXMLDocumentController implements Initializable {
                  System.out.println(vocabolario);
 
 
-                tableView.setItems(FXCollections.observableArrayList(documents));
+                tableView.setItems(observableArrayList(documents));
             }
             pane1.setVisible(false);
             pane2.setVisible(true);
@@ -280,6 +276,7 @@ public class FXMLDocumentController implements Initializable {
         pane2.setVisible(true);
     }
 
+    /*TODO PROBLEMI DA 4 IN GIU*/
     @FXML
     public void mostrastatisticheDocumento(Document documentoSelezionato){
             String testoDocumento = documentoSelezionato.getDocument_text();
