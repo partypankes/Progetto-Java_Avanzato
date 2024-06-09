@@ -22,6 +22,9 @@ import static javafx.collections.FXCollections.observableArrayList;
 public class FXMLDocumentController implements Initializable {
 
     @FXML
+    private Label documentTitleLabel;
+
+    @FXML
     private AnchorPane pane1;
 
     @FXML
@@ -232,6 +235,7 @@ public class FXMLDocumentController implements Initializable {
         pane2.setVisible(false);
         paneDocumento.setVisible(true);
         corpoDocumento.setText(documentoSelezionato.getDocument_text());
+        documentTitleLabel.setText(documentoSelezionato.getTitle());
         mostrastatisticheDocumento(documentoSelezionato);
     }
 
@@ -244,6 +248,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public void mostrastatisticheDocumento(Document documentoSelezionato) {
         String testoDocumento = documentoSelezionato.getDocument_text();
+        int sentenceCount = testoDocumento.split("[.!?]").length;
 
         // Testo già pulito e senza stopwords
         String cleanedText = cleanAndRemoveStopwords(testoDocumento);
@@ -260,7 +265,7 @@ public class FXMLDocumentController implements Initializable {
         StringBuilder statsMessage = new StringBuilder();
         statsMessage.append("Numero totale di parole: ").append(totalWords).append("\n");
         statsMessage.append("Numero di parole uniche: ").append(uniqueWords).append("\n");
-
+        statsMessage.append("Numero di frasi: ").append(sentenceCount).append("\n");
         statsMessage.append("Le 5 parole più comuni sono:\n");
         commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
 
