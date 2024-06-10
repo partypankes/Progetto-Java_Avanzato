@@ -18,14 +18,16 @@ import java.util.Objects;
  * @author gruppo_02
  */
 public class MySimpleIRTool extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("FXMLDocument.fxml")));
-        
+
         Scene scene = new Scene(root);
-        
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("styles.css")).toExternalForm());
+
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 
