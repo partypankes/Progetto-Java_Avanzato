@@ -24,7 +24,7 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-
+import gruppo2.Document;
 
 import static gruppo2.DirectoryChecker.*;
 
@@ -323,7 +323,8 @@ public class FXMLDocumentController implements Initializable {
                 body.append(scanner.nextLine()).append("\n");
             }
 
-            return new Document(file.getName(), title, body.toString().trim());
+            Document document = new Document(file.getName(), title, body.toString());
+            return document;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
