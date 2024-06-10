@@ -1,26 +1,31 @@
 package gruppo2;
 
+import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.DirectoryChooser;
+import javafx.stage.Stage;
+import javafx.stage.WindowEvent;
+
 import java.io.*;
 import java.net.URL;
 import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.DirectoryChooser;
-
-import javax.print.Doc;
-
-import static javafx.collections.FXCollections.observableArrayList;
+import static gruppo2.DirectoryChecker.*;
 
 public class FXMLDocumentController implements Initializable {
 
@@ -76,14 +81,39 @@ public class FXMLDocumentController implements Initializable {
             e.printStackTrace();
         }
         selezionaDocumento();
+
+
+    }
+
+    private void addCloseRequestHandler(Node node) {
+        Stage stage = (Stage) node.getScene().getWindow();
+        stage.setOnCloseRequest(new EventHandler<WindowEvent>() {
+            @Override
+            public void handle(WindowEvent event) {
+                shutdownExecutorService();
+            }
+        });
+    }
+
+    private void shutdownExecutorService() {
+        executorService.shutdown();
+        try {
+            if (!executorService.awaitTermination(60, TimeUnit.SECONDS)) {
+                executorService.shutdownNow();
+            }
+        } catch (InterruptedException e) {
+            executorService.shutdownNow();
+        }
     }
 
     @FXML
     private void handleQuery() {
         String queryText = queryTf.getText();
         if (queryText == null || queryText.trim().isEmpty()) {
+            System.out.println("ciao");
             List<Document> allDocuments = new ArrayList<>(resultMapByDocument.keySet());
-            tableView.setItems(observableArrayList(allDocuments));
+            System.out.println(allDocuments);
+            tableView.setItems(FXCollections.observableArrayList(allDocuments));
         } else {
             String cleanedQuery = cleanAndRemoveStopwords(queryText);
             Map<String, Integer> queryVector = textToVector(cleanedQuery);
@@ -95,9 +125,14 @@ public class FXMLDocumentController implements Initializable {
                 }
             }
 
-            List<Map.Entry<Document, Double>> sortedSimilarities = corrispondenzaSimiliarita.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).collect(Collectors.toList());
-            List<Document> sortedDocuments = sortedSimilarities.stream().map(Map.Entry::getKey).collect(Collectors.toList());
+            List<Map.Entry<Document, Double>> sortedSimilarities = corrispondenzaSimiliarita.entrySet().stream()
+                    .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                    .toList();
+            List<Document> sortedDocuments = sortedSimilarities.stream()
+                    .map(Map.Entry::getKey)
+                    .collect(Collectors.toList());
             tableView.setItems(FXCollections.observableArrayList(sortedDocuments));
+            System.out.println("ciao2");
         }
     }
 
@@ -124,7 +159,7 @@ public class FXMLDocumentController implements Initializable {
         if (normA == 0.0 || normB == 0.0) {
             return 0.0;
         } else {
-            return dotProduct / (Math.sqrt(normA) * Math.sqrt(normB));
+            return dotProduct / (Math.sqrt(normA) * (Math.sqrt(normB)));
         }
     }
 
@@ -143,50 +178,111 @@ public class FXMLDocumentController implements Initializable {
         DirectoryChooser directoryChooser = new DirectoryChooser();
         directoryChooser.setTitle("Seleziona una cartella");
         File selectedDirectory = directoryChooser.showDialog(null);
-
+        addCloseRequestHandler(pane1);
         if (selectedDirectory != null) {
             System.out.println("Cartella selezionata: " + selectedDirectory.getAbsolutePath());
-            File[] files = selectedDirectory.listFiles();
 
-            if (files != null) {
+            // Specifica il percorso della directory da monitorare
+            Path dir = Paths.get(selectedDirectory.getAbsolutePath());
 
-                List<Future<Document>> futures = new ArrayList<>();
+            // Esegui operazioni di controllo della directory in modo asincrono
+            executorService.submit(() -> {
+                // Carica il percorso della directory precedente
+                String previousDirPath = loadPreviousDirPath();
 
-                for (File file : files) {
-                    if (file.isFile() && file.getName().endsWith(".txt")) {
-                        futures.add(executorService.submit(() -> readDocumentFromFile(file)));
-                    }
+                List<Document> documentsToUpdate;
+                if (!dir.toString().equals(previousDirPath)) {
+                    // Nuova directory rilevata
+                    System.out.println("Nuova directory rilevata. Salvataggio del nuovo stato.");
+                    Map<String, Long> currentState = getCurrentState(dir);
+                    List<Document> currentDocuments = readDocumentsFromDirectory(selectedDirectory);
+                    saveCurrentState(currentState, currentDocuments);
+                    saveCurrentDirPath(dir.toString());
+
+                    // Ordina i documenti per titolo
+                    documentsToUpdate = new ArrayList<>(currentDocuments);
+
+                } else {
+                    // Carica lo stato precedente della directory
+                    DirectoryState previousState = loadPreviousState();
+
+                    // Ottieni lo stato attuale della directory
+                    Map<String, Long> currentState = getCurrentState(dir);
+
+                    // Confronta gli stati e rileva le modifiche
+                    checkForChanges(previousState.fileStates, currentState, previousState.documents, dir);
+
+                    // Salva lo stato attuale per il confronto futuro
+                    saveCurrentState(currentState, previousState.documents);
+
+                    // Ordina i documenti per titolo
+                    documentsToUpdate = new ArrayList<>(previousState.documents);
                 }
 
-                for (Future<Document> future : futures) {
-                    try {
-                        Document document = future.get();
-                        if (document != null) {
-                            documents.add(document);
-                        }
-                    } catch (InterruptedException | ExecutionException e) {
-                        e.printStackTrace();
-                    }
-                }
+                // Ordina i documenti per titolo
+                documentsToUpdate.sort(Comparator.comparing(Document::getTitle));
 
-                createVocabularyAndVectors(documents);
-                pane1.setVisible(false);
-                pane2.setVisible(true);
-            } else {
-                System.out.println("Operazione annullata");
+                // Aggiorna la collezione di documenti
+                Platform.runLater(() -> {
+                    documents.setAll(documentsToUpdate);
+                    // Passa alla vista successiva
+                    pane1.setVisible(false);
+                    pane2.setVisible(true);
+                    createVocabularyAndVectors(documents.stream().toList());
+                });
+            });
+        } else {
+            System.out.println("Operazione annullata");
+        }
+
+
+    }
+
+
+
+    private List<Document> readDocumentsFromDirectory(File directory) {
+        List<Document> documentList = new ArrayList<>();
+        File[] files = directory.listFiles();
+        if (files != null) {
+            List<Future<Document>> futures = new ArrayList<>();
+            for (File file : files) {
+                if (file.isFile() && file.getName().endsWith(".txt")) {
+                    futures.add(executorService.submit(() -> readDocumentFromFile(file)));
+                }
+            }
+
+            for (Future<Document> future : futures) {
+                try {
+                    Document document = future.get();
+                    if (document != null) {
+                        documentList.add(document);
+                    }
+                } catch (InterruptedException | ExecutionException e) {
+                    e.printStackTrace();
+                }
             }
         }
+        return documentList;
     }
 
     private Document readDocumentFromFile(File file) {
-        try (BufferedReader bfr = new BufferedReader(new FileReader(file))) {
-            String title = bfr.readLine();
-            StringBuilder body = new StringBuilder();
-            String line;
-            while ((line = bfr.readLine()) != null) {
-                body.append(line).append("\n");
+        return getDocument(file);
+    }
+
+    static Document getDocument(File file) {
+        try (Scanner scanner = new Scanner(new BufferedReader(new FileReader(file)))) {
+            if (!scanner.hasNextLine()) {
+                return null;
             }
-            return new Document(title, body.toString());
+
+            String title = scanner.nextLine();
+            StringBuilder body = new StringBuilder();
+
+            while (scanner.hasNextLine()) {
+                body.append(scanner.nextLine()).append("\n");
+            }
+
+            return new Document(file.getName(), title, body.toString().trim());
         } catch (IOException e) {
             e.printStackTrace();
             return null;
@@ -217,7 +313,9 @@ public class FXMLDocumentController implements Initializable {
 
     private String cleanAndRemoveStopwords(String text) {
         String cleanedText = text.replaceAll("'", " ").replaceAll("[^\\p{L}\\s]", " ").toLowerCase();
-        List<String> words = Stream.of(cleanedText.split("\\s+")).filter(word -> !stopwords.contains(word)).collect(Collectors.toList());
+        List<String> words = Stream.of(cleanedText.split("\\s+"))
+                .filter(word -> !stopwords.contains(word))
+                .collect(Collectors.toList());
         return String.join(" ", words);
     }
 
@@ -264,7 +362,10 @@ public class FXMLDocumentController implements Initializable {
         int uniqueWords = documentVector.size();
 
         // Le 5 parole più comuni
-        List<Map.Entry<String, Integer>> commonWords = documentVector.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).limit(5).collect(Collectors.toList());
+        List<Map.Entry<String, Integer>> commonWords = documentVector.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .limit(5)
+                .collect(Collectors.toList());
 
         // Creazione del messaggio di statistica
         StringBuilder statsMessage = new StringBuilder();

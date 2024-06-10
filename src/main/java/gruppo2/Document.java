@@ -3,20 +3,23 @@ package gruppo2;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.io.Serializable;
 import java.util.Objects;
 
-public class Document implements Comparable<Document> {
+public class Document implements Comparable<Document>, Serializable {
+    private final String filename;
     private final String title;
     private final String document_text;
 
-
-    public Document(String title, String documentText) {
+    public Document(String filename, String title, String document_text) {
+        this.filename = filename;
         this.title = title;
-
-        document_text = documentText;
+        this.document_text = document_text;
     }
 
-
+    public String getFilename() {
+        return filename;
+    }
     public String getTitle() {
         return title;
     }
