@@ -18,8 +18,6 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
 
-import javax.print.Doc;
-
 import static javafx.collections.FXCollections.observableArrayList;
 
 public class FXMLDocumentController implements Initializable {
@@ -43,7 +41,10 @@ public class FXMLDocumentController implements Initializable {
     private TextArea corpoDocumento;
 
     @FXML
-    private TextArea statisticheDocumento;
+    private Label statisticheDocumentoLabel;
+
+    @FXML
+    private Label collectionStatisticsLabel;
 
     @FXML
     private Button chiudiDocumento;
@@ -54,13 +55,16 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TableColumn<Document, String> titleColumn;
 
-    private final ObservableList<Document> documents = FXCollections.observableArrayList();
+    @FXML
+    private ProgressIndicator progressIndicator;
 
-    private static ConcurrentMap<String, Integer> vocabolario = new ConcurrentHashMap<>();
+    private final ObservableList<Document> documents = observableArrayList();
 
-    private static Map<Document, Double> corrispondenzaSimiliarita = new TreeMap<>(Collections.reverseOrder());
+    private static final ConcurrentMap<String, Integer> vocabolario = new ConcurrentHashMap<>();
 
-    private static Map<Document, Map<String, Integer>> resultMapByDocument = new ConcurrentHashMap<>();
+    private static final Map<Document, Double> corrispondenzaSimiliarita = new TreeMap<>(Collections.reverseOrder());
+
+    private static final Map<Document, Map<String, Integer>> resultMapByDocument = new ConcurrentHashMap<>();
 
     private List<String> stopwords;
 
@@ -88,6 +92,7 @@ public class FXMLDocumentController implements Initializable {
         if (queryText == null || queryText.trim().isEmpty()) {
             List<Document> allDocuments = new ArrayList<>(resultMapByDocument.keySet());
             tableView.setItems(observableArrayList(allDocuments));
+            updateCollectionStatistics(allDocuments);
         } else {
             /* Altrimenti vengono mostrati solo i documenti filtrati in base alla similarità:
             - pulisce la query dalle stopwords;
@@ -106,7 +111,8 @@ public class FXMLDocumentController implements Initializable {
 
             List<Map.Entry<Document, Double>> sortedSimilarities = corrispondenzaSimiliarita.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).collect(Collectors.toList());
             List<Document> sortedDocuments = sortedSimilarities.stream().map(Map.Entry::getKey).collect(Collectors.toList());
-            tableView.setItems(FXCollections.observableArrayList(sortedDocuments));
+            tableView.setItems(observableArrayList(sortedDocuments));
+            updateCollectionStatistics(sortedDocuments);
         }
     }
 
@@ -201,6 +207,7 @@ public class FXMLDocumentController implements Initializable {
                 createVocabularyAndVectors(documents);
                 pane1.setVisible(false);
                 pane2.setVisible(true);
+                updateCollectionStatistics(documents);
             } else {
                 System.out.println("Operazione annullata");
             }
@@ -282,7 +289,7 @@ public class FXMLDocumentController implements Initializable {
     // Quando viene selezionato un documento con un click, viene mostrato il suo contenuto
     private void selezionaDocumento() {
         tableView.setOnMouseClicked(event -> {
-            if (event.getClickCount() == 1) { // singolo click
+            if (event.getClickCount() == 1) {
                 Document documentoSelezionato = tableView.getSelectionModel().getSelectedItem();
                 if (documentoSelezionato != null) {
                     mostraContenutoDocumento(documentoSelezionato);
@@ -335,7 +342,10 @@ public class FXMLDocumentController implements Initializable {
         statsMessage.append("Le 5 parole più comuni sono:\n");
         commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
 
-        // Impostazione del messaggio di statistica
-        statisticheDocumento.setText(statsMessage.toString());
+        statisticheDocumentoLabel.setText(statsMessage.toString());
+    }
+
+    private void updateCollectionStatistics(List<Document> documents) {
+        collectionStatisticsLabel.setText("Qui devono esserci le statistiche dell'intera collezione");
     }
 }

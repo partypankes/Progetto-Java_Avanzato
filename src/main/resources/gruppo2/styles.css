@@ -1,0 +1,60 @@
+.background {
+    -fx-background-color: #F0F0F0;
+}
+
+.header-label {
+    -fx-font-size: 25px;
+    -fx-text-fill: #FF9900;
+}
+
+.round-button {
+    -fx-background-color: #FF9900;
+    -fx-text-fill: white;
+    -fx-background-radius: 30;
+    -fx-cursor: hand;
+}
+
+.round-button.small-button {
+    -fx-background-radius: 30;
+}
+
+.round-text-field {
+    -fx-background-radius: 30;
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #000000;
+    -fx-prompt-text-fill: #FF9900;
+}
+
+.left-pane {
+    -fx-background-color: #F0F0F0;
+}
+
+.right-pane {
+    -fx-background-color: #FFFFFF;
+}
+
+.table-view {
+    -fx-background-color: #FFFFFF;
+    -fx-table-cell-border-color: #E0E0E0;
+}
+
+.transparent-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #FF9900;
+    -fx-cursor: hand;
+}
+
+.collection-stats {
+    -fx-font-size: 14px;
+    -fx-text-fill: #000000;
+}
+
+.search-label {
+    -fx-font-size: 18px;
+    -fx-text-fill: #000000;
+}
+
+/* Cursor pointer for clickable elements */
+.button:hover, .table-view:hover .cell, .transparent-button:hover {
+    -fx-cursor: hand;
+}
