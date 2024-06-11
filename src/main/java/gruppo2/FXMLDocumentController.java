@@ -402,13 +402,12 @@ public class FXMLDocumentController implements Initializable {
     }
 
 
-    // Recupera il testo del documento selezionato e mostra anche le relative statistiche
+    // Recupera il testo del documento selezionato
     private void mostraContenutoDocumento(Document documentoSelezionato) {
         pane2.setVisible(false);
         paneDocumento.setVisible(true);
         corpoDocumento.setText(documentoSelezionato.getDocument_text());
         documentTitleLabel.setText(documentoSelezionato.getTitle());
-        mostrastatisticheDocumento(documentoSelezionato);
     }
 
 
@@ -419,6 +418,19 @@ public class FXMLDocumentController implements Initializable {
         pane2.setVisible(true);
     }
 
+
+    @FXML
+    public void statisticheDocumento(){
+        Document documentoSelezionato = tableView.getSelectionModel().getSelectedItem();
+          if (isFirstClick) {
+              if (documentoSelezionato != null) {
+                  mostrastatisticheDocumento(documentoSelezionato);
+              }
+        } else {
+            statisticheDocumentoLabel.setText("");
+        }
+        isFirstClick = !isFirstClick;
+    }
 
     // Calcola le statistiche sul documento selezionato
     public void mostrastatisticheDocumento(Document documentoSelezionato) {
@@ -468,13 +480,12 @@ public class FXMLDocumentController implements Initializable {
         commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
 
         if(corrispondenzaSimiliarita.get(documentoSelezionato) == null) {
-            statsMessage.append("Percentuale di similaritá rispetto alla query: non definita\n");
+            statsMessage.append("Percentuale di similaritá rispetto alla \nquery: non definita\n");
         } else {
             double percentuale = corrispondenzaSimiliarita.get(documentoSelezionato) * 100;
 
             statsMessage.append("Percentuale di similaritá rispetto alla query: ").append(Math.round(percentuale)).append("%\n");
         }
-
 
         statisticheDocumentoLabel.setText(statsMessage.toString());
     }
