@@ -46,7 +46,7 @@ public class FXMLDocumentController implements Initializable {
     private AnchorPane paneDocumento;
 
     @FXML
-    private AnchorPane paneStatistics;
+    private AnchorPane statistics1;
 
     @FXML
     private TextField queryTf;
@@ -430,14 +430,12 @@ public class FXMLDocumentController implements Initializable {
                 // Carica il contenuto del documento su un thread separato
                 String documentText = documentoSelezionato.getDocument_text();
                 String documentTitle = documentoSelezionato.getTitle();
-                String statsMessage = mostrastatisticheDocumento(documentoSelezionato);
 
                 // Aggiorna l'interfaccia utente sul thread principale
                 Platform.runLater(() -> {
                     pane2.setVisible(false);
                     paneDocumento.setVisible(true);
                     documentTitleLabel.setText(documentTitle);
-                    statisticheDocumentoLabel.setText(statsMessage);
                     corpoDocumento.setText(documentText); // Carica tutto il testo alla fine
                 });
 
@@ -472,7 +470,7 @@ public class FXMLDocumentController implements Initializable {
     }
 
     // Calcola le statistiche sul documento selezionato
-    private String mostrastatisticheDocumento(Document documentoSelezionato) {
+    private void mostrastatisticheDocumento(Document documentoSelezionato) {
         String testoDocumento = documentoSelezionato.getDocument_text().replaceAll("'", " ");
         Map<String, Integer> documentVector = new HashMap<>(resultMapByDocument.get(documentoSelezionato)); // Crea una copia
 
@@ -517,7 +515,7 @@ public class FXMLDocumentController implements Initializable {
             statsMessage.append("Percentuale di similaritá rispetto alla query: ").append(Math.round(percentuale)).append("%\n");
         }
 
-        return statsMessage.toString();
+        statisticheDocumentoLabel.setText(String.valueOf(statsMessage));
     }
 
 
@@ -527,9 +525,10 @@ public class FXMLDocumentController implements Initializable {
     private void collectionStatistics(){
         ObservableList<Document> currentDocuments = tableView.getItems();
         if (isFirstClick) {
+            statistics1.setVisible(true);
             showCollectionStatistics(currentDocuments);
         } else {
-            collectionStatisticsLabel.setText("");
+            statistics1.setVisible(false);
         }
         isFirstClick = !isFirstClick;
     }
