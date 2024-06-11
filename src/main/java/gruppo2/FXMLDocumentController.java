@@ -423,16 +423,15 @@ public class FXMLDocumentController implements Initializable {
     // Calcola le statistiche sul documento selezionato
     public void mostrastatisticheDocumento(Document documentoSelezionato) {
         String queryText = queryTf.getText();
-        String testoDocumento = documentoSelezionato.getDocument_text();
+        String testoDocumento = documentoSelezionato.getDocument_text().replaceAll("'", " ");
 
         // Testo già pulito
-        String cleanedText = testoDocumento.replaceAll("'", " ");
-        Map<String, Integer> documentVector = textToVector(cleanedText);
+        Map<String, Integer> documentVector = resultMapByDocument.get(documentoSelezionato);
 
         // Calcolo delle statistiche
         int totalWords = testoDocumento.split("\\s").length - 1;
         int uniqueWords = documentVector.size();
-        int sentenceCount = (int) Arrays.stream(cleanedText.split("[.!?]")).filter(s -> !s.trim().isEmpty()).count();
+        int sentenceCount = (int) Arrays.stream(testoDocumento.split("[.!?]")).filter(s -> !s.trim().isEmpty()).count();
 
 
         // Le 5 parole più comuni
@@ -460,13 +459,7 @@ public class FXMLDocumentController implements Initializable {
         }
 
         // Percentuale di rilevanza rispetto alla query
-        double relevancePercentage = 0.0;
-        if (queryText != null && !queryText.trim().isEmpty()) {
-            String cleanedQuery = cleanAndRemoveStopwords(queryText);
-            Map<String, Integer> queryVector = textToVector(cleanedQuery);
-            double similarity = calculateCosineSimilarity(documentVector, queryVector);
-            relevancePercentage = similarity * 100;
-        }
+
 
         // Creazione del messaggio di statistica
         StringBuilder statsMessage = new StringBuilder();
@@ -475,7 +468,6 @@ public class FXMLDocumentController implements Initializable {
         statsMessage.append("Numero di frasi: ").append(sentenceCount).append("\n");
         statsMessage.append("Le 5 parole più comuni sono:\n");
         commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
-        statsMessage.append("Percentuale di rilevanza rispetto alla query: ").append(String.format("%.2f", relevancePercentage)).append("%");
 
         if(corrispondenzaSimiliarita.get(documentoSelezionato) == null) {
             statsMessage.append("Percentuale di similaritá rispetto alla query: non definita\n");
@@ -509,18 +501,34 @@ public class FXMLDocumentController implements Initializable {
         Map<String, Integer> globalWordCount = new HashMap<>();
 
         for (Document doc : documents) {
-            String testoDocumento = doc.getDocument_text();
-            String cleanedText = testoDocumento.replaceAll("'", " ");
-            Map<String, Integer> documentVector = textToVector(cleanedText);
+            String testoDocumento = doc.getDocument_text().replaceAll("'", " ");
+
+            Map<String, Integer> documentVector = resultMapByDocument.get(doc);
 
             // Aggiorna il conteggio totale delle parole e delle frasi
-            totalWords += documentVector.values().stream().mapToInt(Integer::intValue).sum();
-            sentenceCount += Arrays.stream(cleanedText.split("[.!?]")).filter(s -> !s.trim().isEmpty()).count();
+            totalWords += testoDocumento.split("\\s").length - 1;
+            sentenceCount += (int) Arrays.stream(testoDocumento.split("[.!?]")).filter(s -> !s.trim().isEmpty()).count();
 
             // Aggiorna il conteggio globale delle parole
-            cleanedText = cleanAndRemoveStopwords(testoDocumento);
-            documentVector = textToVector(cleanedText);
+
+            documentVector = resultMapByDocument.get(doc);
             for (Map.Entry<String, Integer> entry : documentVector.entrySet()) {
+                    // Divide il titolo in parole utilizzando spazi e punteggiatura come delimitatori
+                    String[] parole = doc.getTitle().split("\\W+");
+                    int conteggio = 0;
+
+                    // Itera attraverso le parole e conta le occorrenze
+                    for (String p : parole) {
+                        if (p.equalsIgnoreCase(entry.getKey())) {
+                            conteggio++;
+                        }
+                    }
+
+                    // Se il conteggio è maggiore di zero, aggiorna il valore dell'entry
+                    if (conteggio > 0) {
+                        entry.setValue(entry.getValue() - conteggio);
+                    }
+
                 globalWordCount.put(entry.getKey(), globalWordCount.getOrDefault(entry.getKey(), 0) + entry.getValue());
             }
         }
@@ -529,7 +537,7 @@ public class FXMLDocumentController implements Initializable {
         List<Map.Entry<String, Integer>> commonWords = globalWordCount.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .limit(5)
-                .collect(Collectors.toList());
+                .toList();
 
         // Creazione del messaggio di statistica
         StringBuilder statsMessage = new StringBuilder();
