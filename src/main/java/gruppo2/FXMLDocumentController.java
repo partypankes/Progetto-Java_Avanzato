@@ -84,7 +84,9 @@ public class FXMLDocumentController implements Initializable {
 
     private final ExecutorService executorService = Executors.newFixedThreadPool(4);
 
-    private boolean isFirstClick = true;
+    private boolean isFirstClick1 = true;
+
+    private boolean isFirstClick2 = true;
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
@@ -451,6 +453,8 @@ public class FXMLDocumentController implements Initializable {
     // Chiude il documento che era stato selezionato
     @FXML
     public void chiudiDocumento() {
+        statisticheDocumentoLabel.setText("");
+        isFirstClick1 = !isFirstClick1;
         paneDocumento.setVisible(false);
         pane2.setVisible(true);
     }
@@ -459,14 +463,14 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public void statisticheDocumento(){
         Document documentoSelezionato = tableView.getSelectionModel().getSelectedItem();
-          if (isFirstClick) {
+          if (isFirstClick1) {
               if (documentoSelezionato != null) {
                   mostrastatisticheDocumento(documentoSelezionato);
               }
         } else {
             statisticheDocumentoLabel.setText("");
         }
-        isFirstClick = !isFirstClick;
+        isFirstClick1 = !isFirstClick1;
     }
 
     // Calcola le statistiche sul documento selezionato
@@ -524,13 +528,13 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private void collectionStatistics(){
         ObservableList<Document> currentDocuments = tableView.getItems();
-        if (isFirstClick) {
+        if (isFirstClick2) {
             statistics1.setVisible(true);
             showCollectionStatistics(currentDocuments);
         } else {
             statistics1.setVisible(false);
         }
-        isFirstClick = !isFirstClick;
+        isFirstClick2 = !isFirstClick2;
     }
 
     private void showCollectionStatistics(List<Document> documents) {
@@ -582,10 +586,10 @@ public class FXMLDocumentController implements Initializable {
 
                 // Creazione del messaggio di statistica
                 StringBuilder statsMessage = new StringBuilder();
-                statsMessage.append("Numero totale di parole nella collezione: ").append(totalWords).append("\n");
-                statsMessage.append("Numero di frasi nella collezione: ").append(sentenceCount).append("\n");
-                statsMessage.append("Numero di documenti nella collezione: ").append(documentCount).append("\n");
-                statsMessage.append("Le 5 parole più comuni nella collezione sono:\n");
+                statsMessage.append("Numero totale di parole: ").append(totalWords).append("\n");
+                statsMessage.append("Numero di frasi: ").append(sentenceCount).append("\n");
+                statsMessage.append("Numero di documenti: ").append(documentCount).append("\n");
+                statsMessage.append("Le 5 parole più comuni:\n");
                 commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
 
                 return statsMessage.toString();
