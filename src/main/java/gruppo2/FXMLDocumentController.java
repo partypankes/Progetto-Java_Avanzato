@@ -3,6 +3,7 @@ package gruppo2;
 import javafx.application.Platform;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.concurrent.Task;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
@@ -24,19 +25,8 @@ import java.util.*;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
-import gruppo2.Document;
 
 import static gruppo2.DirectoryChecker.*;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.layout.AnchorPane;
-import javafx.stage.DirectoryChooser;
 
 import static javafx.collections.FXCollections.observableArrayList;
 
@@ -133,36 +123,69 @@ public class FXMLDocumentController implements Initializable {
     // Gestisce la query inserita dall'utente
     @FXML
     private void handleQuery() {
-        String queryText = queryTf.getText();
+        // Crea una nuova Task per eseguire la query
+        Task<List<Document>> queryTask = new Task<>() {
+            @Override
+            protected List<Document> call() throws Exception {
+                String queryText = queryTf.getText();
+                List<Document> filteredDocuments;
 
-        // Se la query è vuota, vengono mostrati tutti i documenti;
-        if (queryText == null || queryText.trim().isEmpty()) {
-            System.out.println("ciao");
-            List<Document> allDocuments = new ArrayList<>(resultMapByDocument.keySet());
-            System.out.println(allDocuments);
-            tableView.setItems(FXCollections.observableArrayList(allDocuments));
+                if (queryText == null || queryText.trim().isEmpty()) {
+                    corrispondenzaSimiliarita.clear();
+                    System.out.println("ciao");
+                    filteredDocuments = new ArrayList<>(resultMapByDocument.keySet());
+                    System.out.println(filteredDocuments);
+                } else {
+                    String cleanedQuery = cleanAndRemoveStopwords(queryText);
+                    Map<String, Integer> queryVector = textToVector(cleanedQuery, "");
+                    corrispondenzaSimiliarita.clear();
 
-        } else {
-            /* Altrimenti vengono mostrati solo i documenti filtrati in base alla similarità:
-            - pulisce la query dalle stopwords;
-            - crea un vettore dalla query e calcola la somiglianza tra la query e i documenti usando il coseno di similarità;
-            - ordina i documenti in base alla somiglianza;
-            - aggiorna infine la tabella per mostrare i risultati */
-            String cleanedQuery = cleanAndRemoveStopwords(queryText);
-            Map<String, Integer> queryVector = textToVector(cleanedQuery, "");
-            corrispondenzaSimiliarita.clear();
-            for (Map.Entry<Document, Map<String, Integer>> entry : resultMapByDocument.entrySet()) {
-                double similarity = calculateCosineSimilarity(entry.getValue(), queryVector);
-                if (similarity > 0) {
-                    corrispondenzaSimiliarita.put(entry.getKey(), similarity);
+                    // Contatore per il progresso
+                    int totalDocuments = resultMapByDocument.size();
+                    int processedDocuments = 0;
+
+                    for (Map.Entry<Document, Map<String, Integer>> entry : resultMapByDocument.entrySet()) {
+                        double similarity = calculateCosineSimilarity(entry.getValue(), queryVector);
+                        if (similarity > 0) {
+                            corrispondenzaSimiliarita.put(entry.getKey(), similarity);
+                        }
+
+                        // Aggiorna il progresso
+                        processedDocuments++;
+                        updateProgress(processedDocuments, totalDocuments);
+                    }
+
+                    List<Map.Entry<Document, Double>> sortedSimilarities = corrispondenzaSimiliarita.entrySet().stream()
+                            .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                            .toList();
+                    filteredDocuments = sortedSimilarities.stream().map(Map.Entry::getKey).collect(Collectors.toList());
                 }
-            }
 
-            List<Map.Entry<Document, Double>> sortedSimilarities = corrispondenzaSimiliarita.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).collect(Collectors.toList());
-            List<Document> sortedDocuments = sortedSimilarities.stream().map(Map.Entry::getKey).collect(Collectors.toList());
-            tableView.setItems(observableArrayList(sortedDocuments));
-        }
+                return filteredDocuments;
+            }
+        };
+
+        // Associa il ProgressIndicator al progresso della Task
+        progressIndicator.progressProperty().bind(queryTask.progressProperty());
+        progressIndicator.setVisible(true);
+
+        // Aggiorna la TableView con i risultati della query al termine della Task
+        queryTask.setOnSucceeded(event -> {
+            List<Document> result = queryTask.getValue();
+            tableView.setItems(FXCollections.observableArrayList(result));
+            progressIndicator.setVisible(false);
+            showCollectionStatistics(result);
+        });
+
+        queryTask.setOnFailed(event -> {
+            queryTask.getException().printStackTrace();
+            progressIndicator.setVisible(false);
+        });
+
+        // Esegui la Task utilizzando l'ExecutorService
+        executorService.submit(queryTask);
     }
+
 
 
     //  Converte il testo di un documento  in un vettore di frequenze delle parole
@@ -217,7 +240,6 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private void folderSelection(ActionEvent event) throws IOException {
-        // Viene creato un oggetto DirectoryChooser che permette all'utente di selezionare una cartella
         DirectoryChooser directoryChooser = new DirectoryChooser();
         directoryChooser.setTitle("Seleziona una cartella");
         File selectedDirectory = directoryChooser.showDialog(null);
@@ -225,60 +247,50 @@ public class FXMLDocumentController implements Initializable {
         if (selectedDirectory != null) {
             System.out.println("Cartella selezionata: " + selectedDirectory.getAbsolutePath());
 
-            // Specifica il percorso della directory da monitorare
             Path dir = Paths.get(selectedDirectory.getAbsolutePath());
 
-            // Esegui operazioni di controllo della directory in modo asincrono
-            executorService.submit(() -> {
-                // Carica il percorso della directory precedente
-                String previousDirPath = loadPreviousDirPath();
+            Task<List<Document>> folderTask = new Task<>() {
+                @Override
+                protected List<Document> call() throws Exception {
+                    String previousDirPath = loadPreviousDirPath();
 
-                List<Document> documentsToUpdate;
-                if (!dir.toString().equals(previousDirPath)) {
-                    // Nuova directory rilevata
-                    System.out.println("Nuova directory rilevata. Salvataggio del nuovo stato.");
-                    Map<String, Long> currentState = getCurrentState(dir);
-                    List<Document> currentDocuments = readDocumentsFromDirectory(selectedDirectory);
-                    saveCurrentState(currentState, currentDocuments);
-                    saveCurrentDirPath(dir.toString());
-
-                    // Ordina i documenti per titolo
-                    documentsToUpdate = new ArrayList<>(currentDocuments);
-
-                } else {
-                    // Carica lo stato precedente della directory
-                    DirectoryState previousState = loadPreviousState();
-
-                    // Ottieni lo stato attuale della directory
-                    Map<String, Long> currentState = getCurrentState(dir);
-
-                    // Confronta gli stati e rileva le modifiche
-                    checkForChanges(previousState.fileStates, currentState, previousState.documents, dir);
-
-                    // Salva lo stato attuale per il confronto futuro
-                    saveCurrentState(currentState, previousState.documents);
-
-                    // Ordina i documenti per titolo
-                    documentsToUpdate = new ArrayList<>(previousState.documents);
+                    List<Document> documentsToUpdate;
+                    if (!previousDirPath.equals(dir.toString())) {
+                        System.out.println("Nuova directory rilevata. Salvataggio del nuovo stato.");
+                        Map<String, Long> currentState = getCurrentState(dir);
+                        List<Document> currentDocuments = readDocumentsFromDirectory(selectedDirectory);
+                        saveCurrentState(currentState, currentDocuments);
+                        saveCurrentDirPath(dir.toString());
+                        documentsToUpdate = new ArrayList<>(currentDocuments);
+                    } else {
+                        DirectoryState previousState = loadPreviousState();
+                        Map<String, Long> currentState = getCurrentState(dir);
+                        checkForChanges(previousState.fileStates, currentState, previousState.documents, dir);
+                        saveCurrentState(currentState, previousState.documents);
+                        documentsToUpdate = new ArrayList<>(previousState.documents);
+                    }
+                    return documentsToUpdate;
                 }
+            };
 
-
-
-                // Aggiorna la collezione di documenti
-                Platform.runLater(() -> {
-                    documents.setAll(documentsToUpdate);
-                    // Passa alla vista successiva
-                    pane1.setVisible(false);
-                    pane2.setVisible(true);
-                    createVocabularyAndVectors(documents.stream().toList());
-                });
+            folderTask.setOnSucceeded(event1 -> {
+                List<Document> documentsToUpdate = folderTask.getValue();
+                documents.setAll(documentsToUpdate);
+                pane1.setVisible(false);
+                pane2.setVisible(true);
+                createVocabularyAndVectors(documents.stream().toList());
             });
+
+            folderTask.setOnFailed(event1 -> {
+                folderTask.getException().printStackTrace();
+            });
+
+            executorService.submit(folderTask);
         } else {
             System.out.println("Operazione annullata");
         }
-
-
     }
+
 
 
     private List<Document> readDocumentsFromDirectory(File directory) {
@@ -336,31 +348,40 @@ public class FXMLDocumentController implements Initializable {
 
     // Crea il vocabolario e i vettori di documenti
     private void createVocabularyAndVectors(List<Document> documents) {
-        List<Future<Void>> futures = new ArrayList<>();
+        Task<Void> vocabularyTask = new Task<>() {
+            @Override
+            protected Void call() throws Exception {
+                List<Future<Void>> futures = new ArrayList<>();
 
-        /* Per ogni documento viene inviato un task all'executorService per:
-           - pulisce il testo rimuove le stopwords;
-           - aggiunge le parole del testo senza stopwords, al vocabolario;
-           - creare un vettore di frequenza delle parole */
-        for (Document document : documents) {
-            futures.add(executorService.submit(() -> {
-                String cleanedText = cleanAndRemoveStopwords(document.getDocument_text());
-                String cleanedTitle = cleanAndRemoveStopwords(document.getTitle());
-                addWordsToVocabulary(cleanedText + " " + cleanedTitle);
-                Map<String, Integer> documentVector = textToVector(cleanedText,cleanedTitle);
-                resultMapByDocument.put(document, documentVector);
+                for (Document document : documents) {
+                    futures.add(executorService.submit(() -> {
+                        String cleanedText = cleanAndRemoveStopwords(document.getDocument_text());
+                        String cleanedTitle = cleanAndRemoveStopwords(document.getTitle());
+                        addWordsToVocabulary(cleanedText + " " + cleanedTitle);
+                        Map<String, Integer> documentVector = textToVector(cleanedText, cleanedTitle);
+                        resultMapByDocument.put(document, documentVector);
+                        return null;
+                    }));
+                }
+
+                for (Future<Void> future : futures) {
+                    future.get();
+                }
                 return null;
-            }));
-        }
-
-        for (Future<Void> future : futures) {
-            try {
-                future.get();
-            } catch (InterruptedException | ExecutionException e) {
-                e.printStackTrace();
             }
-        }
+        };
+
+        vocabularyTask.setOnSucceeded(event -> {
+            // Do something after the task completes successfully, if necessary
+        });
+
+        vocabularyTask.setOnFailed(event -> {
+            vocabularyTask.getException().printStackTrace();
+        });
+
+        executorService.submit(vocabularyTask);
     }
+
 
 
     // Pulisce il testo del documento e rimuove le stopwrods
@@ -402,14 +423,32 @@ public class FXMLDocumentController implements Initializable {
     }
 
 
-    // Recupera il testo del documento selezionato
     private void mostraContenutoDocumento(Document documentoSelezionato) {
-        pane2.setVisible(false);
-        paneDocumento.setVisible(true);
-        corpoDocumento.setText(documentoSelezionato.getDocument_text());
-        documentTitleLabel.setText(documentoSelezionato.getTitle());
-    }
+        Task<Void> contentTask = new Task<>() {
+            @Override
+            protected Void call() throws Exception {
+                // Carica il contenuto del documento su un thread separato
+                String documentText = documentoSelezionato.getDocument_text();
+                String documentTitle = documentoSelezionato.getTitle();
+                String statsMessage = mostrastatisticheDocumento(documentoSelezionato);
 
+                // Aggiorna l'interfaccia utente sul thread principale
+                Platform.runLater(() -> {
+                    pane2.setVisible(false);
+                    paneDocumento.setVisible(true);
+                    documentTitleLabel.setText(documentTitle);
+                    statisticheDocumentoLabel.setText(statsMessage);
+                    corpoDocumento.setText(documentText); // Carica tutto il testo alla fine
+                });
+
+                return null;
+            }
+        };
+
+        contentTask.setOnFailed(event -> contentTask.getException().printStackTrace());
+
+        executorService.submit(contentTask);
+    }
 
     // Chiude il documento che era stato selezionato
     @FXML
@@ -433,18 +472,14 @@ public class FXMLDocumentController implements Initializable {
     }
 
     // Calcola le statistiche sul documento selezionato
-    public void mostrastatisticheDocumento(Document documentoSelezionato) {
-        String queryText = queryTf.getText();
+    private String mostrastatisticheDocumento(Document documentoSelezionato) {
         String testoDocumento = documentoSelezionato.getDocument_text().replaceAll("'", " ");
-
-        // Testo già pulito
-        Map<String, Integer> documentVector = resultMapByDocument.get(documentoSelezionato);
+        Map<String, Integer> documentVector = new HashMap<>(resultMapByDocument.get(documentoSelezionato)); // Crea una copia
 
         // Calcolo delle statistiche
         int totalWords = testoDocumento.split("\\s").length - 1;
         int uniqueWords = documentVector.size();
         int sentenceCount = (int) Arrays.stream(testoDocumento.split("[.!?]")).filter(s -> !s.trim().isEmpty()).count();
-
 
         // Le 5 parole più comuni
         List<Map.Entry<String, Integer>> commonWords = documentVector.entrySet().stream()
@@ -452,26 +487,22 @@ public class FXMLDocumentController implements Initializable {
                 .limit(5)
                 .toList();
 
+        // Rimuovi il conteggio delle parole del titolo dalla copia del vector
         for (Map.Entry<String, Integer> entry : commonWords) {
-
-            // Divide il titolo in parole utilizzando spazi e punteggiatura come delimitatori
             String[] parole = documentoSelezionato.getTitle().split("\\W+");
             int conteggio = 0;
 
-            // Itera attraverso le parole e conta le occorrenze
             for (String p : parole) {
                 if (p.equalsIgnoreCase(entry.getKey())) {
                     conteggio++;
                 }
             }
 
-            // Se il conteggio è maggiore di zero, aggiorna il valore dell'entry
             if (conteggio > 0) {
                 entry.setValue(entry.getValue() - conteggio);
             }
         }
 
-        // Creazione del messaggio di statistica
         StringBuilder statsMessage = new StringBuilder();
         statsMessage.append("Numero totale di parole: ").append(totalWords).append("\n");
         statsMessage.append("Numero di parole uniche: ").append(uniqueWords).append("\n");
@@ -479,16 +510,16 @@ public class FXMLDocumentController implements Initializable {
         statsMessage.append("Le 5 parole più comuni sono:\n");
         commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
 
-        if(corrispondenzaSimiliarita.get(documentoSelezionato) == null) {
+        if (corrispondenzaSimiliarita.get(documentoSelezionato) == null) {
             statsMessage.append("Percentuale di similaritá rispetto alla \nquery: non definita\n");
         } else {
             double percentuale = corrispondenzaSimiliarita.get(documentoSelezionato) * 100;
-
             statsMessage.append("Percentuale di similaritá rispetto alla query: ").append(Math.round(percentuale)).append("%\n");
         }
 
-        statisticheDocumentoLabel.setText(statsMessage.toString());
+        return statsMessage.toString();
     }
+
 
 
     // Calcola le statistiche sull'intera collezione di documenti
@@ -504,59 +535,73 @@ public class FXMLDocumentController implements Initializable {
     }
 
     private void showCollectionStatistics(List<Document> documents) {
-        int totalWords = 0;
-        int sentenceCount = 0;
-        int documentCount = documents.size();
-        Map<String, Integer> globalWordCount = new HashMap<>();
+        Task<String> statsTask = new Task<>() {
+            @Override
+            protected String call() throws Exception {
+                int totalWords = 0;
+                int sentenceCount = 0;
+                int documentCount = documents.size();
+                Map<String, Integer> globalWordCount = new HashMap<>();
 
-        for (Document doc : documents) {
-            String testoDocumento = doc.getDocument_text().replaceAll("'", " ");
+                for (Document doc : documents) {
+                    String testoDocumento = doc.getDocument_text().replaceAll("'", " ");
 
-            Map<String, Integer> documentVector = resultMapByDocument.get(doc);
+                    Map<String, Integer> documentVector = new HashMap<>(resultMapByDocument.get(doc)); // Crea una copia
 
-            // Aggiorna il conteggio totale delle parole e delle frasi
-            totalWords += testoDocumento.split("\\s").length - 1;
-            sentenceCount += (int) Arrays.stream(testoDocumento.split("[.!?]")).filter(s -> !s.trim().isEmpty()).count();
+                    // Aggiorna il conteggio totale delle parole e delle frasi
+                    totalWords += testoDocumento.split("\\s").length - 1;
+                    sentenceCount += (int) Arrays.stream(testoDocumento.split("[.!?]")).filter(s -> !s.trim().isEmpty()).count();
 
-            // Aggiorna il conteggio globale delle parole
+                    // Aggiorna il conteggio globale delle parole
+                    for (Map.Entry<String, Integer> entry : documentVector.entrySet()) {
+                        // Divide il titolo in parole utilizzando spazi e punteggiatura come delimitatori
+                        String[] parole = doc.getTitle().split("\\W+");
+                        int conteggio = 0;
 
-            documentVector = resultMapByDocument.get(doc);
-            for (Map.Entry<String, Integer> entry : documentVector.entrySet()) {
-
-                    // Divide il titolo in parole utilizzando spazi e punteggiatura come delimitatori
-                    String[] parole = doc.getTitle().split("\\W+");
-                    int conteggio = 0;
-
-                    // Itera attraverso le parole e conta le occorrenze
-                    for (String p : parole) {
-                        if (p.equalsIgnoreCase(entry.getKey())) {
-                            conteggio++;
+                        // Itera attraverso le parole e conta le occorrenze
+                        for (String p : parole) {
+                            if (p.equalsIgnoreCase(entry.getKey())) {
+                                conteggio++;
+                            }
                         }
+
+                        // Se il conteggio è maggiore di zero, aggiorna il valore dell'entry
+                        if (conteggio > 0) {
+                            entry.setValue(entry.getValue() - conteggio);
+                        }
+
+                        globalWordCount.put(entry.getKey(), globalWordCount.getOrDefault(entry.getKey(), 0) + entry.getValue());
                     }
 
-                    // Se il conteggio è maggiore di zero, aggiorna il valore dell'entry
-                    if (conteggio > 0) {
-                        entry.setValue(entry.getValue() - conteggio);
-                    }
+                }
 
-                globalWordCount.put(entry.getKey(), globalWordCount.getOrDefault(entry.getKey(), 0) + entry.getValue());
+                // Le 5 parole più comuni nell'intera collezione
+                List<Map.Entry<String, Integer>> commonWords = globalWordCount.entrySet().stream()
+                        .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                        .limit(5)
+                        .toList();
+
+                // Creazione del messaggio di statistica
+                StringBuilder statsMessage = new StringBuilder();
+                statsMessage.append("Numero totale di parole nella collezione: ").append(totalWords).append("\n");
+                statsMessage.append("Numero di frasi nella collezione: ").append(sentenceCount).append("\n");
+                statsMessage.append("Numero di documenti nella collezione: ").append(documentCount).append("\n");
+                statsMessage.append("Le 5 parole più comuni nella collezione sono:\n");
+                commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
+
+                return statsMessage.toString();
             }
-        }
+        };
 
-        // Le 5 parole più comuni nell'intera collezione
-        List<Map.Entry<String, Integer>> commonWords = globalWordCount.entrySet().stream()
-                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                .limit(5)
-                .toList();
+        statsTask.setOnSucceeded(event -> {
+            String statsMessage = statsTask.getValue();
+            collectionStatisticsLabel.setText(statsMessage);
+        });
 
-        // Creazione del messaggio di statistica
-        StringBuilder statsMessage = new StringBuilder();
-        statsMessage.append("Numero totale di parole nella collezione: ").append(totalWords).append("\n");
-        statsMessage.append("Numero di frasi nella collezione: ").append(sentenceCount).append("\n");
-        statsMessage.append("Numero di documenti nella collezione: ").append(documentCount).append("\n");
-        statsMessage.append("Le 5 parole più comuni nella collezione sono:\n");
-        commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
+        statsTask.setOnFailed(event -> statsTask.getException().printStackTrace());
 
-        collectionStatisticsLabel.setText(statsMessage.toString());
+        executorService.submit(statsTask);
     }
+
+
 }
