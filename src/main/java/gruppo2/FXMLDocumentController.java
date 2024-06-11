@@ -101,6 +101,8 @@ public class FXMLDocumentController implements Initializable {
             e.printStackTrace();
         }
         selezionaDocumento();
+
+
     }
 
     private void addCloseRequestHandler(Node node) {
@@ -137,7 +139,7 @@ public class FXMLDocumentController implements Initializable {
             System.out.println(allDocuments);
             tableView.setItems(FXCollections.observableArrayList(allDocuments));
 
-            showCollectionStatistics(allDocuments);
+            updateCollectionStatistics(allDocuments);
         } else {
             /* Altrimenti vengono mostrati solo i documenti filtrati in base alla similarità:
             - pulisce la query dalle stopwords;
@@ -157,12 +159,12 @@ public class FXMLDocumentController implements Initializable {
             List<Map.Entry<Document, Double>> sortedSimilarities = corrispondenzaSimiliarita.entrySet().stream().sorted(Map.Entry.comparingByValue(Comparator.reverseOrder())).collect(Collectors.toList());
             List<Document> sortedDocuments = sortedSimilarities.stream().map(Map.Entry::getKey).collect(Collectors.toList());
             tableView.setItems(observableArrayList(sortedDocuments));
-            showCollectionStatistics(sortedDocuments);
+            updateCollectionStatistics(sortedDocuments);
         }
     }
 
 
-    // Converte il testo di un documento  in un vettore di frequenze delle parole
+    //  Converte il testo di un documento  in un vettore di frequenze delle parole
     private Map<String, Integer> textToVector(String text) {
         Map<String, Integer> vector = new TreeMap<>();
 
@@ -262,7 +264,6 @@ public class FXMLDocumentController implements Initializable {
                 // Aggiorna la collezione di documenti
                 Platform.runLater(() -> {
                     documents.setAll(documentsToUpdate);
-                    showCollectionStatistics(documents);
                     // Passa alla vista successiva
                     pane1.setVisible(false);
                     pane2.setVisible(true);
@@ -275,6 +276,7 @@ public class FXMLDocumentController implements Initializable {
 
 
     }
+
 
 
     private List<Document> readDocumentsFromDirectory(File directory) {
@@ -419,20 +421,17 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public void mostrastatisticheDocumento(Document documentoSelezionato) {
         String testoDocumento = documentoSelezionato.getDocument_text();
+        int sentenceCount = testoDocumento.split("[.!?]").length;
 
         // Testo già pulito e senza stopwords
-        String cleanedText = testoDocumento.replaceAll("'", " ");
+        String cleanedText = cleanAndRemoveStopwords(testoDocumento);
         Map<String, Integer> documentVector = textToVector(cleanedText);
 
         // Calcolo delle statistiche
         int totalWords = documentVector.values().stream().mapToInt(Integer::intValue).sum();
         int uniqueWords = documentVector.size();
-        int sentenceCount = (int) Arrays.stream(cleanedText.split("[.!?]")).filter(s -> !s.trim().isEmpty()).count();
 
-
-        // Le 5 parole più comuni (non considerando le stopwords)
-        cleanedText = cleanAndRemoveStopwords(testoDocumento);
-        documentVector = textToVector(cleanedText);
+        // Le 5 parole più comuni
         List<Map.Entry<String, Integer>> commonWords = documentVector.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .limit(5)
@@ -449,43 +448,7 @@ public class FXMLDocumentController implements Initializable {
         statisticheDocumentoLabel.setText(statsMessage.toString());
     }
 
-
-    // Calcola le statistiche sull'intera collezione di documenti
-    private void showCollectionStatistics(List<Document> documents) {
-        int totalWords = 0;
-        int sentenceCount = 0;
-        Map<String, Integer> globalWordCount = new HashMap<>();
-
-        for (Document doc : documents) {
-            String testoDocumento = doc.getDocument_text();
-            String cleanedText = testoDocumento.replaceAll("'", " ");
-            Map<String, Integer> documentVector = textToVector(cleanedText);
-
-            // Aggiorna il conteggio totale delle parole e delle frasi
-            totalWords += documentVector.values().stream().mapToInt(Integer::intValue).sum();
-            sentenceCount += Arrays.stream(cleanedText.split("[.!?]")).filter(s -> !s.trim().isEmpty()).count();
-
-            // Aggiorna il conteggio globale delle parole
-            cleanedText = cleanAndRemoveStopwords(testoDocumento);
-            documentVector = textToVector(cleanedText);
-            for (Map.Entry<String, Integer> entry : documentVector.entrySet()) {
-                globalWordCount.put(entry.getKey(), globalWordCount.getOrDefault(entry.getKey(), 0) + entry.getValue());
-            }
-        }
-
-        // Le 5 parole più comuni nell'intera collezione
-        List<Map.Entry<String, Integer>> commonWords = globalWordCount.entrySet().stream()
-                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
-                .limit(5)
-                .collect(Collectors.toList());
-
-        // Creazione del messaggio di statistica
-        StringBuilder statsMessage = new StringBuilder();
-        statsMessage.append("Numero totale di parole nella collezione: ").append(totalWords).append("\n");
-        statsMessage.append("Numero di frasi nella collezione: ").append(sentenceCount).append("\n");
-        statsMessage.append("Le 5 parole più comuni nella collezione sono:\n");
-        commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
-
-        collectionStatisticsLabel.setText(statsMessage.toString());
+    private void updateCollectionStatistics(List<Document> documents) {
+        collectionStatisticsLabel.setText("Qui devono esserci le statistiche dell'intera collezione");
     }
 }
