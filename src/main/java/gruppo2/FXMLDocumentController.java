@@ -439,6 +439,7 @@ public class FXMLDocumentController implements Initializable {
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .limit(5)
                 .toList();
+
         for (Map.Entry<String, Integer> entry : commonWords) {
 
             // Divide il titolo in parole utilizzando spazi e punteggiatura come delimitatori
@@ -457,9 +458,6 @@ public class FXMLDocumentController implements Initializable {
                 entry.setValue(entry.getValue() - conteggio);
             }
         }
-
-        // Percentuale di rilevanza rispetto alla query
-
 
         // Creazione del messaggio di statistica
         StringBuilder statsMessage = new StringBuilder();
@@ -495,9 +493,9 @@ public class FXMLDocumentController implements Initializable {
     }
 
     private void showCollectionStatistics(List<Document> documents) {
-
         int totalWords = 0;
         int sentenceCount = 0;
+        int documentCount = documents.size();
         Map<String, Integer> globalWordCount = new HashMap<>();
 
         for (Document doc : documents) {
@@ -513,6 +511,7 @@ public class FXMLDocumentController implements Initializable {
 
             documentVector = resultMapByDocument.get(doc);
             for (Map.Entry<String, Integer> entry : documentVector.entrySet()) {
+
                     // Divide il titolo in parole utilizzando spazi e punteggiatura come delimitatori
                     String[] parole = doc.getTitle().split("\\W+");
                     int conteggio = 0;
@@ -543,6 +542,7 @@ public class FXMLDocumentController implements Initializable {
         StringBuilder statsMessage = new StringBuilder();
         statsMessage.append("Numero totale di parole nella collezione: ").append(totalWords).append("\n");
         statsMessage.append("Numero di frasi nella collezione: ").append(sentenceCount).append("\n");
+        statsMessage.append("Numero di documenti nella collezione: ").append(documentCount).append("\n");
         statsMessage.append("Le 5 parole più comuni nella collezione sono:\n");
         commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
 
