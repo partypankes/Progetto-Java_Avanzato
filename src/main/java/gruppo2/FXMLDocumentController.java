@@ -147,7 +147,7 @@ public class FXMLDocumentController implements Initializable {
             - ordina i documenti in base alla somiglianza;
             - aggiorna infine la tabella per mostrare i risultati */
             String cleanedQuery = cleanAndRemoveStopwords(queryText);
-            Map<String, Integer> queryVector = textToVector(cleanedQuery);
+            Map<String, Integer> queryVector = textToVector(cleanedQuery, "");
             corrispondenzaSimiliarita.clear();
             for (Map.Entry<Document, Map<String, Integer>> entry : resultMapByDocument.entrySet()) {
                 double similarity = calculateCosineSimilarity(entry.getValue(), queryVector);
@@ -165,9 +165,12 @@ public class FXMLDocumentController implements Initializable {
 
 
     //  Converte il testo di un documento  in un vettore di frequenze delle parole
-    private Map<String, Integer> textToVector(String text) {
+    private Map<String, Integer> textToVector(String text, String title) {
         Map<String, Integer> vector = new TreeMap<>();
-
+        if(!Objects.equals(title, ""))
+        {
+            Arrays.stream(title.split("\\s+")).forEach(word -> vector.merge(word, 2, Integer::sum));
+        }
         // ogni parola nel testo diventa una chiave nella mappa e il valore associato è il numero di occorrenze di quella parola
         Arrays.stream(text.split("\\s+")).forEach(word -> vector.merge(word, 1, Integer::sum));
         return vector;
@@ -258,8 +261,7 @@ public class FXMLDocumentController implements Initializable {
                     documentsToUpdate = new ArrayList<>(previousState.documents);
                 }
 
-                // Ordina i documenti per titolo
-                documentsToUpdate.sort(Comparator.comparing(Document::getTitle));
+
 
                 // Aggiorna la collezione di documenti
                 Platform.runLater(() -> {
@@ -342,9 +344,10 @@ public class FXMLDocumentController implements Initializable {
            - creare un vettore di frequenza delle parole */
         for (Document document : documents) {
             futures.add(executorService.submit(() -> {
-                String cleanedText = cleanAndRemoveStopwords(document.getTitle() + " " + document.getDocument_text());
-                addWordsToVocabulary(cleanedText);
-                Map<String, Integer> documentVector = textToVector(cleanedText);
+                String cleanedText = cleanAndRemoveStopwords(document.getDocument_text());
+                String cleanedTitle = cleanAndRemoveStopwords(document.getTitle());
+                addWordsToVocabulary(cleanedText + " " + cleanedTitle);
+                Map<String, Integer> documentVector = textToVector(cleanedText,cleanedTitle);
                 resultMapByDocument.put(document, documentVector);
                 return null;
             }));
@@ -420,22 +423,42 @@ public class FXMLDocumentController implements Initializable {
     // Calcola le statistiche sul documento selezionato
     @FXML
     public void mostrastatisticheDocumento(Document documentoSelezionato) {
-        String testoDocumento = documentoSelezionato.getDocument_text();
-        int sentenceCount = testoDocumento.split("[.!?]").length;
+        String testoDocumento = documentoSelezionato.getDocument_text().replaceAll("'", " ");
+
+        int sentenceCount =  (int) Arrays.stream(testoDocumento.split("[.!?]")).filter(s -> !s.trim().isEmpty()).count();
 
         // Testo già pulito e senza stopwords
-        String cleanedText = cleanAndRemoveStopwords(testoDocumento);
-        Map<String, Integer> documentVector = textToVector(cleanedText);
+
+        Map<String, Integer> documentVector = resultMapByDocument.get(documentoSelezionato);
 
         // Calcolo delle statistiche
-        int totalWords = documentVector.values().stream().mapToInt(Integer::intValue).sum();
+        int totalWords = testoDocumento.split("\\s").length - 1;
         int uniqueWords = documentVector.size();
+
 
         // Le 5 parole più comuni
         List<Map.Entry<String, Integer>> commonWords = documentVector.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .limit(5)
-                .collect(Collectors.toList());
+                .toList();
+        for (Map.Entry<String, Integer> entry : commonWords) {
+
+            // Divide il titolo in parole utilizzando spazi e punteggiatura come delimitatori
+            String[] parole = documentoSelezionato.getTitle().split("\\W+");
+            int conteggio = 0;
+
+            // Itera attraverso le parole e conta le occorrenze
+            for (String p : parole) {
+                if (p.equalsIgnoreCase(entry.getKey())) {
+                    conteggio++;
+                }
+            }
+
+            // Se il conteggio è maggiore di zero, aggiorna il valore dell'entry
+            if (conteggio > 0) {
+                entry.setValue(entry.getValue() - conteggio);
+            }
+        }
 
         // Creazione del messaggio di statistica
         StringBuilder statsMessage = new StringBuilder();
@@ -444,6 +467,15 @@ public class FXMLDocumentController implements Initializable {
         statsMessage.append("Numero di frasi: ").append(sentenceCount).append("\n");
         statsMessage.append("Le 5 parole più comuni sono:\n");
         commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
+
+        if(corrispondenzaSimiliarita.get(documentoSelezionato) == null) {
+            statsMessage.append("Percentuale di similaritá rispetto alla query: non definita\n");
+        } else {
+            double percentuale = corrispondenzaSimiliarita.get(documentoSelezionato) * 100;
+
+            statsMessage.append("Percentuale di similaritá rispetto alla query: ").append(Math.round(percentuale)).append("%\n");
+        }
+
 
         statisticheDocumentoLabel.setText(statsMessage.toString());
     }
