@@ -28,7 +28,7 @@
             <!-- Pane 2: Query and Results -->
             <AnchorPane fx:id="pane2" prefHeight="700.0" prefWidth="900.0" visible="false">
                <children>
-                  <SplitPane dividerPositions="0.3" layoutY="-1.0" orientation="HORIZONTAL" prefHeight="700.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <SplitPane dividerPositions="0.35412026726057905" layoutY="-1.0" orientation="HORIZONTAL" prefHeight="700.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <items>
                         <VBox alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="300.0" spacing="20.0" styleClass="left-pane">
                            <children>
