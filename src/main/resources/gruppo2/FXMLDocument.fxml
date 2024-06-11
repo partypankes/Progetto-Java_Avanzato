@@ -1,5 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressIndicator?>
@@ -13,7 +18,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gruppo2.FXMLDocumentController">
+<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gruppo2.FXMLDocumentController">
    <children>
       <StackPane prefHeight="700.0" prefWidth="900.0" styleClass="background">
          <children>
@@ -32,40 +37,31 @@
                   </VBox>
                </children>
             </AnchorPane>
-
+      
             <!-- Pane 2: Query and Results -->
-            <AnchorPane fx:id="pane2" prefHeight="700.0" prefWidth="900.0" visible="false">
+            <AnchorPane fx:id="pane2" prefHeight="719.0" prefWidth="914.0" visible="false">
                <children>
-                  <SplitPane dividerPositions="0.3" layoutY="-1.0" orientation="HORIZONTAL" prefHeight="700.0" prefWidth="900.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                     <items>
-                        <VBox alignment="CENTER" minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="300.0" spacing="20.0" styleClass="left-pane">
-                           <children>
-                              <Label styleClass="search-label" text="Search Query" />
-                              <TextField fx:id="queryTf" focusTraversable="false" promptText="Write your query..." styleClass="round-text-field">
-                                 <font>
-                                    <Font size="20.0" />
-                                 </font>
-                              </TextField>
-                              <Button focusTraversable="false" mnemonicParsing="false" onAction="#handleQuery" styleClass="round-button small-button" text="Confirm">
-                                 <font>
-                                    <Font size="18.0" />
-                                 </font>
-                              </Button>
-                              <ProgressIndicator fx:id="progressIndicator" focusTraversable="false" prefHeight="67.0" prefWidth="77.0" progress="0.0" />
-                              <Label fx:id="collectionStatisticsLabel" styleClass="collection-stats" text="Collection Statistics will appear here" />
-                           </children>
-                        </VBox>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="700.0" prefWidth="600.0" styleClass="right-pane">
-                           <children>
-                              <TableView fx:id="tableView" prefHeight="698.0" prefWidth="625.0" styleClass="table-view" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                 <columns>
-                                    <TableColumn fx:id="titleColumn" editable="false" prefWidth="624.0" sortable="false" />
-                                 </columns>
-                              </TableView>
-                           </children>
-                        </AnchorPane>
-                     </items>
-                  </SplitPane>
+                  <TableView fx:id="tableView" layoutY="104.0" prefHeight="593.0" prefWidth="616.0" styleClass="table-view" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="284.0" AnchorPane.topAnchor="104.0">
+                     <columns>
+                        <TableColumn fx:id="titleColumn" editable="false" prefWidth="624.0" sortable="false" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="queryTf" focusTraversable="false" layoutX="28.0" layoutY="25.0" prefHeight="54.0" prefWidth="441.0" promptText="Write your query..." styleClass="round-text-field">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </TextField>
+                  <Button layoutX="698.0" layoutY="104.0" mnemonicParsing="false" onAction="#collectionStatistics" prefHeight="39.0" prefWidth="119.0" text="STATISTICS">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Button focusTraversable="false" layoutX="494.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleQuery" styleClass="round-button small-button" text="CONFIRM">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="collectionStatisticsLabel" alignment="TOP_CENTER" layoutX="620.0" layoutY="188.0" prefHeight="271.0" prefWidth="277.0" />
                </children>
             </AnchorPane>
 
