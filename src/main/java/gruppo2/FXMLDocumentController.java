@@ -509,10 +509,10 @@ public class FXMLDocumentController implements Initializable {
         commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
 
         if (corrispondenzaSimiliarita.get(documentoSelezionato) == null) {
-            statsMessage.append("Percentuale di similaritá rispetto alla \nquery: non definita\n");
+            statsMessage.append("Similaritá rispetto alla \nquery: non definita\n");
         } else {
             double percentuale = corrispondenzaSimiliarita.get(documentoSelezionato) * 100;
-            statsMessage.append("Percentuale di similaritá rispetto alla query: ").append(Math.round(percentuale)).append("%\n");
+            statsMessage.append("Similaritá rispetto alla query: ").append(Math.round(percentuale)).append("%\n");
         }
 
         statisticheDocumentoLabel.setText(String.valueOf(statsMessage));
