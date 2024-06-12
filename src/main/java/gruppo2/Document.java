@@ -1,63 +1,27 @@
 package gruppo2;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
 import java.io.Serializable;
-import java.util.Objects;
-
-public class Document implements Comparable<Document>, Serializable {
-    private final String filename;
-    private final String title;
-    private final String document_text;
-
-    public Document(String filename, String title, String document_text) {
-        this.filename = filename;
-        this.title = title;
-        this.document_text = document_text;
-    }
-
-    public String getFilename() {
-        return filename;
-    }
-    public String getTitle() {
-        return title;
-    }
-
-    public String getDocument_text() {
-        return document_text;
-    }
 
 
-    @Override
-    public String toString() {
-        return "Document{" +
-                "title='" + title + '\'' +
-                '}';
-    }
+/**
+ * Rappresenta un documento con un nome file, un titolo e un testo del documento.
+ */
+public record Document(String filename, String title, String document_text) implements Comparable<Document>, Serializable {
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Document document = (Document) o;
-        return Objects.equals(getTitle(), document.getTitle()) && Objects.equals(getDocument_text(), document.getDocument_text());
-
-}
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(getTitle(), getDocument_text());
-    }
-
+    /**
+     * Confronta questo documento con un altro documento.
+     *
+     * @param other L'altro documento da confrontare.
+     * @return un valore negativo, zero o un valore positivo se questo documento
+     * è rispettivamente minore, uguale o maggiore dell'altro documento.
+     */
     @Override
     public int compareTo(Document other) {
-        int titleComparison = this.title.compareTo(other.getTitle());
+        int titleComparison = this.title.compareTo(other.title());
         if (titleComparison != 0) {
             return titleComparison;
         } else {
-            return this.document_text.compareTo(other.getDocument_text());
+            return this.document_text.compareTo(other.document_text());
         }
     }
-    }
-
+}

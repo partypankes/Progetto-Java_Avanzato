@@ -2,6 +2,8 @@ package gruppo2;
 
 import gruppo2.service.*;
 import javafx.application.Platform;
+import javafx.beans.property.SimpleStringProperty;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.concurrent.Task;
@@ -16,6 +18,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
+import javafx.util.Callback;
 
 import java.io.*;
 import java.net.URL;
@@ -68,7 +71,8 @@ public class FXMLDocumentController implements Initializable {
     private Button collectionStats;
 
     @FXML
-    private TableColumn<Document, String> titleColumn;
+    private TableColumn<Document, String> titleColumn = new TableColumn<>("Title");
+
     private final ObservableList<Document> documents = observableArrayList();
 
     private static final ConcurrentMap<String, Integer> vocabolario = new ConcurrentHashMap<>();
@@ -85,7 +89,12 @@ public class FXMLDocumentController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        titleColumn.setCellValueFactory(new PropertyValueFactory<>("title"));
+        titleColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Document, String>, ObservableValue<String>>() {
+            @Override
+            public ObservableValue<String> call(TableColumn.CellDataFeatures<Document, String> param) {
+                return new SimpleStringProperty(param.getValue().title());
+            }
+        });
         tableView.setItems(documents);
         try {
             loadStopwords();

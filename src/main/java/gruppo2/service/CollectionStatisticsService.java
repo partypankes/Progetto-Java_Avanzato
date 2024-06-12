@@ -12,8 +12,8 @@ import java.util.*;
  * il numero di documenti e le 5 parole più comuni nell'intera collezione.
  */
 public class CollectionStatisticsService extends Service<String> {
-    private List<Document> documents;
-    private Map<Document, Map<String, Integer>> resultMapByDocument;
+    private final List<Document> documents;
+    private final Map<Document, Map<String, Integer>> resultMapByDocument;
 
     /**
      * Costruttore della classe CollectionStatisticsService.
@@ -35,14 +35,14 @@ public class CollectionStatisticsService extends Service<String> {
     protected Task<String> createTask() {
         return new Task<>() {
             @Override
-            protected String call() throws Exception {
+            protected String call() {
                 int totalWords = 0;
                 int sentenceCount = 0;
                 int documentCount = documents.size();
                 Map<String, Integer> globalWordCount = new HashMap<>();
 
                 for (Document doc : documents) {
-                    String testoDocumento = doc.getDocument_text().replaceAll("'", " ");
+                    String testoDocumento = doc.document_text().replaceAll("'", " ");
 
                     Map<String, Integer> documentVector = new HashMap<>(resultMapByDocument.get(doc)); // Crea una copia
 
@@ -53,7 +53,7 @@ public class CollectionStatisticsService extends Service<String> {
                     // Aggiorna il conteggio globale delle parole
                     for (Map.Entry<String, Integer> entry : documentVector.entrySet()) {
                         // Divide il titolo in parole utilizzando spazi e punteggiatura come delimitatori
-                        String[] parole = doc.getTitle().split("\\W+");
+                        String[] parole = doc.title().split("\\W+");
                         int conteggio = 0;
 
                         // Itera attraverso le parole e conta le occorrenze

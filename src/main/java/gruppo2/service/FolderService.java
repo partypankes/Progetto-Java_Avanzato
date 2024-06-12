@@ -11,25 +11,43 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * FolderService è una classe che estende Service<List<Document>> per gestire e monitorare i documenti in una directory.
+ * <p>
+ * Questa classe permette di monitorare una directory per rilevare nuovi documenti o cambiamenti nei documenti esistenti,
+ * e di aggiornare lo stato salvato della directory.
+ */
 public class FolderService extends Service<List<Document>> {
     private Path dir;
     private File selectedDirectory;
 
-
+    /**
+     * Costruttore predefinito per inizializzare FolderService.
+     */
     public FolderService() {
 
     }
 
+    /**
+     * Imposta la directory selezionata e aggiorna il percorso.
+     *
+     * @param selectedDirectory la directory selezionata
+     */
     public void setSelectedDirectory(File selectedDirectory) {
         this.selectedDirectory = selectedDirectory;
         this.dir = Paths.get(selectedDirectory.getAbsolutePath());
     }
 
+    /**
+     * Crea un task per gestire i documenti nella directory selezionata.
+     *
+     * @return il task per gestire i documenti nella directory selezionata
+     */
     @Override
     protected Task<List<Document>> createTask() {
         return new Task<>() {
             @Override
-            protected List<Document> call() throws Exception {
+            protected List<Document> call() {
                 String previousDirPath = DirectoryChecker.loadPreviousDirPath();
 
                 List<Document> documentsToUpdate;
@@ -50,6 +68,12 @@ public class FolderService extends Service<List<Document>> {
                 return documentsToUpdate;
             }
 
+            /**
+             * Legge i documenti dalla directory specificata.
+             *
+             * @param directory la directory da cui leggere i documenti
+             * @return una lista di documenti letti dalla directory
+             */
             private List<Document> readDocumentsFromDirectory(File directory) {
                 List<Document> documentList = new ArrayList<>();
                 File[] files = directory.listFiles();
@@ -66,6 +90,12 @@ public class FolderService extends Service<List<Document>> {
                 return documentList;
             }
 
+            /**
+             * Legge un documento dal file specificato.
+             *
+             * @param file il file da cui leggere il documento
+             * @return il documento letto dal file, o null se non può essere letto
+             */
             private Document readDocumentFromFile(File file) {
                 return DirectoryChecker.readDocumentFromFile(file);
             }
