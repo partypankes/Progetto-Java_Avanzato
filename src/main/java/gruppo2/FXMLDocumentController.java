@@ -62,17 +62,10 @@ public class FXMLDocumentController implements Initializable {
     private Label collectionStatisticsLabel;
 
     @FXML
-    private Button chiudiDocumento;
-
-    @FXML
     private TableView<Document> tableView;
 
     @FXML
     private TableColumn<Document, String> titleColumn;
-
-    @FXML
-    private ProgressIndicator progressIndicator;
-
     private final ObservableList<Document> documents = observableArrayList();
 
     private static final ConcurrentMap<String, Integer> vocabolario = new ConcurrentHashMap<>();
@@ -371,5 +364,8 @@ public class FXMLDocumentController implements Initializable {
         collectionStatisticsService.restart();
     }
 
+    @FXML
+    private void changeFolder() {
 
+    }
 }
