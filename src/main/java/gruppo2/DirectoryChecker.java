@@ -167,7 +167,7 @@ public class DirectoryChecker {
      * @param file Il file da leggere.
      * @return L'oggetto Document letto dal file.
      */
-    private static Document readDocumentFromFile(File file) {
+    public static Document readDocumentFromFile(File file) {
         return getDocument(file);
     }
 }
