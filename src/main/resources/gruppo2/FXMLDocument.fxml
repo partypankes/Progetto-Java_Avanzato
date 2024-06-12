@@ -16,14 +16,14 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gruppo2.FXMLDocumentController">
+<AnchorPane styleClass="anchor-pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gruppo2.FXMLDocumentController">
    <children>
       <StackPane prefHeight="700.0" prefWidth="900.0" styleClass="background">
          <children>
             <!-- Pane 1: Folder Selection -->
-            <AnchorPane fx:id="pane1" prefHeight="700.0" prefWidth="900.0">
+            <AnchorPane fx:id="pane1" prefHeight="700.0" prefWidth="900.0" styleClass="anchor-pane">
                <children>
-                  <VBox alignment="CENTER" layoutY="96.0" prefHeight="700.0" prefWidth="900.0" spacing="30.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <VBox alignment="CENTER" layoutY="96.0" prefHeight="700.0" prefWidth="900.0" spacing="30.0" styleClass="vbox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Label focusTraversable="false" styleClass="header-label" text="Before starting you have to select a Folder" />
                         <Button focusTraversable="false" mnemonicParsing="false" onAction="#folderSelection" styleClass="round-button" text="Start!">
@@ -35,58 +35,59 @@
                   </VBox>
                </children>
             </AnchorPane>
-      
+
             <!-- Pane 2: Query and Results -->
-            <AnchorPane fx:id="pane2" prefHeight="719.0" prefWidth="914.0" visible="false">
+            <AnchorPane fx:id="pane2" prefHeight="719.0" prefWidth="914.0" styleClass="anchor-pane" visible="false">
                <children>
-                  <TableView fx:id="tableView" focusTraversable="false" layoutY="104.0" prefHeight="593.0" prefWidth="616.0" styleClass="table-view" AnchorPane.bottomAnchor="3.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="284.0" AnchorPane.topAnchor="104.0">
+                  <TableView fx:id="tableView" focusTraversable="false" layoutY="104.0" prefHeight="593.0" prefWidth="616.0" styleClass="table-view" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="285.0" AnchorPane.topAnchor="78.0">
                      <columns>
-                        <TableColumn fx:id="titleColumn" editable="false" prefWidth="624.0" sortable="false" />
+                        <TableColumn fx:id="titleColumn" editable="false" prefWidth="624.0" sortable="false" styleClass="table-column" text="DOCUMENTS" />
                      </columns>
                   </TableView>
-                  <TextField fx:id="queryTf" focusTraversable="false" layoutX="28.0" layoutY="25.0" prefHeight="54.0" prefWidth="441.0" promptText="Write your query..." styleClass="round-text-field">
+                  <TextField fx:id="queryTf" focusTraversable="false" layoutX="26.0" layoutY="14.0" prefHeight="50.0" prefWidth="441.0" promptText="Write your query..." styleClass="round-text-field" AnchorPane.bottomAnchor="636.0" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="14.0">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </TextField>
-                  <Button focusTraversable="false" layoutX="694.0" layoutY="104.0" mnemonicParsing="false" onAction="#collectionStatistics" prefHeight="39.0" prefWidth="114.0" text="STATISTICS">
+                  <Button focusTraversable="false" layoutX="695.0" layoutY="104.0" mnemonicParsing="false" onAction="#collectionStatistics" prefHeight="39.0" prefWidth="114.0" styleClass="button" text="STATISTICS" AnchorPane.bottomAnchor="557.0" AnchorPane.leftAnchor="695.0" AnchorPane.rightAnchor="93.0" AnchorPane.topAnchor="104.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Button focusTraversable="false" layoutX="494.0" layoutY="33.0" mnemonicParsing="false" onAction="#handleQuery" styleClass="round-button small-button" text="CONFIRM">
+                  <Button focusTraversable="false" layoutX="494.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleQuery" styleClass="round-button small-button" text="CONFIRM">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <ProgressIndicator fx:id="progressIndicator" layoutX="690.0" layoutY="33.0" prefHeight="56.0" prefWidth="123.0" progress="0.0" />
-                  <AnchorPane fx:id="statistics1" layoutX="616.0" layoutY="163.0" prefHeight="200.0" prefWidth="200.0" visible="false" AnchorPane.topAnchor="160.0">
+                  <ProgressIndicator fx:id="progressIndicator" layoutX="690.0" layoutY="20.0" prefHeight="56.0" prefWidth="123.0" progress="0.0" styleClass="progress-indicator" />
+                  <AnchorPane fx:id="statistics1" layoutX="616.0" layoutY="163.0" prefHeight="200.0" prefWidth="200.0" styleClass="anchor-pane" visible="false" AnchorPane.topAnchor="160.0">
                      <children>
-                        <Label fx:id="collectionStatisticsLabel" alignment="TOP_CENTER" prefHeight="291.0" prefWidth="285.0" AnchorPane.topAnchor="0.0" />
+                        <Label fx:id="collectionStatisticsLabel" alignment="TOP_CENTER" prefHeight="291.0" prefWidth="285.0" styleClass="stats-label" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
                </children>
             </AnchorPane>
 
             <!-- Pane 3: Document View -->
-            <AnchorPane fx:id="paneDocumento" prefHeight="700.0" prefWidth="900.0" visible="false">
+            <AnchorPane fx:id="paneDocumento" prefHeight="700.0" prefWidth="900.0" styleClass="anchor-pane" visible="false">
                <children>
-                  <TextArea fx:id="corpoDocumento" editable="false" focusTraversable="false" layoutX="26.0" layoutY="78.0" prefHeight="593.0" prefWidth="591.0" wrapText="true" />
-                  <Button fx:id="chiudiDocumento" focusTraversable="false" layoutX="840.0" layoutY="10.0" mnemonicParsing="false" onAction="#chiudiDocumento" prefHeight="29.0" prefWidth="50.0" styleClass="transparent-button" text="Close">
+                  <TextArea fx:id="corpoDocumento" editable="false" focusTraversable="false" layoutX="26.0" layoutY="78.0" prefHeight="593.0" prefWidth="591.0" styleClass="text-area" wrapText="true" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="285.0" AnchorPane.topAnchor="78.0" />
+                  <Button fx:id="chiudiDocumento" focusTraversable="false" layoutX="751.0" layoutY="30.0" mnemonicParsing="false" onAction="#chiudiDocumento" prefHeight="29.0" prefWidth="71.0" styleClass="transparent-button" text="CLOSE">
                      <font>
-                        <Font size="13.0" />
+                        <Font size="14.0" />
                      </font>
                   </Button>
-                  <Label fx:id="documentTitleLabel" alignment="CENTER" focusTraversable="false" layoutX="54.0" layoutY="25.0" prefHeight="39.0" prefWidth="536.0" style="-fx-font-weight: bold;" text="TESTO DOCUMENTO">
-                     <font>
-                        <Font size="18.0" />
-                     </font></Label>
-                  <Button focusTraversable="false" layoutX="694.0" layoutY="103.0" mnemonicParsing="false" onAction="#statisticheDocumento" text="STATISTICS">
+                  <Label fx:id="documentTitleLabel" alignment="CENTER" focusTraversable="false" layoutX="54.0" layoutY="25.0" prefHeight="39.0" prefWidth="536.0" styleClass="title-label" text="TESTO DOCUMENTO">
                      <font>
                         <Font size="18.0" />
                      </font>
+                  </Label>
+                  <Button focusTraversable="false" layoutX="694.0" layoutY="103.0" mnemonicParsing="false" onAction="#statisticheDocumento" styleClass="button" text="STATISTICS" AnchorPane.bottomAnchor="557.0" AnchorPane.leftAnchor="695.0" AnchorPane.rightAnchor="93.0" AnchorPane.topAnchor="104.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
                   </Button>
-                  <Label fx:id="statisticheDocumentoLabel" alignment="TOP_CENTER" layoutX="617.0" layoutY="161.0" prefHeight="297.0" prefWidth="285.0" AnchorPane.topAnchor="160.0" />
+                  <Label fx:id="statisticheDocumentoLabel" alignment="TOP_CENTER" layoutX="617.0" layoutY="161.0" prefHeight="297.0" prefWidth="285.0" styleClass="stats-label" AnchorPane.topAnchor="160.0" />
                </children>
             </AnchorPane>
          </children>
