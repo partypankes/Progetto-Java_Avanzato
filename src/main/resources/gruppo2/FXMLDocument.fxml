@@ -54,25 +54,16 @@
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <AnchorPane layoutX="631.0" layoutY="8.0" prefHeight="666.0" prefWidth="262.0" AnchorPane.bottomAnchor="8.0" AnchorPane.topAnchor="8.0">
+                  <AnchorPane fx:id="statistics1" layoutX="629.0" layoutY="78.0" prefHeight="596.0" prefWidth="245.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="629.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="78.0">
                      <children>
-                        <AnchorPane fx:id="statistics1" layoutY="62.0" prefHeight="395.0" prefWidth="262.0" styleClass="anchor-pane" visible="false" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="62.0">
-                           <children>
-                              <Label fx:id="collectionStatisticsLabel" alignment="TOP_CENTER" prefHeight="291.0" prefWidth="254.0" styleClass="stats-label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
-                           </children>
-                        </AnchorPane>
-                        <Button layoutX="50.0" layoutY="624.0" mnemonicParsing="false" onAction="#changeFolder" text="CHANGE FOLDER" AnchorPane.bottomAnchor="18.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
-                        <Button fx:id="collectionStats" layoutX="74.0" layoutY="14.0" mnemonicParsing="false" onAction="#collectionStatistics" prefHeight="39.0" prefWidth="114.0" text="STATISTICS" AnchorPane.topAnchor="12.0">
-                           <font>
-                              <Font size="18.0" />
-                           </font>
-                        </Button>
+                        <Label fx:id="collectionStatisticsLabel" alignment="CENTER" prefHeight="291.0" prefWidth="254.0" styleClass="stats-label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
+                  <Button fx:id="collectionStats" layoutX="693.0" layoutY="20.0" mnemonicParsing="false" onAction="#collectionStatistics" prefHeight="39.0" prefWidth="118.0" text="STATISTICS" AnchorPane.leftAnchor="693.0" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="20.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
 
@@ -90,12 +81,16 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Button focusTraversable="false" layoutX="703.0" layoutY="78.0" mnemonicParsing="false" onAction="#statisticheDocumento" styleClass="button" text="STATISTICS" AnchorPane.bottomAnchor="583.0" AnchorPane.leftAnchor="703.0" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="78.0">
+                  <AnchorPane layoutX="629.0" layoutY="79.0" prefHeight="596.0" prefWidth="245.0" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="629.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="78.0">
+                     <children>
+                        <Label fx:id="statisticheDocumentoLabel" alignment="CENTER" layoutX="37.0" prefHeight="297.0" prefWidth="194.0" styleClass="stats-label" AnchorPane.bottomAnchor="139.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="160.0" />
+                     </children>
+                  </AnchorPane>
+                  <Button layoutX="693.0" layoutY="26.0" mnemonicParsing="false" onAction="#statisticheDocumento" prefHeight="39.0" prefWidth="118.0" text="STATISTICS" AnchorPane.bottomAnchor="638.0" AnchorPane.leftAnchor="693.0" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="26.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
-                  <Label fx:id="statisticheDocumentoLabel" alignment="TOP_CENTER" layoutX="617.0" layoutY="161.0" prefHeight="297.0" prefWidth="285.0" styleClass="stats-label" AnchorPane.topAnchor="160.0" />
                </children>
             </AnchorPane>
          </children>
