@@ -37,7 +37,7 @@
             </AnchorPane>
 
             <!-- Pane 2: Query and Results -->
-            <AnchorPane fx:id="pane2" prefHeight="719.0" prefWidth="914.0" styleClass="anchor-pane">
+            <AnchorPane fx:id="pane2" prefHeight="719.0" prefWidth="914.0" styleClass="anchor-pane" visible="false">
                <children>
                   <TableView fx:id="tableView" focusTraversable="false" layoutY="104.0" prefHeight="593.0" prefWidth="616.0" styleClass="table-view" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="285.0" AnchorPane.topAnchor="78.0">
                      <columns>
