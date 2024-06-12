@@ -13,19 +13,28 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import javafx.util.Callback;
 
+import java.awt.*;
 import java.io.*;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.*;
+import java.util.List;
 import java.util.concurrent.*;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -73,6 +82,9 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     private TableColumn<Document, String> titleColumn = new TableColumn<>("Title");
 
+    @FXML
+    private ImageView unisaIcon;
+
     private final ObservableList<Document> documents = observableArrayList();
 
     private static final ConcurrentMap<String, Integer> vocabolario = new ConcurrentHashMap<>();
@@ -102,6 +114,7 @@ public class FXMLDocumentController implements Initializable {
             e.printStackTrace();
         }
         selezionaDocumento();
+        collectionStats.setDisable(true);
     }
 
 
@@ -243,9 +256,12 @@ public class FXMLDocumentController implements Initializable {
         // Crea e configura il VocabularyService
         VocabularyService vocabularyService = new VocabularyService(documents, resultMapByDocument);
 
-
+        vocabularyService.setOnSucceeded(event -> {
+            collectionStats.setDisable(false);
+        });
         vocabularyService.setOnFailed(event -> {
             vocabularyService.getException().printStackTrace();
+            collectionStats.setDisable(false);
         });
 
         // Avvia il Service
@@ -377,7 +393,11 @@ public class FXMLDocumentController implements Initializable {
     }
 
     @FXML
-    private void changeFolder() {
+    private void imageTest() {
+        try {
+            Desktop.getDesktop().browse(new URI("https://www.diem.unisa.it"));
+        } catch (IOException | URISyntaxException ignored) {
 
+        }
     }
 }

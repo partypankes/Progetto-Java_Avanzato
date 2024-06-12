@@ -5,6 +5,7 @@ import javafx.concurrent.Service;
 import javafx.concurrent.Task;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 /**
@@ -52,6 +53,7 @@ public class DocumentStatisticsService extends Service<String> {
 
                 // Le 5 parole più comuni
                 List<Map.Entry<String, Integer>> commonWords = documentVector.entrySet().stream()
+                        .filter(entry -> entry.getKey() != null && !entry.getKey().trim().isEmpty()) // Filtra chiavi vuote o spazi
                         .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                         .limit(5)
                         .toList();
@@ -76,8 +78,13 @@ public class DocumentStatisticsService extends Service<String> {
                 statsMessage.append("Numero totale di parole: ").append(totalWords).append("\n");
                 statsMessage.append("Numero di parole uniche: ").append(uniqueWords).append("\n");
                 statsMessage.append("Numero di frasi: ").append(sentenceCount).append("\n");
-                statsMessage.append("Le 5 parole più comuni sono:\n");
-                commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
+                if(commonWords.isEmpty()){
+                    statsMessage.append("Nessuna Parola Presente").append(uniqueWords).append("\n");
+                } else {
+                    statsMessage.append("Le 5 parole più comuni sono:\n");
+                    commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
+                }
+
 
                 if (corrispondenzaSimiliarita.get(document) == null) {
                     statsMessage.append("Percentuale di similaritá rispetto alla \nquery: non definita\n");

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -44,12 +45,12 @@
                         <TableColumn fx:id="titleColumn" editable="false" prefWidth="624.0" sortable="false" />
                      </columns>
                   </TableView>
-                  <TextField fx:id="queryTf" focusTraversable="false" layoutX="26.0" layoutY="14.0" prefHeight="50.0" prefWidth="441.0" promptText="Write your query..." styleClass="round-text-field" AnchorPane.bottomAnchor="636.0" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="14.0">
+                  <TextField fx:id="queryTf" focusTraversable="false" layoutX="74.0" layoutY="15.0" prefHeight="50.0" prefWidth="425.0" promptText="Write your query..." styleClass="round-text-field" AnchorPane.bottomAnchor="635.0" AnchorPane.leftAnchor="74.0" AnchorPane.topAnchor="15.0">
                      <font>
                         <Font size="20.0" />
                      </font>
                   </TextField>
-                  <Button focusTraversable="false" layoutX="499.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleQuery" styleClass="round-button small-button" text="CONFIRM" AnchorPane.topAnchor="20.0">
+                  <Button focusTraversable="false" layoutX="512.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleQuery" styleClass="round-button small-button" text="CONFIRM" AnchorPane.topAnchor="20.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -63,11 +64,16 @@
                         </AnchorPane>
                      </children>
                   </AnchorPane>
-                  <Button fx:id="collectionStats" layoutX="693.0" layoutY="20.0" mnemonicParsing="false" onAction="#collectionStatistics" prefHeight="39.0" prefWidth="118.0" text="STATISTICS" AnchorPane.leftAnchor="693.0" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="20.0">
+                  <Button fx:id="collectionStats" disable="true" layoutX="693.0" layoutY="20.0" mnemonicParsing="false" onAction="#collectionStatistics" prefHeight="39.0" prefWidth="118.0" text="STATISTICS" AnchorPane.leftAnchor="693.0" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="20.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Button>
+                  <ImageView fx:id="unisaIcon" fitHeight="24.0" fitWidth="64.0" layoutX="6.0" layoutY="28.0" onMouseClicked="#imageTest" pickOnBounds="true" preserveRatio="true" styleClass="imageDiem">
+                     <image>
+                        <Image url="@images.png" />
+                     </image>
+                  </ImageView>
                </children>
             </AnchorPane>
 

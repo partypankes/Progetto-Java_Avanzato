@@ -112,7 +112,7 @@ public class DirectoryChecker {
     public static void checkForChanges(Map<String, Long> previousState, Map<String, Long> currentState, List<Document> documents, Path dir) {
         Map<String, Document> documentMap = new HashMap<>();
         for (Document doc : documents) {
-            documentMap.put(doc.title(), doc);
+            documentMap.put(doc.filename(), doc);
         }
 
         // Rileva aggiunte e modifiche
@@ -139,7 +139,7 @@ public class DirectoryChecker {
         Iterator<Document> iterator = documents.iterator();
         while (iterator.hasNext()) {
             Document doc = iterator.next();
-            String filePath = doc.title();
+            String filePath = doc.filename();
             if (!currentState.containsKey(filePath)) {
                 System.out.println("File rimosso: " + filePath);
                 iterator.remove();

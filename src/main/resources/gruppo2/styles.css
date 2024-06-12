@@ -160,3 +160,6 @@
     -fx-background-radius: 20;
 }
 
+.imageDiem {
+    -fx-cursor: hand;
+}
