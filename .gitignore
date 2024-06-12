@@ -1,3 +1,6 @@
 
 *.class
 *.ser
+target/classes/gruppo2/FXMLDocument.fxml
+target/classes/gruppo2/icon.png
+target/*
