@@ -1,0 +1,162 @@
+.background {
+    -fx-background-color: #E8F0FE;
+}
+
+.header-label {
+    -fx-font-size: 25px !important;
+    -fx-text-fill: #1A73E8 !important;
+    -fx-font-weight: bold;
+}
+
+.round-button {
+    -fx-background-color: #1A73E8;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}
+
+.round-button.small-button {
+    -fx-background-radius: 20;
+}
+
+.button {
+    -fx-background-color: #1A73E8;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}
+
+.button:hover {
+    -fx-background-color: #1558B0;
+}
+
+.text-field {
+    -fx-background-radius: 20;
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #1A73E8;
+    -fx-prompt-text-fill: #1A73E8;
+    -fx-border-color: #1A73E8;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+}
+
+.anchor-pane {
+    -fx-background-color: transparent;
+}
+
+.table-view {
+    -fx-border-color: #1A73E8;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-padding: 10 !important;
+    -fx-background-color: #FFFFFF !important;
+    -fx-background-radius: 20;
+}
+
+.table-view .column-header,
+.table-view .column-header-background {
+    -fx-background-color: white !important;
+    -fx-padding: -25;
+    -fx-start-margin: 0;
+    -fx-background-radius: 20 !important;
+    -fx-border-radius: 20 !important;
+}
+
+.table-view .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.table-view .table-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-text-fill: #1A73E8;
+}
+
+.table-view .table-row-cell:filled:selected, .table-view .table-row-cell:filled:selected:hover {
+    -fx-background-color: #BBDEFB;
+    -fx-border-color: transparent;
+    -fx-text-fill: #1A73E8;
+}
+
+.table-view .table-row-cell:filled:hover {
+    -fx-background-color: #E3F2FD;
+    -fx-border-color: transparent;
+    -fx-text-fill: #1A73E8;
+}
+
+/* Close button */
+.transparent-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #1A73E8;
+    -fx-border-color: transparent;
+    -fx-cursor: hand;
+}
+
+/* Text areas */
+.text-area {
+    -fx-background-radius: 20;
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #1A73E8;
+    -fx-border-color: #1A73E8;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-padding: 5;
+}
+
+/* Labels */
+.stats-label {
+    -fx-text-fill: #1A73E8;
+    -fx-font-size: 14px;
+}
+
+.title-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: #1A73E8;
+    -fx-font-size: 18px;
+}
+
+/* Progress Indicator */
+.progress-indicator {
+    -fx-progress-color: #1A73E8;
+}
+
+/* Scrollbar personalizzata */
+.table-view .scroll-bar, .text-area .scroll-bar {
+    -fx-background-color: #699def;
+    -fx-max-width: 20px; /* Rimosso lo spazio extra prima di px */
+}
+
+.table-view .scroll-bar .thumb, .text-area .scroll-bar .thumb  {
+    -fx-background-color: #699def;
+    -fx-background-radius: 13;
+}
+
+.table-view .scroll-bar .track, .text-area .scroll-bar .track  {
+    -fx-background-color: #c2d7f8;
+    -fx-background-radius: 10;
+}
+
+.table-view .scroll-bar .increment-button,
+.table-view .scroll-bar .decrement-button,
+.text-area .scroll-bar .increment-button,
+.text-area .scroll-bar .decrement-button {
+    -fx-background-color: transparent;
+}
+
+.table-view .scroll-bar .increment-arrow,
+.table-view .scroll-bar .decrement-arrow,
+.text-area .scroll-bar .increment-arrow,
+.text-area .scroll-bar .decrement-arrow {
+    -fx-background-color: #699def;
+}
+
+.anchor{
+    -fx-border-color: #1A73E8;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-padding: 10 !important;
+    -fx-background-color: #FFFFFF !important;
+    -fx-background-radius: 20;
+}
+
