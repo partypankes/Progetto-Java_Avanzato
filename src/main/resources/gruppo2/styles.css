@@ -122,28 +122,32 @@
 }
 
 /* Scrollbar personalizzata */
-.table-view .scroll-bar {
+.table-view .scroll-bar, .text-area .scroll-bar {
     -fx-background-color: #699def;
     -fx-max-width: 20px; /* Rimosso lo spazio extra prima di px */
 }
 
-.table-view .scroll-bar .thumb {
+.table-view .scroll-bar .thumb, .text-area .scroll-bar .thumb  {
     -fx-background-color: #699def;
     -fx-background-radius: 13;
 }
 
-.table-view .scroll-bar .track {
+.table-view .scroll-bar .track, .text-area .scroll-bar .track  {
     -fx-background-color: #c2d7f8;
     -fx-background-radius: 10;
 }
 
 .table-view .scroll-bar .increment-button,
-.table-view .scroll-bar .decrement-button {
+.table-view .scroll-bar .decrement-button,
+.text-area .scroll-bar .increment-button,
+.text-area .scroll-bar .decrement-button {
     -fx-background-color: transparent;
 }
 
 .table-view .scroll-bar .increment-arrow,
-.table-view .scroll-bar .decrement-arrow {
+.table-view .scroll-bar .decrement-arrow,
+.text-area .scroll-bar .increment-arrow,
+.text-area .scroll-bar .decrement-arrow {
     -fx-background-color: #699def;
 }
 
@@ -155,3 +159,4 @@
     -fx-background-color: #FFFFFF !important;
     -fx-background-radius: 20;
 }
+
