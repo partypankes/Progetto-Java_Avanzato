@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.*?>
 <?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
@@ -8,30 +7,26 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressIndicator?>
-<?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gruppo2.FXMLDocumentController">
+<AnchorPane styleClass="anchor-pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gruppo2.FXMLDocumentController">
    <children>
-      <StackPane prefHeight="801.0" prefWidth="653.0">
+      <StackPane prefHeight="700.0" prefWidth="900.0" styleClass="background">
          <children>
-            <AnchorPane fx:id="pane1" prefHeight="734.0" prefWidth="653.0">
+            <!-- Pane 1: Folder Selection -->
+            <AnchorPane fx:id="pane1" prefHeight="700.0" prefWidth="900.0" styleClass="anchor-pane">
                <children>
-                  <VBox alignment="CENTER" layoutY="96.0" prefHeight="614.0" prefWidth="651.0" spacing="30.0">
+                  <VBox alignment="CENTER" layoutY="96.0" prefHeight="700.0" prefWidth="900.0" spacing="30.0" styleClass="vbox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
-                        <Label text="Before starting you have to select a Folder">
-                           <font>
-                              <Font size="25.0" />
-                           </font>
-                        </Label>
-                        <Button focusTraversable="false" mnemonicParsing="false" onAction="#folderSelection" text="Start!">
+                        <Label focusTraversable="false" styleClass="header-label" text="Before starting you have to select a Folder" />
+                        <Button focusTraversable="false" mnemonicParsing="false" onAction="#folderSelection" styleClass="round-button" text="Start!">
                            <font>
                               <Font size="19.0" />
                            </font>
@@ -40,48 +35,66 @@
                   </VBox>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="pane2" prefHeight="646.0" prefWidth="613.0" visible="false">
+
+            <!-- Pane 2: Query and Results -->
+            <AnchorPane fx:id="pane2" prefHeight="719.0" prefWidth="914.0" styleClass="anchor-pane" visible="false">
                <children>
-                  <SplitPane dividerPositions="0.12607449856733524" layoutY="-1.0" orientation="VERTICAL" prefHeight="801.0" prefWidth="655.0">
-                    <items>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                  <TableView fx:id="tableView" focusTraversable="false" layoutY="104.0" prefHeight="593.0" prefWidth="616.0" styleClass="table-view" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="285.0" AnchorPane.topAnchor="78.0">
+                     <columns>
+                        <TableColumn fx:id="titleColumn" editable="false" prefWidth="624.0" sortable="false" />
+                     </columns>
+                  </TableView>
+                  <TextField fx:id="queryTf" focusTraversable="false" layoutX="26.0" layoutY="14.0" prefHeight="50.0" prefWidth="441.0" promptText="Write your query..." styleClass="round-text-field" AnchorPane.bottomAnchor="636.0" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="14.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                  </TextField>
+                  <Button focusTraversable="false" layoutX="499.0" layoutY="20.0" mnemonicParsing="false" onAction="#handleQuery" styleClass="round-button small-button" text="CONFIRM" AnchorPane.topAnchor="20.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
+                  <AnchorPane layoutX="629.0" layoutY="78.0" prefHeight="596.0" prefWidth="245.0" styleClass="anchor" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="629.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="78.0">
+                     <children>
+                        <AnchorPane fx:id="statistics1" layoutX="30.0" layoutY="3.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                            <children>
-                              <HBox layoutX="21.0" layoutY="16.0" prefHeight="62.0" prefWidth="576.0" spacing="40.0">
-                                 <children>
-                                    <TextField fx:id="queryTf" focusTraversable="false" prefHeight="55.0" prefWidth="308.0" promptText="Add something in order to search">
-                                       <font>
-                                          <Font size="20.0" />
-                                       </font>
-                                    </TextField>
-                                    <Button focusTraversable="false" mnemonicParsing="false" onAction="#handleQuery" prefHeight="56.0" prefWidth="109.0" text="Confirm">
-                                       <font>
-                                          <Font size="18.0" />
-                                       </font>
-                                    </Button>
-                                    <ProgressIndicator focusTraversable="false" prefHeight="67.0" prefWidth="77.0" progress="0.0" />
-                                 </children>
-                              </HBox>
+                              <Label fx:id="collectionStatisticsLabel" alignment="TOP_CENTER" prefHeight="291.0" prefWidth="254.0" styleClass="stats-label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0" />
                            </children>
                         </AnchorPane>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="606.0" prefWidth="611.0">
-                           <children>
-                              <TableView fx:id="tableView" layoutX="1.0" layoutY="4.0" prefHeight="684.0" prefWidth="651.0">
-                                <columns>
-                                  <TableColumn fx:id="titleColumn" prefWidth="650.0" text="Titolo Documento" />
-                                </columns>
-                              </TableView>
-                           </children></AnchorPane>
-                    </items>
-                  </SplitPane>
+                     </children>
+                  </AnchorPane>
+                  <Button fx:id="collectionStats" layoutX="693.0" layoutY="20.0" mnemonicParsing="false" onAction="#collectionStatistics" prefHeight="39.0" prefWidth="118.0" text="STATISTICS" AnchorPane.leftAnchor="693.0" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="20.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
-            <AnchorPane fx:id="paneDocumento" prefHeight="451.0" prefWidth="543.0">
+
+            <!-- Pane 3: Document View -->
+            <AnchorPane fx:id="paneDocumento" prefHeight="700.0" prefWidth="900.0" styleClass="anchor-pane" visible="false">
                <children>
-                  <TextArea fx:id="corpoDocumento" layoutX="57.0" layoutY="248.0" prefHeight="306.0" prefWidth="543.0" wrapText="true" prefColumnCount="20" />
-                  <Button fx:id="chiudiDocumento" layoutX="301.0" layoutY="516.0" mnemonicParsing="false" onAction="#chiudiDocumento" text="CLOSE">
+                  <TextArea fx:id="corpoDocumento" editable="false" focusTraversable="false" layoutX="26.0" layoutY="78.0" prefHeight="593.0" prefWidth="591.0" styleClass="text-area" wrapText="true" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="285.0" AnchorPane.topAnchor="78.0" />
+                  <Button fx:id="chiudiDocumento" focusTraversable="false" layoutX="26.0" layoutY="30.0" mnemonicParsing="false" onAction="#chiudiDocumento" prefHeight="29.0" prefWidth="71.0" styleClass="transparent-button" text="CLOSE">
                      <font>
-                        <Font size="13.0" />
-                     </font></Button>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <Label fx:id="documentTitleLabel" focusTraversable="false" layoutX="100.0" layoutY="25.0" prefHeight="39.0" prefWidth="441.0" styleClass="title-label" text="TESTO DOCUMENTO" AnchorPane.rightAnchor="285.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <AnchorPane layoutX="629.0" layoutY="79.0" prefHeight="596.0" prefWidth="245.0" styleClass="anchor" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="629.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="78.0">
+                     <children>
+                        <Label fx:id="statisticheDocumentoLabel" alignment="TOP_CENTER" layoutX="37.0" prefHeight="297.0" prefWidth="194.0" styleClass="stats-label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0" />
+                     </children>
+                  </AnchorPane>
+                  <Button layoutX="693.0" layoutY="26.0" mnemonicParsing="false" onAction="#statisticheDocumento" prefHeight="39.0" prefWidth="118.0" text="STATISTICS" AnchorPane.bottomAnchor="638.0" AnchorPane.leftAnchor="693.0" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="20.0">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
          </children>

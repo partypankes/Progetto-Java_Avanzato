@@ -9,6 +9,7 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.stage.Stage;
 
 import java.util.Objects;
@@ -18,14 +19,16 @@ import java.util.Objects;
  * @author gruppo_02
  */
 public class MySimpleIRTool extends Application {
-    
+
     @Override
     public void start(Stage stage) throws Exception {
         Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("FXMLDocument.fxml")));
-        
+        Image icon = new Image(Objects.requireNonNull(getClass().getResourceAsStream("icon.png")));
         Scene scene = new Scene(root);
-        
+        scene.getStylesheets().add(Objects.requireNonNull(getClass().getResource("styles.css")).toExternalForm());
+        stage.getIcons().add(icon);
         stage.setScene(scene);
+        stage.setResizable(false);
         stage.show();
     }
 

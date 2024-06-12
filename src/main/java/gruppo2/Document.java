@@ -1,38 +1,27 @@
 package gruppo2;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
-
-public class Document {
-    private final String title;
-    private final String document_text;
+import java.io.Serializable;
 
 
-    public Document(String title, String documentText) {
-        this.title = title;
+/**
+ * Rappresenta un documento con un nome file, un titolo e un testo del documento.
+ */
+public record Document(String filename, String title, String document_text) implements Comparable<Document>, Serializable {
 
-        document_text = documentText;
-    }
-
-    public Document(String title) { // l'ho inizializzato per fare la prova
-        this.title = title;
-        document_text = null;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public String getDocument_text() {
-        return document_text;
-    }
-
-
+    /**
+     * Confronta questo documento con un altro documento.
+     *
+     * @param other L'altro documento da confrontare.
+     * @return un valore negativo, zero o un valore positivo se questo documento
+     * è rispettivamente minore, uguale o maggiore dell'altro documento.
+     */
     @Override
-    public String toString() {
-        return "Document{" +
-                "title='" + title + '\'' +
-                '}';
+    public int compareTo(Document other) {
+        int titleComparison = this.title.compareTo(other.title());
+        if (titleComparison != 0) {
+            return titleComparison;
+        } else {
+            return this.document_text.compareTo(other.document_text());
+        }
     }
 }
