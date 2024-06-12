@@ -44,24 +44,21 @@
     -fx-background-color: transparent;
 }
 
-/* Table view */
 .table-view {
     -fx-border-color: #1A73E8;
     -fx-border-radius: 20;
     -fx-border-width: 1;
-    -fx-padding: 5;
-    -fx-background-insets: 3;
-    -fx-background-color: white;
+    -fx-padding: 10 !important;
+    -fx-background-color: #FFFFFF !important;
 }
 
 .table-view .column-header,
 .table-view .column-header-background {
-    -fx-background-color: #699def;
-    -fx-padding: 0;
-}
-
-.table-view .column-header .label {
-    -fx-text-fill: #FFFFFF; /* Colore del testo */
+    -fx-background-color: white !important;
+    -fx-padding: -25;
+    -fx-start-margin: 0;
+    -fx-background-radius: 20 !important;
+    -fx-border-radius: 20 !important;
 }
 
 .table-view .table-row-cell {
@@ -126,6 +123,7 @@
 /* Scrollbar personalizzata */
 .table-view .scroll-bar {
     -fx-background-color: #699def;
+    -fx-max-width: 20 px;
 }
 
 .table-view .scroll-bar .thumb {
@@ -140,7 +138,7 @@
 
 .table-view .scroll-bar .increment-button,
 .table-view .scroll-bar .decrement-button {
-    -fx-background-color: #699def;
+    -fx-background-color: transparent;
 }
 
 .table-view .scroll-bar .increment-arrow,

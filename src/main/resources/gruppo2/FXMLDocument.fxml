@@ -41,7 +41,7 @@
                <children>
                   <TableView fx:id="tableView" focusTraversable="false" layoutY="104.0" prefHeight="593.0" prefWidth="616.0" styleClass="table-view" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="285.0" AnchorPane.topAnchor="78.0">
                      <columns>
-                        <TableColumn fx:id="titleColumn" editable="false" prefWidth="624.0" sortable="false" styleClass="table-column" text="DOCUMENTS" />
+                        <TableColumn fx:id="titleColumn" editable="false" prefWidth="624.0" sortable="false" />
                      </columns>
                   </TableView>
                   <TextField fx:id="queryTf" focusTraversable="false" layoutX="26.0" layoutY="14.0" prefHeight="50.0" prefWidth="441.0" promptText="Write your query..." styleClass="round-text-field" AnchorPane.bottomAnchor="636.0" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="14.0">
