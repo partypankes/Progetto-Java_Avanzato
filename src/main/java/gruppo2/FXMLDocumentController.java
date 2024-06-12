@@ -302,7 +302,7 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public void chiudiDocumento() {
         statisticheDocumentoLabel.setText("");
-        isFirstClick1 = !isFirstClick1;
+        isFirstClick1 = true;
         paneDocumento.setVisible(false);
         pane2.setVisible(true);
     }
