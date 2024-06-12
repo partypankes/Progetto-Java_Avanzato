@@ -65,6 +65,9 @@ public class FXMLDocumentController implements Initializable {
     private TableView<Document> tableView;
 
     @FXML
+    private Button collectionStats;
+
+    @FXML
     private TableColumn<Document, String> titleColumn;
     private final ObservableList<Document> documents = observableArrayList();
 

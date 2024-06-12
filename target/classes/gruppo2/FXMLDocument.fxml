@@ -37,7 +37,7 @@
             </AnchorPane>
 
             <!-- Pane 2: Query and Results -->
-            <AnchorPane fx:id="pane2" prefHeight="719.0" prefWidth="914.0" styleClass="anchor-pane">
+            <AnchorPane fx:id="pane2" prefHeight="719.0" prefWidth="914.0" styleClass="anchor-pane" visible="false">
                <children>
                   <TableView fx:id="tableView" focusTraversable="false" layoutY="104.0" prefHeight="593.0" prefWidth="616.0" styleClass="table-view" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="285.0" AnchorPane.topAnchor="78.0">
                      <columns>
@@ -49,7 +49,7 @@
                         <Font size="20.0" />
                      </font>
                   </TextField>
-                  <Button focusTraversable="false" layoutX="695.0" layoutY="104.0" mnemonicParsing="false" onAction="#collectionStatistics" prefHeight="39.0" prefWidth="114.0" styleClass="button" text="STATISTICS" AnchorPane.bottomAnchor="557.0" AnchorPane.leftAnchor="695.0" AnchorPane.rightAnchor="93.0" AnchorPane.topAnchor="104.0">
+                  <Button focusTraversable="false" layoutX="702.0" layoutY="20.0" mnemonicParsing="false" onAction="#collectionStatistics" prefHeight="39.0" prefWidth="114.0" styleClass="button" text="STATISTICS" AnchorPane.bottomAnchor="641.0" AnchorPane.leftAnchor="702.0" AnchorPane.rightAnchor="86.0" AnchorPane.topAnchor="20.0">
                      <font>
                         <Font size="18.0" />
                      </font>
@@ -64,7 +64,11 @@
                         <Label fx:id="collectionStatisticsLabel" alignment="TOP_CENTER" prefHeight="291.0" prefWidth="285.0" styleClass="stats-label" AnchorPane.topAnchor="0.0" />
                      </children>
                   </AnchorPane>
-                  <Button layoutX="686.0" layoutY="21.0" mnemonicParsing="false" text="CHANGE FOLDER" />
+                  <Button layoutX="686.0" layoutY="637.0" mnemonicParsing="false" onAction="#changeFolder" text="CHANGE FOLDER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Button>
                </children>
             </AnchorPane>
 
@@ -72,7 +76,7 @@
             <AnchorPane fx:id="paneDocumento" prefHeight="700.0" prefWidth="900.0" styleClass="anchor-pane" visible="false">
                <children>
                   <TextArea fx:id="corpoDocumento" editable="false" focusTraversable="false" layoutX="26.0" layoutY="78.0" prefHeight="593.0" prefWidth="591.0" styleClass="text-area" wrapText="true" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="285.0" AnchorPane.topAnchor="78.0" />
-                  <Button fx:id="chiudiDocumento" focusTraversable="false" layoutX="751.0" layoutY="30.0" mnemonicParsing="false" onAction="#chiudiDocumento" prefHeight="29.0" prefWidth="71.0" styleClass="transparent-button" text="CLOSE">
+                  <Button fx:id="chiudiDocumento" focusTraversable="false" layoutX="26.0" layoutY="30.0" mnemonicParsing="false" onAction="#chiudiDocumento" prefHeight="29.0" prefWidth="71.0" styleClass="transparent-button" text="CLOSE">
                      <font>
                         <Font size="14.0" />
                      </font>
@@ -82,7 +86,7 @@
                         <Font size="18.0" />
                      </font>
                   </Label>
-                  <Button focusTraversable="false" layoutX="694.0" layoutY="103.0" mnemonicParsing="false" onAction="#statisticheDocumento" styleClass="button" text="STATISTICS" AnchorPane.bottomAnchor="557.0" AnchorPane.leftAnchor="695.0" AnchorPane.rightAnchor="93.0" AnchorPane.topAnchor="104.0">
+                  <Button focusTraversable="false" layoutX="703.0" layoutY="78.0" mnemonicParsing="false" onAction="#statisticheDocumento" styleClass="button" text="STATISTICS" AnchorPane.bottomAnchor="583.0" AnchorPane.leftAnchor="703.0" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="78.0">
                      <font>
                         <Font size="18.0" />
                      </font>
