@@ -95,11 +95,12 @@
 
 /* Text areas */
 .text-area {
+    -fx-border-color: #1A73E8;
     -fx-background-radius: 20;
+    -fx-border-radius: 20;
     -fx-background-color: #FFFFFF;
     -fx-text-fill: #1A73E8;
     -fx-padding: 5;
-    -fx-border-color: transparent;
 }
 
 .no-border {
