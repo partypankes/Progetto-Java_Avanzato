@@ -32,8 +32,20 @@
                               <Font size="19.0" />
                            </font>
                         </Button>
+                        <Label fx:id="stopwordsLabel" focusTraversable="false" styleClass="header-label" text="And If you want a stopwords file!" />
+                        <Button mnemonicParsing="false" onAction="#loadStopwords" styleClass="round-button" text="Stopwords" />
                      </children>
                   </VBox>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="loadingPane" prefHeight="200.0" prefWidth="200.0" visible="false">
+               <children>
+                  <ProgressIndicator layoutX="347.0" layoutY="300.0" prefHeight="101.0" prefWidth="207.0" />
+                  <Label layoutX="410.0" layoutY="239.0" text="Loading">
+                     <font>
+                        <Font size="24.0" />
+                     </font>
+                  </Label>
                </children>
             </AnchorPane>
 

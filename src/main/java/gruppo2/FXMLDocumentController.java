@@ -21,6 +21,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.DirectoryChooser;
+import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.stage.WindowEvent;
 import javafx.util.Callback;
@@ -50,10 +51,16 @@ public class FXMLDocumentController implements Initializable {
     private Label documentTitleLabel;
 
     @FXML
+    private Label stopwordsLabel;
+
+    @FXML
     private AnchorPane pane1;
 
     @FXML
     private AnchorPane pane2;
+
+    @FXML
+    private AnchorPane loadingPane;
 
     @FXML
     private AnchorPane paneDocumento;
@@ -93,7 +100,7 @@ public class FXMLDocumentController implements Initializable {
 
     private static final Map<Document, Map<String, Integer>> resultMapByDocument = new ConcurrentHashMap<>();
 
-    private static List<String> stopwords;
+    private static List<String> stopwords = new ArrayList<>();
 
     private boolean isFirstClick1 = true;
 
@@ -108,11 +115,6 @@ public class FXMLDocumentController implements Initializable {
             }
         });
         tableView.setItems(documents);
-        try {
-            loadStopwords();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
         selezionaDocumento();
         collectionStats.setDisable(true);
     }
@@ -178,15 +180,16 @@ public class FXMLDocumentController implements Initializable {
 
 
     // Carica le stopwords da un file e le inserisce in una lista
+    @FXML
     public void loadStopwords() throws IOException {
-        File stopwordsFile = new File("stopwords-it.txt");
+        FileChooser fileChooser = new FileChooser();
+        fileChooser.setTitle("Open Resource File");
+        fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
 
+        File stopwordsFile = fileChooser.showOpenDialog(pane1.getScene().getWindow());
         if (stopwordsFile.exists()) {
             stopwords = Files.readAllLines(stopwordsFile.toPath());
-        } else {
-            // Se il file non esiste, la lista di stopwords sarà vuota
-            stopwords = new ArrayList<>();
-            System.out.println("Stopwords file not found.");
+            stopwordsLabel.setText(stopwordsFile.getName());
         }
     }
 
@@ -218,7 +221,7 @@ public class FXMLDocumentController implements Initializable {
             List<Document> documentsToUpdate = folderService.getValue();
             documents.setAll(documentsToUpdate);
             pane1.setVisible(false);
-            pane2.setVisible(true);
+            loadingPane.setVisible(true);
             createVocabularyAndVectors(documents.stream().toList());
         });
 
@@ -258,6 +261,8 @@ public class FXMLDocumentController implements Initializable {
 
         vocabularyService.setOnSucceeded(event -> {
             collectionStats.setDisable(false);
+            loadingPane.setVisible(false);
+            pane2.setVisible(true);
         });
         vocabularyService.setOnFailed(event -> {
             vocabularyService.getException().printStackTrace();
