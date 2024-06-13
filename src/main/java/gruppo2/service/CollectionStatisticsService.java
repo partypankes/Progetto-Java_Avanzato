@@ -42,7 +42,7 @@ public class CollectionStatisticsService extends Service<String> {
                 Map<String, Integer> globalWordCount = new HashMap<>();
 
                 for (Document doc : documents) {
-                    String testoDocumento = doc.document_text().replaceAll("'", " ");
+                    String testoDocumento = doc.documentText().replaceAll("'", " ");
 
                     Map<String, Integer> documentVector = new HashMap<>(resultMapByDocument.get(doc)); // Crea una copia
 
@@ -80,10 +80,10 @@ public class CollectionStatisticsService extends Service<String> {
 
                 // Creazione del messaggio di statistica
                 StringBuilder statsMessage = new StringBuilder();
-                statsMessage.append("\u2022 ").append("Numero di parole: ").append(totalWords).append("\n\n");
-                statsMessage.append("\u2022 ").append("Numero di frasi: ").append(sentenceCount).append("\n\n");
-                statsMessage.append("\u2022 ").append("Numero di documenti: ").append(documentCount).append("\n\n");
-                statsMessage.append("\u2022 ").append("Le 5 parole più comuni:\n");
+                statsMessage.append("• ").append("Numero di parole: ").append(totalWords).append("\n\n");
+                statsMessage.append("• ").append("Numero di frasi: ").append(sentenceCount).append("\n\n");
+                statsMessage.append("• ").append("Numero di documenti: ").append(documentCount).append("\n\n");
+                statsMessage.append("• ").append("Le 5 parole più comuni:\n");
                 commonWords.forEach(entry -> statsMessage.append("   -  ").append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
 
                 return statsMessage.toString();

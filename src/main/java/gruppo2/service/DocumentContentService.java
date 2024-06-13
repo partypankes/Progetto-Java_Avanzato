@@ -49,7 +49,7 @@ public class DocumentContentService extends Service<Void> {
             @Override
             protected Void call() {
                 // Carica il contenuto del documento su un thread separato
-                String documentText = document.document_text();
+                String documentText = document.documentText();
                 String documentTitle = document.title().toUpperCase();
 
                 // Aggiorna l'interfaccia utente sul thread principale

@@ -6,7 +6,7 @@ import java.io.Serializable;
 /**
  * Rappresenta un documento con un nome file, un titolo e un testo del documento.
  */
-public record Document(String filename, String title, String document_text) implements Comparable<Document>, Serializable {
+public record Document(String filename, String title, String documentText) implements Comparable<Document>, Serializable {
 
     /**
      * Confronta questo documento con un altro documento.
@@ -21,7 +21,7 @@ public record Document(String filename, String title, String document_text) impl
         if (titleComparison != 0) {
             return titleComparison;
         } else {
-            return this.document_text.compareTo(other.document_text());
+            return this.documentText.compareTo(other.documentText());
         }
     }
 }

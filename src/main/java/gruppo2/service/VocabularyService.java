@@ -41,7 +41,7 @@ public class VocabularyService extends Service<Void> {
             @Override
             protected Void call() {
                 for (Document document : documents) {
-                    String cleanedText = cleanAndRemoveStopwords(document.document_text());
+                    String cleanedText = cleanAndRemoveStopwords(document.documentText());
                     String cleanedTitle = cleanAndRemoveStopwords(document.title());
                     addWordsToVocabulary(cleanedText + " " + cleanedTitle);
                     Map<String, Integer> documentVector = textToVector(cleanedText, cleanedTitle);

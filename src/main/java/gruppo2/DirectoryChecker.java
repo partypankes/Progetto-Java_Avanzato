@@ -72,8 +72,8 @@ public class DirectoryChecker {
     public static void saveCurrentDirPath(String dirPath) {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(DIR_PATH_FILE))) {
             oos.writeObject(dirPath);
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (IOException ignored) {
+
         }
     }
 
@@ -86,9 +86,9 @@ public class DirectoryChecker {
     public static Map<String, Long> getCurrentState(Path dir) {
         Map<String, Long> state = new HashMap<>();
         try {
-            Files.walkFileTree(dir, new SimpleFileVisitor<Path>() {
+            Files.walkFileTree(dir, new SimpleFileVisitor<>() {
                 @Override
-                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
+                public FileVisitResult visitFile(Path file, BasicFileAttributes attrs){
                     if (file.toString().endsWith(".txt")) {
                         state.put(dir.relativize(file).toString(), attrs.lastModifiedTime().toMillis());
                     }
@@ -96,7 +96,7 @@ public class DirectoryChecker {
                 }
             });
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("file non trovato\n");
         }
         return state;
     }
@@ -157,7 +157,7 @@ public class DirectoryChecker {
         try (ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(STATE_FILE))) {
             oos.writeObject(new DirectoryState(state, documents));
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("file non trovato");
         }
     }
 

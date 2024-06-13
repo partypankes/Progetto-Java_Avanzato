@@ -58,6 +58,7 @@ public class QueryService extends Service<List<Document>> {
                 if (queryText == null || queryText.trim().isEmpty()) {
                     corrispondenzaSimiliarita.clear();
                     filteredDocuments = new ArrayList<>(resultMapByDocument.keySet());
+                    filteredDocuments.sort(Comparator.naturalOrder());
                 } else {
                     String cleanedQuery = cleanAndRemoveStopwords(queryText);
                     Map<String, Integer> queryVector = textToVector(cleanedQuery, "");
