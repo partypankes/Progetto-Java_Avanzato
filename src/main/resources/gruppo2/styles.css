@@ -98,10 +98,22 @@
     -fx-background-radius: 20;
     -fx-background-color: #FFFFFF;
     -fx-text-fill: #1A73E8;
-    -fx-border-color: #1A73E8;
-    -fx-border-radius: 20;
-    -fx-border-width: 1;
     -fx-padding: 5;
+    -fx-border-color: transparent;
+}
+
+.no-border {
+    -fx-border-color: transparent !important;
+    -fx-background-insets: 0 !important;
+}
+
+.text-area:focused {
+    -fx-border-color: transparent !important;
+    -fx-background-insets: 0 !important;
+}
+
+.text-area .content {
+    -fx-background-color: white !important;
 }
 
 /* Labels */
