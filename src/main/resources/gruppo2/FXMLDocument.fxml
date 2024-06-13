@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.image.*?>
-<?import java.lang.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ProgressIndicator?>
@@ -12,19 +8,22 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane styleClass="anchor-pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gruppo2.FXMLDocumentController">
+<AnchorPane styleClass="anchor-pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gruppo2.FXMLDocumentController">
    <children>
       <StackPane prefHeight="700.0" prefWidth="900.0" styleClass="background">
          <children>
             <!-- Pane 1: Folder Selection -->
             <AnchorPane fx:id="pane1" prefHeight="700.0" prefWidth="900.0" styleClass="anchor-pane">
                <children>
-                  <VBox alignment="CENTER" layoutY="96.0" prefHeight="700.0" prefWidth="900.0" spacing="5.0" styleClass="vbox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <VBox alignment="CENTER" layoutX="184.0" layoutY="145.0" prefHeight="529.0" prefWidth="532.0" spacing="5.0" styleClass="vbox" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="184.0" AnchorPane.topAnchor="145.0">
                      <children>
                         <Label focusTraversable="false" styleClass="header-label" text="Before starting you have to select a Folder" />
                         <Label focusTraversable="false" styleClass="header-label" text="and, if you want, a stopwords file!" />
@@ -41,6 +40,9 @@
                                  </font>
                               </Button>
                            </children>
+                           <VBox.margin>
+                              <Insets bottom="100.0" />
+                           </VBox.margin>
                         </HBox>
                         <Label styleClass="header-label" text="Now you can start" />
                         <Button mnemonicParsing="false" onAction="#start" styleClass="round-button" text="START">

@@ -51,9 +51,6 @@ public class FXMLDocumentController implements Initializable {
     private Label documentTitleLabel;
 
     @FXML
-    private Label stopwordsLabel;
-
-    @FXML
     private AnchorPane pane1;
 
     @FXML
@@ -189,9 +186,9 @@ public class FXMLDocumentController implements Initializable {
         fileChooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("Text Files", "*.txt"));
 
         File stopwordsFile = fileChooser.showOpenDialog(pane1.getScene().getWindow());
+        System.out.println(stopwordsFile);
         if (stopwordsFile.exists()) {
             stopwords = Files.readAllLines(stopwordsFile.toPath());
-            stopwordsLabel.setText(stopwordsFile.getName());
         }
     }
 
