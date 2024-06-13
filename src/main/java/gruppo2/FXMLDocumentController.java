@@ -106,6 +106,8 @@ public class FXMLDocumentController implements Initializable {
 
     private boolean isFirstClick2 = true;
 
+    private boolean selected = false;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         titleColumn.setCellValueFactory(new Callback<TableColumn.CellDataFeatures<Document, String>, ObservableValue<String>>() {
@@ -220,15 +222,23 @@ public class FXMLDocumentController implements Initializable {
         folderService.setOnSucceeded(event1 -> {
             List<Document> documentsToUpdate = folderService.getValue();
             documents.setAll(documentsToUpdate);
-            pane1.setVisible(false);
-            loadingPane.setVisible(true);
-            createVocabularyAndVectors(documents.stream().toList());
+            selected = true;
         });
 
         folderService.setOnFailed(event1 -> {
             folderService.getException().printStackTrace();
         });
         return folderService;
+    }
+
+    @FXML
+    private void start(){
+        if(selected) {
+            pane1.setVisible(false);
+            createVocabularyAndVectors(documents.stream().toList());
+            loadingPane.setVisible(true);
+            selected = false;
+        }
     }
 
     static Document getDocument(File file) {

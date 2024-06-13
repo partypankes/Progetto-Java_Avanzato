@@ -24,16 +24,29 @@
             <!-- Pane 1: Folder Selection -->
             <AnchorPane fx:id="pane1" prefHeight="700.0" prefWidth="900.0" styleClass="anchor-pane">
                <children>
-                  <VBox alignment="CENTER" layoutY="96.0" prefHeight="700.0" prefWidth="900.0" spacing="30.0" styleClass="vbox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                  <VBox alignment="CENTER" layoutY="96.0" prefHeight="700.0" prefWidth="900.0" spacing="5.0" styleClass="vbox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                      <children>
                         <Label focusTraversable="false" styleClass="header-label" text="Before starting you have to select a Folder" />
-                        <Button focusTraversable="false" mnemonicParsing="false" onAction="#folderSelection" styleClass="round-button" text="Start!">
+                        <Label focusTraversable="false" styleClass="header-label" text="and, if you want, a stopwords file!" />
+                        <HBox alignment="CENTER" spacing="30.0">
+                           <children>
+                              <Button focusTraversable="false" mnemonicParsing="false" onAction="#folderSelection" styleClass="round-button" text="FOLDER">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#loadStopwords" styleClass="round-button" text="STOPWORDS">
+                                 <font>
+                                    <Font size="17.0" />
+                                 </font>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <Label styleClass="header-label" text="Now you can start" />
+                        <Button mnemonicParsing="false" onAction="#start" styleClass="round-button" text="START">
                            <font>
-                              <Font size="19.0" />
-                           </font>
-                        </Button>
-                        <Label fx:id="stopwordsLabel" focusTraversable="false" styleClass="header-label" text="And If you want a stopwords file!" />
-                        <Button mnemonicParsing="false" onAction="#loadStopwords" styleClass="round-button" text="Stopwords" />
+                              <Font size="20.0" />
+                           </font></Button>
                      </children>
                   </VBox>
                </children>
