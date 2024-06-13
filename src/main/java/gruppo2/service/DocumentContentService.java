@@ -50,7 +50,7 @@ public class DocumentContentService extends Service<Void> {
             protected Void call() {
                 // Carica il contenuto del documento su un thread separato
                 String documentText = document.document_text();
-                String documentTitle = document.title();
+                String documentTitle = document.title().toUpperCase();
 
                 // Aggiorna l'interfaccia utente sul thread principale
                 Platform.runLater(() -> {

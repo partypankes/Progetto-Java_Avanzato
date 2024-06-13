@@ -75,22 +75,22 @@ public class DocumentStatisticsService extends Service<String> {
                 }
 
                 StringBuilder statsMessage = new StringBuilder();
-                statsMessage.append("Numero totale di parole: ").append(totalWords).append("\n");
-                statsMessage.append("Numero di parole uniche: ").append(uniqueWords).append("\n");
-                statsMessage.append("Numero di frasi: ").append(sentenceCount).append("\n");
+                statsMessage.append("\u2022 ").append("Numero di parole: ").append(totalWords).append("\n\n");
+                statsMessage.append("\u2022 ").append("Numero di parole \n  uniche: ").append(uniqueWords).append("\n\n");
+                statsMessage.append("\u2022 ").append("Numero di frasi: ").append(sentenceCount).append("\n\n");
                 if(commonWords.isEmpty()){
-                    statsMessage.append("Nessuna Parola Presente").append(uniqueWords).append("\n");
+                    statsMessage.append("Nessuna parola comune presente").append(uniqueWords).append("\n");
                 } else {
-                    statsMessage.append("Le 5 parole più comuni sono:\n");
-                    commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
+                    statsMessage.append("\u2022 ").append("Le 5 parole più comuni: \n");
+                    commonWords.forEach(entry -> statsMessage.append("   - ").append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
                 }
 
 
                 if (corrispondenzaSimiliarita.get(document) == null) {
-                    statsMessage.append("Percentuale di similaritá rispetto alla \nquery: non definita\n");
+                    statsMessage.append("\n \u2022 ").append("Percentuale di similaritá rispetto \n  alla query: non definita\n");
                 } else {
                     double percentuale = corrispondenzaSimiliarita.get(document) * 100;
-                    statsMessage.append("Percentuale di similaritá rispetto alla query: \n").append(Math.round(percentuale)).append("%\n");
+                    statsMessage.append("\n \u2022 ").append("Percentuale di similaritá rispetto \n  alla query: ").append(Math.round(percentuale)).append("%\n");
                 }
 
                 return statsMessage.toString();

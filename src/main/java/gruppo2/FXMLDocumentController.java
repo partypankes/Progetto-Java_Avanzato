@@ -70,7 +70,6 @@ public class FXMLDocumentController implements Initializable {
 
     @FXML
     private TextArea corpoDocumento;
-
     @FXML
     private Label statisticheDocumentoLabel;
 
@@ -81,28 +80,16 @@ public class FXMLDocumentController implements Initializable {
     private TableView<Document> tableView;
 
     @FXML
-    private Button collectionStats;
-
-    @FXML
     private TableColumn<Document, String> titleColumn = new TableColumn<>("Title");
 
     @FXML
     private ImageView unisaIcon;
 
     private final ObservableList<Document> documents = observableArrayList();
-
     private static final ConcurrentMap<String, Integer> vocabolario = new ConcurrentHashMap<>();
-
     private static final Map<Document, Double> corrispondenzaSimiliarita = new TreeMap<>(Collections.reverseOrder());
-
     private static final Map<Document, Map<String, Integer>> resultMapByDocument = new ConcurrentHashMap<>();
-
     private static List<String> stopwords = new ArrayList<>();
-
-    private boolean isFirstClick1 = true;
-
-    private boolean isFirstClick2 = true;
-
     private boolean selected = false;
 
     @Override
@@ -115,7 +102,6 @@ public class FXMLDocumentController implements Initializable {
         });
         tableView.setItems(documents);
         selezionaDocumento();
-        collectionStats.setDisable(true);
     }
 
 
@@ -207,6 +193,7 @@ public class FXMLDocumentController implements Initializable {
 
             // Avvia il Service
             folderService.restart();
+
         } else {
             System.out.println("Operazione annullata");
         }
@@ -267,13 +254,12 @@ public class FXMLDocumentController implements Initializable {
         VocabularyService vocabularyService = new VocabularyService(documents, resultMapByDocument);
 
         vocabularyService.setOnSucceeded(event -> {
-            collectionStats.setDisable(false);
             loadingPane.setVisible(false);
             pane2.setVisible(true);
+            showCollectionStatistics(documents);
         });
         vocabularyService.setOnFailed(event -> {
             vocabularyService.getException().printStackTrace();
-            collectionStats.setDisable(false);
         });
 
         // Avvia il Service
@@ -313,6 +299,7 @@ public class FXMLDocumentController implements Initializable {
                 Document documentoSelezionato = tableView.getSelectionModel().getSelectedItem();
                 if (documentoSelezionato != null) {
                     mostraContenutoDocumento(documentoSelezionato);
+                    mostrastatisticheDocumento(documentoSelezionato);
                 }
             }
         });
@@ -335,23 +322,8 @@ public class FXMLDocumentController implements Initializable {
     @FXML
     public void chiudiDocumento() {
         statisticheDocumentoLabel.setText("");
-        isFirstClick1 = true;
         paneDocumento.setVisible(false);
         pane2.setVisible(true);
-    }
-
-
-    @FXML
-    public void statisticheDocumento(){
-        Document documentoSelezionato = tableView.getSelectionModel().getSelectedItem();
-          if (isFirstClick1) {
-              if (documentoSelezionato != null) {
-                  mostrastatisticheDocumento(documentoSelezionato);
-              }
-        } else {
-            statisticheDocumentoLabel.setText("");
-        }
-        isFirstClick1 = !isFirstClick1;
     }
 
     // Calcola le statistiche sul documento selezionato
@@ -375,18 +347,6 @@ public class FXMLDocumentController implements Initializable {
 
 
     // Calcola le statistiche sull'intera collezione di documenti
-    @FXML
-    private void collectionStatistics(){
-        ObservableList<Document> currentDocuments = tableView.getItems();
-        if (isFirstClick2) {
-            statistics1.setVisible(true);
-            showCollectionStatistics(currentDocuments);
-        } else {
-            statistics1.setVisible(false);
-        }
-        isFirstClick2 = !isFirstClick2;
-    }
-
     private void showCollectionStatistics(List<Document> documents) {
         // Crea e configura il CollectionStatisticsService
         CollectionStatisticsService collectionStatisticsService = new CollectionStatisticsService(documents, resultMapByDocument);

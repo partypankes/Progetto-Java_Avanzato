@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -16,14 +22,19 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane styleClass="anchor-pane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gruppo2.FXMLDocumentController">
+<AnchorPane styleClass="anchor-pane" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gruppo2.FXMLDocumentController">
    <children>
       <StackPane prefHeight="700.0" prefWidth="900.0" styleClass="background">
          <children>
             <!-- Pane 1: Folder Selection -->
             <AnchorPane fx:id="pane1" prefHeight="700.0" prefWidth="900.0" styleClass="anchor-pane">
                <children>
-                  <VBox alignment="CENTER" layoutX="184.0" layoutY="145.0" prefHeight="529.0" prefWidth="532.0" spacing="5.0" styleClass="vbox" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="184.0" AnchorPane.topAnchor="145.0">
+                  <ImageView fx:id="unisaIcon" fitHeight="200.0" fitWidth="200.0" layoutX="337.0" layoutY="105.0" onMouseClicked="#imageTest" pickOnBounds="true" preserveRatio="true" styleClass="imageDiem" AnchorPane.bottomAnchor="515.9756088256836" AnchorPane.leftAnchor="337.0" AnchorPane.rightAnchor="363.0" AnchorPane.topAnchor="105.0">
+                     <image>
+                        <Image url="@images.png" />
+                     </image>
+                  </ImageView>
+                  <VBox alignment="CENTER" layoutX="184.0" layoutY="256.0" prefHeight="418.0" prefWidth="532.0" spacing="5.0" styleClass="vbox" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="184.0" AnchorPane.rightAnchor="184.0" AnchorPane.topAnchor="145.0">
                      <children>
                         <Label focusTraversable="false" styleClass="header-label" text="Before starting you have to select a Folder" />
                         <Label focusTraversable="false" styleClass="header-label" text="and, if you want, a stopwords file!" />
@@ -55,7 +66,7 @@
             </AnchorPane>
             <AnchorPane fx:id="loadingPane" prefHeight="200.0" prefWidth="200.0" visible="false">
                <children>
-                  <ProgressIndicator layoutX="347.0" layoutY="300.0" prefHeight="101.0" prefWidth="207.0" />
+                  <ProgressIndicator layoutX="300.0" layoutY="300.0" prefHeight="101.0" prefWidth="207.0" />
                   <Label layoutX="410.0" layoutY="239.0" text="Loading">
                      <font>
                         <Font size="24.0" />
@@ -72,7 +83,7 @@
                         <TableColumn fx:id="titleColumn" editable="false" prefWidth="624.0" sortable="false" />
                      </columns>
                   </TableView>
-                  <TextField fx:id="queryTf" focusTraversable="false" layoutX="74.0" layoutY="15.0" prefHeight="50.0" prefWidth="425.0" promptText="Write your query..." styleClass="round-text-field" AnchorPane.bottomAnchor="635.0" AnchorPane.leftAnchor="74.0" AnchorPane.topAnchor="15.0">
+                  <TextField fx:id="queryTf" focusTraversable="false" layoutX="74.0" layoutY="15.0" prefHeight="50.0" prefWidth="425.0" promptText="Write your query..." styleClass="round-text-field" AnchorPane.bottomAnchor="635.0" AnchorPane.leftAnchor="26.0" AnchorPane.topAnchor="15.0">
                      <font>
                         <Font size="20.0" />
                      </font>
@@ -84,23 +95,14 @@
                   </Button>
                   <AnchorPane layoutX="629.0" layoutY="78.0" prefHeight="596.0" prefWidth="245.0" styleClass="anchor" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="629.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="78.0">
                      <children>
-                        <AnchorPane fx:id="statistics1" layoutX="30.0" layoutY="3.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                           <children>
-                              <Label fx:id="collectionStatisticsLabel" alignment="TOP_CENTER" prefHeight="291.0" prefWidth="254.0" styleClass="stats-label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0" />
-                           </children>
-                        </AnchorPane>
+                        <Label fx:id="collectionStatisticsLabel" alignment="TOP_LEFT" prefHeight="291.0" prefWidth="254.0" styleClass="stats-label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0" />
                      </children>
                   </AnchorPane>
-                  <Button fx:id="collectionStats" disable="true" layoutX="693.0" layoutY="20.0" mnemonicParsing="false" onAction="#collectionStatistics" prefHeight="39.0" prefWidth="118.0" text="STATISTICS" AnchorPane.leftAnchor="693.0" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="20.0">
+                  <Label layoutX="693.0" layoutY="26.0" styleClass="s-label" text="STATISTICS" AnchorPane.bottomAnchor="638.0" AnchorPane.leftAnchor="693.0" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="20.0">
                      <font>
                         <Font size="18.0" />
                      </font>
-                  </Button>
-                  <ImageView fx:id="unisaIcon" fitHeight="24.0" fitWidth="64.0" layoutX="6.0" layoutY="28.0" onMouseClicked="#imageTest" pickOnBounds="true" preserveRatio="true" styleClass="imageDiem">
-                     <image>
-                        <Image url="@images.png" />
-                     </image>
-                  </ImageView>
+                  </Label>
                </children>
             </AnchorPane>
 
@@ -113,21 +115,21 @@
                         <Font size="14.0" />
                      </font>
                   </Button>
-                  <Label fx:id="documentTitleLabel" focusTraversable="false" layoutX="100.0" layoutY="25.0" prefHeight="39.0" prefWidth="441.0" styleClass="title-label" text="TESTO DOCUMENTO" AnchorPane.rightAnchor="285.0">
+                  <Label fx:id="documentTitleLabel" focusTraversable="false" layoutX="100.0" layoutY="25.0" prefHeight="39.0" prefWidth="509.0" styleClass="title-label" text="TESTO DOCUMENTO" AnchorPane.rightAnchor="285.0">
                      <font>
                         <Font size="18.0" />
                      </font>
                   </Label>
                   <AnchorPane layoutX="629.0" layoutY="79.0" prefHeight="596.0" prefWidth="245.0" styleClass="anchor" AnchorPane.bottomAnchor="26.0" AnchorPane.leftAnchor="629.0" AnchorPane.rightAnchor="26.0" AnchorPane.topAnchor="78.0">
                      <children>
-                        <Label fx:id="statisticheDocumentoLabel" alignment="TOP_CENTER" layoutX="37.0" prefHeight="297.0" prefWidth="194.0" styleClass="stats-label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0" />
+                        <Label fx:id="statisticheDocumentoLabel" alignment="TOP_LEFT" layoutX="37.0" prefHeight="297.0" prefWidth="194.0" styleClass="stats-label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0" />
                      </children>
                   </AnchorPane>
-                  <Button layoutX="693.0" layoutY="26.0" mnemonicParsing="false" onAction="#statisticheDocumento" prefHeight="39.0" prefWidth="118.0" text="STATISTICS" AnchorPane.bottomAnchor="638.0" AnchorPane.leftAnchor="693.0" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="20.0">
+                  <Label layoutX="693.0" layoutY="26.0" styleClass="s-label" text="STATISTICS" AnchorPane.bottomAnchor="638.0" AnchorPane.leftAnchor="693.0" AnchorPane.rightAnchor="89.0" AnchorPane.topAnchor="20.0">
                      <font>
                         <Font size="18.0" />
                      </font>
-                  </Button>
+                  </Label>
                </children>
             </AnchorPane>
          </children>

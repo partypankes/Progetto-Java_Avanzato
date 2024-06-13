@@ -80,11 +80,11 @@ public class CollectionStatisticsService extends Service<String> {
 
                 // Creazione del messaggio di statistica
                 StringBuilder statsMessage = new StringBuilder();
-                statsMessage.append("Numero totale di parole: ").append(totalWords).append("\n");
-                statsMessage.append("Numero di frasi: ").append(sentenceCount).append("\n");
-                statsMessage.append("Numero di documenti: ").append(documentCount).append("\n");
-                statsMessage.append("Le 5 parole più comuni:\n");
-                commonWords.forEach(entry -> statsMessage.append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
+                statsMessage.append("\u2022 ").append("Numero di parole: ").append(totalWords).append("\n\n");
+                statsMessage.append("\u2022 ").append("Numero di frasi: ").append(sentenceCount).append("\n\n");
+                statsMessage.append("\u2022 ").append("Numero di documenti: ").append(documentCount).append("\n\n");
+                statsMessage.append("\u2022 ").append("Le 5 parole più comuni:\n");
+                commonWords.forEach(entry -> statsMessage.append("   -  ").append(entry.getKey()).append(": ").append(entry.getValue()).append("\n"));
 
                 return statsMessage.toString();
             }
