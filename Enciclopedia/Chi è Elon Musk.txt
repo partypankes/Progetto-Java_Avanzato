@@ -1,0 +1,165 @@
+Chi è Elon Musk?
+Elon Reeve Musk[1] (Pretoria, 28 giugno 1971) è un imprenditore sudafricano con cittadinanza canadese naturalizzato statunitense.
+
+Ricopre i ruoli di fondatore, amministratore delegato e direttore tecnico della compagnia aerospaziale SpaceX,[2] fondatore di The Boring Company,[3] cofondatore di Neuralink e OpenAI,[4] amministratore delegato e product architect della multinazionale automobilistica Tesla,[5] proprietario e presidente di X.[6] Ha inoltre proposto un sistema di trasporto superveloce conosciuto come Hyperloop, tuttora in fase di sviluppo.[7]
+
+Musk ha affermato che l'obiettivo di Tesla e SpaceX si concentra sull'ideale di migliorare il mondo e l'umanità.[8] Uno dei suoi scopi è anche quello di ridurre il riscaldamento globale tramite l'utilizzo di energie rinnovabili e ridurre il rischio dell'estinzione umana o di catastrofi naturali stabilendo una colonia umana su Marte.[9] Tramite Starlink, una costellazione di satelliti prodotta e gestita da SpaceX, vorrebbe invece fornire Internet ad alta velocità e bassa latenza a tutto il pianeta.[10]
+
+Secondo Forbes, al 19 febbraio 2024, con un patrimonio stimato di 205,2 miliardi di dollari, risulta essere la seconda persona più ricca del mondo dopo Bernard Arnault.[11][12]
+
+Elon Musk è nato il 28 giugno 1971 a Pretoria, in Sudafrica,[13] da Maye Haldeman ed Errol Musk.[14][15] La madre è una dietologa e modella canadese,[16] mentre il padre è un ingegnere elettromeccanico, pilota e navigatore sudafricano, ex co-proprietario di una miniera di smeraldi in Zambia.[14][17] Ha un fratello, Kimbal, del 1972, e una sorella, Tosca, del 1974.[18][19][20] La nonna paterna era britannica,[20] mentre il nonno materno era statunitense, del Minnesota.[21] Dopo il divorzio dei suoi genitori nel 1980 Musk ha vissuto principalmente con il padre in Sudafrica, ma ora afferma di aver fatto un grave errore ad aver scelto il padre, soprattutto poiché questi era indifferente verso il bullismo subito dal figlio; infatti da adulto ha poi tagliato i rapporti con lui.[22]
+
+Durante l'infanzia, Musk era un grande lettore;[23] e all'età di 10 anni si appassiona alla programmazione, che impara da solo utilizzando un Commodore VIC-20;[24] a 12 anni vende il codice da lui creato di un videogioco scritto in BASIC, chiamato Blastar, alla rivista chiamata PC and Office Technology per circa 500 US $. Una versione web del gioco[25] esiste tuttora online.[26]
+
+Musk è stato vittima di bullismo per tutta la sua infanzia,[22] ed è finito all'ospedale quando un gruppo di ragazzi l'ha lanciato giù da una rampa di scale per poi picchiarlo fino a fargli perdere conoscenza.[22][23]
+
+Musk ha studiato dapprima in scuole private, frequentando la Waterkloof House Preparatory School inglese e la Bryanston High School;[27] si è successivamente diplomato alla Pretoria Boys High School. Sebbene il padre avesse insistito affinché andasse in college a Pretoria, Elon era determinato a trasferirsi negli Stati Uniti. Come afferma: "Ricordo che pensavo e vedevo che l'America è dove sono possibili grandi cose, più di ogni altra nazione nel mondo."[28] Sapendo che era facile arrivare negli Stati Uniti dal Canada, vi si trasferì nel giugno del 1989, non ancora diciottenne, dopo aver ottenuto la cittadinanza tramite la madre.[29][30]
+
+Università
+All'età di 19 anni, Musk viene accettato alla Queen's University a Kingston, Ontario. Nel 1992, dopo 2 anni alla Queen's University, si trasferisce all'Università della Pennsylvania, dove consegue dapprima un Bachelor of Science in economia, presso la Wharton School of the University of Pennsylvania, e poi un Bachelor of Arts in fisica al College of Arts and Sciences.[31][32]
+
+Nel 1995, all'età di 24 anni, Musk si trasferisce in California per iniziare un dottorato in fisica applicata e scienza dei materiali alla Stanford University, ma si ritirò dopo 2 giorni per inseguire le sue aspirazioni imprenditoriali nelle aree di internet, energia rinnovabile ed esplorazione dello spazio.[33][34] Nel 2002, è diventato cittadino degli USA.
+
+Carriera
+Zip2, X.com e PayPal
+Nel 1995, Elon Musk e suo fratello Kimbal Musk fondarono Zip2, un'azienda di software web, con il denaro raccolto da un piccolo gruppo di angel investor.[22] L'azienda sviluppava e vendeva guide cittadine online per l'industria editoriale di giornali.[35] Musk ottenne dei contratti con The New York Times e il Chicago Tribune[36] e convinse il consiglio di amministrazione a non pianificare un'unione con CitySearch.[37] Mentre era in Zip2, Musk voleva diventare CEO, ma nessun membro del consiglio lo permetteva.[23] Compaq acquisì Zip2 per 307 milioni di $ in denaro[23] e 34 milioni in stock option nel febbraio del 1999.[38] Dalla vendita Musk ricevette 22 milioni di $ per la sua parte del 7%.[23][36]
+
+Nel marzo 1999 Musk investe il ricavato della vendita di Zip2 a Compaq per cofondare X.com, una compagnia di servizi finanziari online e di pagamenti via e-mail. Un anno dopo, la compagnia si fonde con Confinity, dando origine a PayPal. Quando questa viene acquistata da eBay nel 2002 per 1,5 miliardi di dollari, Elon Musk diventa uno degli imprenditori più conosciuti al mondo.
+
+SpaceX
+
+Decollo del Falcon 9
+
+Elon Musk con il presidente Barack Obama alla rampa di lancio del Falcon 9, Cape Canaveral Air Force Station, 2010
+Nel giugno 2002 Musk fonda la sua terza compagnia: Space Exploration Technologies Corporation, nota come SpaceX, di cui è CEO e CTO.[39]
+
+Fin dal primo giorno, l'obiettivo di SpaceX è quello di sviluppare un'architettura per il trasporto interplanetario di massa completamente riutilizzabile. Lo sviluppo di tale architettura, chiamata inizialmente BFR, è iniziato internamente nel 2014, venendo presentato pubblicamente all'International Astronautical Congress del 2016. Attualmente l'architettura è in sviluppo, con diversi prototipi di base già all'attivo, sotto il nome di Starship, presso Boca Chica TX, sito dove SpaceX sta costruendo le infrastrutture necessarie per produrre, testare e lanciare il veicolo.
+
+SpaceX non è solo impegnata nello sviluppo interno dell'architettura Starship, ma si occupa anche del rifornimento della Stazione Spaziale Internazionale per conto della NASA (programma CRS) tramite il lanciatore Falcon 9 e la capsula Dragon, nonché del lancio di satelliti per conto di privati, tramite Falcon 9 e Falcon Heavy.
+
+Tesla
+
+Una Tesla Roadster portata nello spazio con il volo inaugurale del Falcon Heavy
+
+Elon Musk nel 2011, accanto ad una vettura Tesla, nella fabbrica a Fremont, in California.
+Nel 2004 entra a far parte di Tesla, una multinazionale produttrice di veicoli elettrici e di pannelli solari, che diventa presto la sua attività più importante, di cui è tuttora CEO e product architect.
+
+La missione di Tesla è accelerare la transizione del mondo verso energie sostenibili tramite la produzione ed il consumo delle stesse attraverso energie rinnovabili e veicoli elettrici, rispettivamente.[40]
+
+Il suo interesse verso i veicoli elettrici è radicato da ben prima della fondazione di Tesla. Tutto ebbe inizio quando Musk assunse come amministratore delegato Martin Eberhard, fornendo praticamente tutto il capitale per le prime due raccolte fondi della società e divenendone, fin dall'inizio, azionista di maggioranza. A causa della crisi finanziaria del 2008, con conseguenti licenziamenti nell'azienda Tesla, Musk fu costretto ad assumere anche la carica di amministratore delegato.
+
+La prima automobile elettrica a essere stata costruita da Tesla, all'epoca Tesla Motors, è stata la Tesla Roadster, un modello sportivo. La Tesla Roadster è stata commercializzata in 31 paesi, per un totale di 2 500 esemplari venduti. Tesla ha poi iniziato le consegne della berlina a quattro porte Model S il 22 giugno 2012 dopo aver svelato, il 9 febbraio 2012, il terzo prodotto dell'azienda: la Tesla Model X. La Model X si presenta come un SUV e la sua commercializzazione è iniziata a settembre del 2015, dopo numerosi rinvii dovuti a problemi tecnici.
+
+Il 31 marzo 2016 è stata presentata la berlina Tesla Model 3. Si tratta del primo modello della casa che aspira a un pubblico più vasto, visto il prezzo base annunciato di 35000 $ (tasse escluse). L'avvio della produzione a luglio 2017 è stato sancito da Musk con la frase, rivolta ai dipendenti di Tesla, "Welcome to production hell" (Benvenuti all'inferno della produzione)[41], riferendosi allo stress sulla compagnia che la produzione della Model 3 avrebbe portato, essendo la prima Tesla prodotta su larga scala. Inizialmente la produzione ha visto numerosi ritardi, che hanno portato a una crescente attenzione dei media sul numero di Model 3 prodotte.[42] A luglio 2018 Tesla ha raggiunto l'obiettivo auto-imposto di 5000 Tesla Model 3 prodotte alla settimana,[43] un primo segnale positivo circa la risoluzione dei problemi produttivi. Nel 2020 entra in produzione la Tesla Model Y, un SUV di design derivato dalla Model 3.
+
+Nel dicembre del 2017 Tesla svela al pubblico il Tesla Semi, un camion elettrico. Durante la stessa presentazione viene svelata al pubblico la nuova Tesla Roadster[44]. Il Tesla Semi è entrato in produzione pilota nel quarto trimestre del 2022 [45].
+
+Nel 2022, Elon Musk ha presentato due prototipi del robot umanoide Optimus alla conferenza annuale di Tesla sull'intelligenza artificiale.[46]
+
+SolarCity
+Nel 2006 ispirò la creazione di SolarCity, una compagnia specializzata in prodotti e servizi legati al fotovoltaico che diventò successivamente sussidiaria di Tesla. Oltre ad essere l'investitore principale, Elon Musk opera come presidente del consiglio di amministrazione di SolarCity.
+
+L'amministratore delegato nonché cofondatore di questa impresa è il cugino di Musk, Lyndon Rive.[47][48] Così come per Tesla, il motivo di fondo che ha spinto Musk a finanziare questa compagnia è la lotta al riscaldamento globale.[49] SolarCity è cresciuta molto negli ultimi anni grazie a diversi finanziamenti da aziende private e il continuo sviluppo del solare. La compagnia è stata successivamente assorbita da Tesla verso la fine del 2016.[50]
+
+Hyperloop
+Hyperloop è un sistema futuristico di trasporto ad alta velocità ideato da Elon Musk. Secondo Musk esso rappresenterebbe una "quinta modalità" di trasporto, alternativa a navi, aerei, automobili e treni, aggiungendo che "potrebbe rivoluzionare i viaggi".
+
+Musk e un piccolo gruppo di ingegneri di Tesla e SpaceX hanno pubblicato un progetto preliminare ad agosto 2013. Il progetto "Alpha" richiede una capsula che dovrebbe essere posizionata su un cuscino d'aria forzata attraverso molteplici aperture sul fondo della capsula. Il progetto propone "una combinazione di mezzi attivi e passivi per ridurre gli effetti negativi della resistenza dell'aria". Secondo tale progetto un Hyperloop potrebbe consentire di collegare Los Angeles e San Francisco in 35 minuti. La proposta "Alpha" verrebbe a costare 6 miliardi di dollari, mentre una versione che permette il trasporto di passeggeri e auto costerebbe 7,5 miliardi di dollari.[51]
+
+Il primo test pubblico è stato effettuato nel maggio 2016 nel deserto del Nevada. Un piccolo vettore della lunghezza di 3 metri è stato lanciato sui binari per circa 2 secondi, raggiungendo la velocità di 187 km/h ed andandosi a fermare contro un cumulo di sabbia.[52][53][54]
+
+Come idea, è stata più volte criticata da alcuni esperti di urbanizzazione e di trasporti, in quanto, secondo molti, sarebbe più economico, efficiente ed ecologico usare gli stessi spazi e fondi per costruire un sistema ferroviario tradizionale.[55]
+
+Attualmente il progetto è portato avanti da diverse aziende, tra cui Virgin Hyperloop, non collegate direttamente a Elon Musk. Il coinvolgimento attuale di quest'ultimo nel progetto è rimasto nell'organizzazione di competizioni studentesche in scala ridotta note come Hyperloop Pod Competition svoltesi annualmente dal 2015 al 2019 nei pressi della sede di SpaceX e del centro design di Tesla ad Hawthorne, California.[56]
+
+OpenAI
+
+Elon Musk alla presentazione di un robot Neuralink
+Nel dicembre del 2015, Elon Musk ha annunciato la fondazione di OpenAI, una compagnia di ricerca dell'intelligenza artificiale (AI: artificial intelligence) OpenAI mira allo sviluppo di un'intelligenza artificiale forte in modo che sia sicura e benefica per l'umanità.[57]
+
+Rendendo accessibile le AI a tutti, OpenAI intende "contrastare le grandi aziende che possono guadagnare troppo potere attraverso il possesso di sistemi super-intelligenti dedicati agli utili, così come i governi che possono utilizzare le AI per ottenere il potere, ma anche per opprimere i loro cittadini".[58] Nel febbraio 2018, Musk ha lasciato la presidenza della società per evitare conflitti d'interesse con il suo ruolo presso Tesla, pur rimanendo un donatore.[59]
+
+Neuralink
+Nel luglio 2016 Musk ha cofondato Neuralink, una startup di neurotecnologie incentrata sullo sviluppo di interfacce neurali, per collegare il cervello umano con l'intelligenza artificiale. La compagnia, che è ancora nelle prime fasi di sviluppo, è incentrata sulla creazione di interfacce neurali che possano essere impiantate nel cervello umano. Questi dispositivi potrebbero migliorare la memoria o consentire l'interfacciamento più diretto con i dispositivi informatici.[60].
+
+Musk ha annunciato che Neuralink ha installato il suo primo chip, chiamato Telepathy, nel cervello di un essere umano il 28 Gennaio 2024.[61].
+
+The Boring Company
+
+Elon Musk alla presentazione del tunnel di prova ad Hawthorne, California il 18 dicembre 2018
+Nel 2016 Musk ha fondato The Boring Company, un'azienda di infrastrutture per creare una rete di tunnel sotterranei, con lo scopo dichiarato di ridurre il traffico. L'azienda ha costruito un tunnel di prova ad Hawthorne ed uno in operazione presso il Convention Center di Las Vegas con piani di espansione lungo il Las Vegas Strip, progetto noto con il nome di Vegas Loop. Nuovi progetti sono attesi a Fort Lauderdale, Miami e San Antonio.[62][63][64][65]
+
+Dal 2021 l'azienda propone una competizione annuale per gruppi studenteschi e amatoriali nota come Not-A-Boring-Competition.[66]
+
+Twitter
+Il 5 aprile 2022 diventa il maggior azionista di Twitter, dopo aver acquisito il 9,2% delle sue azioni per un valore di circa 3 miliardi, diventando membro del CdA.[67][68] Venti giorni dopo, invece, viene definito l'accordo per l'acquisizione dell'intera società per l'ammontare di 44 miliardi di dollari circa.[69][70][71]
+
+L'offerta è stata successivamente ritirata da Musk, che ha accusato Twitter di aver dichiarato una percentuale di account falsi ben al di sotto di quella reale, violando così gli accordi.[72]
+
+Nonostante ciò, il 28 ottobre 2022 torna sui suoi passi, concludendo l'acquisizione e trasformando la società in una azienda privata di proprietà della X Holdings; in seguito alla conclusione dell’acquisto, Musk licenzia la maggior parte del personale, tra cui importanti manager.[73][74]
+
+Il 16 dicembre 2022 Twitter ha bloccato i profili di diversi giornalisti, che avevano dato informazioni sui suoi spostamenti aerei. Per tale ragione, è stato criticato di voler limitare la libertà di stampa e la Commissione europea ha annunciato l'assunzione di sanzioni nei confronti del social network per la violazione del Regolamento (UE) 2022/2065 sul mercato unico dei servizi digitali, per il mancato rispetto della libertà dei media e dei diritti fondamentali.[75]
+
+xAI
+Il 3 novembre 2023 annuncia il debutto a partire dal giorno dopo di xAI, la sua società dedicata allo sviluppo dell'intelligenza artificiale generativa.[76]
+
+Riconoscimenti
+
+Elon Musk con un modello di Starship
+L'istituto americano aero/astronautico (American Institute of Aeronautics and Astronautics) lo ha insignito del premio George M. Low Space Transportation Award per il "contributo più rilevante nello sviluppo di sistemi di trasporto spaziale commerciale, usando innovativi approcci a basso prezzo".[77][78] È stato riconosciuto Living Legend in Aviation (Leggenda vivente dell'aviazione) dalla Kitty Hawk Foundation nel 2010 per aver creato il successore dello Space Shuttle (Falcon 9 e capsula Dragon). Tra le altre personalità insignite di questa onorificenza si annoverano Buzz Aldrin e Richard Branson.[79]
+
+Ha vinto il prestigioso Werner Von Braun Award (in italiano: Premio Werner Von Braun) della National Space Society (Società spaziale nazionale) nel 2008-2009.[80] Nel giugno 2011 Musk ha vinto i 500 000 dollari dell'Heinlein Prize for Advances in Space Commercialization (Premio Heinlein per avanzamenti nella commercializzazione spaziale).[81] Nel febbraio 2011 la rivista di economia e finanza Forbes ha nominato Musk come uno degli "Amministratori delegati più potenti d'America con meno di 40 anni".[82]
+
+La rivista Esquire lo ha nominato come una delle 75 persone più influenti del XXI secolo.[83] Nel 2010 Musk è stato eletto nel consiglio di amministrazione dell'Università di Pasadena: California Institute of Technology.[84] In un sondaggio della Space Foundation del 2010 Musk è stato classificato come il decimo (a pari merito con Wernher von Braun, lo scienziato iniziatore dell'astronautica moderna) eroe spaziale più popolare.[85]
+
+Nel 2021 viene nominato Persona dell'anno dalla rivista Time.[86]
+
+Onorificenze accademiche
+Laurea honoris causa in ingegneria aerospaziale - nastrino per uniforme ordinaria
+Laurea honoris causa in ingegneria aerospaziale
+— Università del Surrey, Inghilterra[87]
+Posizioni politiche e sociali
+Posizioni politiche
+
+Elon Musk con il vicepresidente Mike Pence al John F. Kennedy Space Center nel 2020, poco prima del lancio dello SpaceX Crew Dragon Demo 2.
+Musk si è auto-definito come "metà democratico, metà repubblicano", affermando di essere progressista sulle tematiche sociali e conservatore in materia fiscale.[88] Nel 2018 ha affermato in un tweet di essere politicamente indipendente e moderato.[89] Nonostante in passato abbia finanziato le campagne elettorali del candidato alla rielezione presidenziale George W. Bush e del senatore repubblicano Marco Rubio, nel 2015 Musk risultava uno dei maggiori contributori del Partito Democratico. Musk ha affermato che finanziare i partiti politici è uno dei requisiti per avere voce in capitolo nell'agenda governativa.[90] Convintamente ambientalista, Musk è stato duramente critico nei confronti dell'allora presidente Donald Trump, soprattutto in relazione alle posizioni negazioniste del cambiamento climatico del tycoon.[91] Nel giugno 2017, in seguito al ritiro degli Stati Uniti dall'accordo di Parigi sul clima, Musk si è polemicamente dimesso dai consigli consultivi di imprenditori creati dall'amministrazione Trump.[92] Alle primarie democratiche del 2020 ha sostenuto la candidatura di Andrew Yang e ha espresso supporto per la proposta di introdurre un reddito di base;[93] ha inoltre sostenuto la candidatura presidenziale da indipendente del rapper Kanye West.[94] Nel settembre 2021, il governatore del Texas Greg Abbott ha sostenuto che Musk supportasse le politiche sociali adottate in Texas, in particolare le restrittive leggi sull'aborto; Musk ha risposto a tali affermazioni, smentendo il governatore e affermando che: "il governo dovrebbe imporre il meno possibile la propria volontà sulla gente e, se proprio è necessario che lo faccia, dovrebbe aspirare a massimizzare la felicità collettiva. Detto questo, preferirei restare fuori dalla politica".[95] Musk si è espresso contro la proposta di aumentare le tasse sui miliardari, criticando il senatore democratico Ron Wyden, uno dei proponenti della riforma.[96][97]
+
+Nel luglio 2020, Musk ha postato su Twitter il messaggio "Pronouns suck",[98] generando numerosi commenti negativi, tra cui quello della sua allora compagna Grimes. Diversi attivisti per i diritti LGBTQ+ hanno definito il tweet come transfobico. Nel dicembre 2020 Musk ha nuovamente criticato l'uso dei pronomi personali sui social per definire la propria identità di genere. La Human Rights Campaign ha criticato le esternazioni di Musk e lo ha invitato a scusarsi.[99][100]
+
+
+Elon Musk con il primo ministro indiano Narendra Modi nel 2015.
+Musk ha affermato diverse volte che, secondo lui, il governo americano non dovrebbe erogare sussidi alle grandi aziende, sostenendo invece la maggiore utilità di una carbon tax per favorire la transizione ecologica.[101] Le sue posizioni sono state ritenute "ipocrite" da numerosi critici, in quanto le sue aziende hanno largamente beneficiato di sussidi statali.[102][103] Inoltre, Tesla ha guadagnato rilevanti somme dal sistema di crediti e agevolazioni per i mezzi non inquinanti, in vigore a livello sia statale in California che federale in tutti gli Stati Uniti, che ha fortemente incoraggiato l'acquisto di veicoli elettrici da parte dei consumatori.[104] Inoltre, una porzione rilevanti dei guadagni di Tesla provengono dai crediti di carbonio garantiti all'azienda dall'Unione europea e dalla Cina.[105][106][107][108]
+
+Nel novembre 2021 Musk ha deriso il senatore Bernie Sanders su Twitter. Sanders aveva postato un messaggio in cui affermava l'esigenza di chiedere ai più ricchi di pagare la giusta quota di tasse. Musk ha risposto al tweet con "continuo a dimenticarmi del fatto che tu sia ancora vivo".[109][110]
+
+Nel dicembre 2021, in un'intervista per il sito satirico The Babylon Bee, Musk ha lamentato come per lui fosse difficile raggiungere i suoi obiettivi produttivi in California. Musk ha venduto il 10% delle sue azioni di Tesla e ha delocalizzato l'azienda dalla California al Texas per sfuggire alla tassazione californiana. Musk ha affermato che "la California era la terra delle opportunità, e ora è diventata la terra dell'ipertassazione e dell'iperregolamentazione". Nella stessa intervista ha criticato l'ideologia woke, definendola "divisiva, escludente e odiosa. Offre alle persone cattive uno scudo per essere meschine e crudeli, mascherate dietro una falsa virtù".[111]
+
+Sul fronte della crisi Russia-Ucraina del 2022, Musk ha annunciato misure per supportare la resistenza ucraina, tra cui permetterle gratuitamente l'accesso al sistema di satelliti Starlink per garantire la connessione internet anche nel pieno del conflitto. Per queste iniziative, il presidente ucraino Volodymyr Zelens'kyj ha pubblicamente ringraziato Musk.[112] Nonostante le richieste di diversi governi a Starlink di bloccare l'accesso ai siti di informazione russi in risposta all'invasione, Musk ha affermato di essere un "assolutista della libertà di parola" e di non voler bloccare i siti russi "a meno che non mi puntino contro una pistola".[113][114][115][116][117][118][119]
+
+Nel maggio 2022 ha affermato in un tweet di aver intenzione di votare per il Partito Repubblicano, sostenendo che, nonostante egli avesse sostenuto in passato il Partito Democratico, quest'ultimo sia diventato il "partito delle divisioni e dell'odio".[120][121]
+
+Nel gennaio 2023 sostiene apertamente la candidatura a Speaker della Camera del Repubblicano Kevin McCarthy.[122]
+
+Controversie sul COVID-19
+Musk ha ricevuto critiche sulle sue opinioni e azioni relative alla pandemia di COVID-19.[123] Il 31 gennaio 2020 paragona alcuni aspetti della COVID-19 al comune raffreddore e afferma che "il panico da coronavirus è stupido",[124] e "il pericolo del panico supera di gran lunga il pericolo del coronavirus, se allochiamo troppe risorse mediche per il corona, ciò avverrà a spese del trattamento di altre malattie".[125] Musk è stato inoltre criticato per aver rilasciato affermazioni controverse sulla malattia, inclusa l'affermazione[126] che "I bambini sono essenzialmente immuni",[127] accompagnando un grafico in cui si mostra che nessun bambino era morto in Italia entro il 15 marzo 2020,[128][129] sostenendo quindi che "Sulla base delle tendenze attuali, probabilmente negli Stati Uniti si andrà vicino a zero nuovi casi entro la fine di aprile".[130] Il 30 aprile 2020 negli Stati Uniti si registreranno 31.000 nuovi casi, per un totale di circa 1,1 milioni.[131] Inoltre ha promosso articoli che suggerivano che le compagnie sanitarie gonfiassero i numeri dei casi COVID-19 per motivi finanziari, ha promosso un documento sui benefici della clorochina che è stato successivamente ampiamente screditato e rimosso da Google e ha ritwittato un video che chiedeva la fine immediata alle misure di distanziamento sociale.[132][133]
+
+Quando lo sceriffo della contea di Alameda ordinò la chiusura di tutte le attività non essenziali, Musk e la Tesla inizialmente rifiutarono di eseguire l'ordine, sostenendo che la produzione di veicoli e le infrastrutture energetiche sono settori critici, citando il Dipartimento della Sicurezza Nazionale degli Stati Uniti.[134][135]
+
+«Se qualcuno vuole restare a casa sua, questo è grandioso. Dovrebbero essere autorizzati a rimanere nella loro casa e non dovrebbero essere costretti a uscire, ma dire che non possono lasciare la loro casa e saranno arrestati se lo faranno, questo è fascista, questo non è democratico, questa non è libertà. Ridate alle persone la loro dannata libertà.[136]»
+
+In seguito Musk invia numerosi tweet in opposizione ai blocchi obbligatori, come "AMERICA LIBERA ORA!",[137][138] sostenendo che gli ospedali della California sarebbero "mezzi vuoti".[139]
+
+L'11 maggio 2020 Musk riapre la linea di produzione Fremont di Tesla in violazione dell'ordinanza della contea di Alameda. Lo stesso giorno dichiarerà: "Tesla sta riprendendo la produzione oggi contro le regole della contea di Alameda. Sarò in linea con tutti gli altri. Se qualcuno verrà arrestato, chiedo che sia solo io."[140] Musk minaccia di spostare il quartier generale della Tesla in Texas o Nevada. La Tesla intenta una causa contro la contea di Alameda sfidando il suo blocco alla fabbrica di Fremont: la causa viene successivamente ritirata.[141][142] Il dipartimento della sanità pubblica della contea di Alameda ha spiegato che stava aspettando un piano che Tesla aveva promesso di fornire l'11 maggio per illustrare come proteggere la salute dei lavoratori durante la pandemia di COVID-19.[143] Il 2 giugno 2020 un lavoratore di Tesla risulta positivo per COVID-19 dopo la riapertura della fabbrica di Tesla a Buffalo, New York, il primo caso da quando Tesla ha riaperto le sue fabbriche statunitensi.[144]
+
+Tra maggio e dicembre del 2020, in una fabbrica Tesla in California, sono stati registrati 450 casi di positività alla COVID-19.[145]
+
+Vita privata
+Musk si è sposato due volte e ha avuto 11 figli, l'ultimo chiamato con il nome di Techno Mechanicus, soprannominato Tau, è il terzo figlio nato dalla relazione con la ex compagna Grimes, con cui ha fatto coppia fissa dal 2018 al 2022. La nascita di Tau Techno Machanicus non è stata rivelata fino all'11 settembre 2023 [146]. La sua prima moglie è stata Justine Wilson, una scrittrice canadese, conosciuta quando erano entrambi studenti alla Queen's University. Musk e la Wilson si sposano nel 2000 e hanno cinque figli, più uno morto prematuramente.[147] La coppia si separa nel settembre del 2008.[148] Nel 2010, dopo averla frequentata per due anni, Musk si sposa con l'attrice inglese Talulah Riley. Nel gennaio 2012 i due si lasciano[149] e nel luglio 2013 si risposano, per poi separarsi nuovamente nel dicembre 2014 e divorziare alla fine del 2016.[150] Nel frattempo Musk frequenta l'attrice americana Amber Heard, ma i due si lasciano un anno più tardi.[151] Nel 2018 si fidanza con la cantante e musicista canadese Grimes (pseudonimo di Claire Boucher)[152] e il 4 maggio 2020 nasce il loro primo figlio, chiamato inizialmente X Æ A-12,[153] poi cambiato in X Æ A-XII a causa delle leggi vigenti in California.[154] Nel dicembre 2021 nasce, tramite madre surrogata, la seconda figlia Exa Dark Sideræl. La coppia, il 25 settembre 2021, ha dichiarato l'intenzione di lasciarsi ufficialmente,[155] per via del lavoro di Elon Musk in SpaceX e Tesla, che richiede la sua continua presenza in Texas ed all'estero.
+
+Ha partecipato nel 2004 al Burning Man festival e ha dichiarato che la prima idea per SolarCity gli è venuta proprio al festival.[23]
+
+La sorella di Elon, Tosca Musk, è la fondatrice della Musk Entertainment e la produttrice di vari film[156], fra cui Thank You for Smoking. Lo stesso Musk è stato il produttore esecutivo del suo primo film, Puzzled. Suo fratello Kimbal è l'amministratore delegato dell'azienda di pubblicità OneRiot ed è proprietario del ristorante The Kitchen a Boulder e a Denver, Colorado. Suo cugino Lyndon Rive è l'amministratore delegato e cofondatore di Solar City.
+
+Ha una figlia transgender, Vivian Jenna,[157][158] che alla nascita si chiamava Xavier. Vivian Jenna ha inoltre cambiato cognome (da "Musk" a "Wilson"), avendo rotto ogni rapporto col padre, anche per motivi politici (il tycoon è anticomunista).[159][160]
+
+Durante la sua conduzione del Saturday Night Live a maggio 2021, Musk ha rivelato di avere la sindrome di Asperger.[

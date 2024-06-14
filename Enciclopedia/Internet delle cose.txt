@@ -1,0 +1,81 @@
+Internet delle cose 
+L'Internet delle cose (IdC), in inglese Internet of Things (IoT), e' un neologismo utilizzato nel mondo delle telecomunicazioni e dell'informatica che fa riferimento all'estensione di internet al mondo degli oggetti e dei luoghi concreti, che acquisiscono una propria identita' digitale in modo da poter comunicare con altri oggetti nella rete e poter fornire servizi agli utenti.
+
+Si tratta dell'evoluzione del web stesso, il 3.0, inteso come la generalizzazione del Web of Things (o WoT) e come parte anche del web semantico e degli altri tipi di web.
+
+Storia
+Dopo i primi esperimenti empirici come il collegamento di alcune macchine a delle reti di server ARPANET negli anni '80[1], le prime proposte software di meta' anni '90 da parte di alcune multinazionali (Microsoft At Work di Microsoft oppure il NEST di Novell), a partire da fine anni '90 il concetto di IoT ando' delineandosi piu' chiaramente attraverso pubblicazioni scientifiche (come quelle di Nicholas Negroponte del Media Lab del MIT o nel 1999 dell'ingegnere Kevin Ashton,[2] co-fondatore di Auto-ID Center sempre al MIT[3]) e relativi articoli di giornale[4], per poi essere in seguito sviluppato dall'agenzia di ricerca Gartner.[5]
+
+La Cisco Systems sostiene invece che l'IoT sia nato tra il 2008 e il 2009, quando il numero di oggetti e cose connessi a internet supero' quello degli esseri umani.[6]
+
+Nel corso degli anni '10 tale concetto si diffonde enormemente a livello pubblico, soprattutto grazie alla domotica (smart home), ai sistemi di intrattenimento nelle automobili e alla videosorveglianza, ma anche alla e-health e ad altri settori.
+
+Descrizione
+Il concetto rappresenta una possibile evoluzione dell'uso della rete internet: gli oggetti (le "cose") si rendono riconoscibili e acquisiscono intelligenza grazie al fatto di poter comunicare dati su se stessi e accedere ad informazioni aggregate da parte di altri[7]. Le sveglie suonano prima in caso di traffico, le scarpe da ginnastica trasmettono tempi, velocita' e distanza per gareggiare in tempo reale con persone dall'altra parte del globo, i vasetti delle medicine avvisano i familiari se si dimentica di prendere il farmaco. Tutti gli oggetti possono acquisire un ruolo attivo grazie al collegamento alla Rete.[8]
+
+Per "cosa" o "oggetto" si puo' intendere piu' precisamente categorie quali: dispositivi, apparecchiature, impianti e sistemi, materiali e prodotti tangibili, opere e beni, macchine e attrezzature. Questi oggetti connessi che sono alla base dell'Internet delle cose si definiscono piu' propriamente "oggetti intelligenti" (in inglese smart objects) e si contraddistinguono per alcune proprieta' o funzionalita'. Le piu' importanti sono identificazione, connessione, localizzazione, capacita' di elaborare dati e capacita' di interagire con l'ambiente esterno.[9]
+
+L'obiettivo dell'internet delle cose e' far si' che il mondo elettronico tracci una mappa di quello reale, dando un'identita' elettronica alle cose e ai luoghi dell'ambiente fisico. Gli oggetti e i luoghi muniti di etichette RFID (identificazione a radiofrequenza) o codici QR comunicano informazioni in rete o a dispositivi mobili come i telefoni cellulari.[10]
+
+I campi di applicabilita' sono molteplici: dalle applicazioni industriali (processi produttivi), alla logistica e all'infomobilita', fino all'efficienza energetica, all'assistenza remota e alla tutela ambientale.[11]
+
+Tecnologie abilitanti
+Nella visione dell'Internet delle cose, gli oggetti creano un sistema pervasivo ed interconnesso avvalendosi di molteplici tecnologie di comunicazione (tipicamente a corto raggio). I tag RFID hanno rappresentato uno dei primi esempi in tale ambito. Tuttavia, nel tempo sono emerse nuove tecnologie in grado di rendere piu' efficiente la comunicazione tra gli oggetti. Tra esse spicca lo standard IEEE 802.15.4 e, soprattutto, il suo recente emendamento IEEE 802.15.4e, in grado di incrementare notevolmente l'affidabilita' dei collegamenti a radio frequenza e l'efficienza energetica, grazie all'adozione del meccanismo di accesso al mezzo Time Slotted Channel Hopping. Queste tecnologie di piu' basso livello, quando integrate in architetture protocollari basate sul protocollo IP, possono dar concretamente vita alla visione dell'Internet delle cose, essendo in grado di dialogare con i nodi della rete Internet. In tal senso, e' importante menzionare i protocolli IETF 6LoWPAN, RPL, e CoAP, in grado di creare operativamente una rete IP di oggetti che puo' dialogare con la rete Internet per creare nuovi servizi in molteplici domini applicativi.
+
+Aspettative di sviluppo
+Il valore del mercato e' stimato in 100 miliardi di dollari.[12] Secondo l'Osservatorio Internet of Things del Politecnico di Milano, il mercato degli oggetti intelligenti in Italia e' arrivato a toccare i 6 miliardi di indirizzi univoci. La principale fetta di questo mercato e' rappresentata dalle applicazioni di smart metering (i contatori gas intelligenti installati presso le utenze domestiche). Nel prossimo futuro si prevede un' ulteriore accelerazione del mercato, soprattutto per quanto riguarda gli ambiti smart metering, smart car, smart home e industrial IoT.[13]
+
+Le aspettative degli esperti sono che l'Internet delle cose cambiera' il nostro modo di vivere in modo radicale. Gli oggetti intelligenti, con capacita' decisionale, permetteranno risparmio energetico sia a livello personale (domotica o smart home) sia a livello macroscopico (smart city e smart grid). L'integrazione con internet implica l'utilizzo di IP univoci. IPv4 permette di avere 6 miliardi di indirizzi univoci, ecco perche' gli sviluppatori di dispositivi IoT stanno adottando lo standard IPv6, che permette di raggiungere 2128 (circa 3,4 x 1038) indirizzi.
+
+I principali domini applicativi ed ambiti operativi interessati dallo sviluppo della IoT sono riportati sinteticamente nel seguente elenco:
+- Sanita'
+- Manutenzioni
+- Agricoltura
+- Avionica
+- Citta' intelligente
+- Contatore intelligente
+- Domotica
+- Intelligent transportation system
+- Industria automobilistica
+- Ingegneria biomedica
+- Monitoraggio
+- Robotica
+- Reti wireless di sensori
+- Rilevazione eventi avversi
+- Smart grid
+- Sistemi embedded
+- Telelettura
+- Telemetria
+- Telematica
+- Videosorveglianza
+- Zootecnia
+- Progetti di ricerca.
+
+IoT e' oggetto di ricerca a livello internazionale, dal momento che promette di avere applicazioni in diversi ambiti. L'utilizzo di trasmissione 5G per poter sviluppare su larga scala IoT viene studiato nel progetto 5G-SOLUTIONS[14] coordinato da Andrea Di Giglio. Il progetto, finanziato dalla Comunita' Europea nell'ambito del programma Horizon 2020, e' partito a giugno 2019. 4 living lab sono stati messi a punto per sperimentazioni su Industria 4.0, smart cities, smart ports, smart energy e la trasmissione di contenuti media.
+
+Problematiche e controversie
+Le maggiori problematiche all'IoT riguardano due aspetti: la sicurezza e la privacy, che dipendono dal fatto che i sistemi di tipo centralizzato sempre piu' grandi in uso si sono rivelati in proporzione sempre piu' vulnerabili e manipolabili; la maggior parte delle aziende sta quindi lavorando su soluzioni di sistema non piu' centralizzato ma distribuito, tipo blockchain, che rendano piu' sicuri i dispositivi da errori o da attacchi informatici.
+
+Un problema altrettanto importante riguarda il fatto che i dispositivi non dovrebbero avere al loro interno aggiunte indesiderate o nascoste nelle fasi costruttive: per cercare di garantire questa sicurezza, all'uscita dei prodotti dalla fabbrica sono stati creati dei protocolli di trusted computing.
+
+Privacy, autonomia e controllo
+Peter-Paul Verbeek, professore di filosofia della tecnologia all'Universita' di Twente (Olanda), scrive che la tecnologia ha gia' ora una forte influenza sulle nostre decisioni morali, che a loro volta vanno a condizionare l'agire dell'uomo, la sua privacy ed autonomia. Inoltre, mette in guardia dal considerare la tecnologia semplicemente come un oggetto, e raccomanda invece di riguardarla come un agente attivo.[15]
+
+Justin Brookman, del Centro per la Democrazia e la Tecnologia (CDT), ha dichiarato preoccupazione sull'impatto dell'IoT sulla privacy dei consumatori, dicendo che "Ci sono alcune persone nell'ambito commerciale che dicono, 'Oh, Big Data - raccogliamo tutto, e teniamolo in giro per un sacco di tempo; pagheremo qualcuno per pensare alla sicurezza piu' tardi.' La questione e' se vogliamo o no avere un qualche strumento di controllo per limitare la dispersione di dati."[16]
+
+Tim O'Reilly ritiene che i metodi di vendita dei dispositivi IoT siano fuorvianti; mentre essi diffondono l'idea che la funzione principale dell'IoT sia di guadagnare efficienza collegando alla rete tutti i tipi di congegni elettronici, egli sostiene che "l'IoT e' in realta' un'estensione dell'uomo. Le applicazioni sono profondamente differenti quando ci sono sensori e dati che influenzano la presa di decisioni."[17]
+
+Anche editoriali di WIRED hanno espresso preoccupazione; uno in particolare dichiara: "Cio' che stiamo per perdere e' la nostra privacy. Anzi, e' anche peggio. Non perderai solo la tua privacy, vedrai il concetto stesso di privacy riscritto sotto il tuo naso"[18]
+
+L'American Civil Liberties Union (ACLU, Unione americana per le liberta' civili) ha rivelato apprensione circa la possibilita' che l'IoT possa mettere a repentaglio il controllo di ognuno sulla propria vita. L'ACLU ha scritto che "Non esiste un modo semplice per prevedere come saranno utilizzati questi strumenti cosi' potenti -- che si accumulano in maniera sproporzionata nelle mani di corporazioni che cercano vantaggi finanziari o di governi che aspirano ad un controllo ancora maggiore. C'e' la possibilita' che i Big Data e l'Internet delle Cose ci rendano piu' difficile controllare le nostre vite, e mentre noi diventiamo sempre piu' trasparenti per grandi corporazioni e istituzioni governative, esse diventino sempre piu' torbide."[19]
+
+Alcuni ricercatori hanno identificato i problemi sulla privacy che tutti gli stakeholder nel campo dell'IoT devono affrontare, dai produttori e gli sviluppatori di app ai clienti stessi, ed hanno esaminato le responsabilita' di ogni parte coinvolta cosi' da assicurare la privacy in tutte le circostanze. Tra i problemi sottolineati nel report[20] si trovano:
+
+Consenso dell'utente: in qualche modo gli utenti devono essere in grado di dare consenso informato alla raccolta di dati. Gli utenti, pero', hanno a disposizione tempo e conoscenze tecnologiche limitate.
+Liberta' di scelta: sia la protezione della privacy sia le norme sottostanti devono promuovere la liberta' di scelta.
+Anonimato: le piattaforme dell'IoT prestano scarse attenzione all'anonimato dell'utente nella trasmissione di dati. Piattaforme future potrebbero, per esempio, utilizzare TOR o tecnologie simili cosi' che non si possano tracciare profili troppo specifici degli utenti basandosi sul comportamento delle loro "cose".
+La liberta' individuale ad utilizzare le proprie proprieta' potrebbe essere limitata o addirittura annullato quasi in tempo zero prendendo il controllo della rete IOT. Un regime militare che prende il potere potrebbe immediatamente bloccare tutti i veicoli connessi alla rete, disattivare i televisori e altri dispositivi collegati alla rete.
+
+Sicurezza
+
+Sono state sollevate preoccupazioni sul fatto che si stia sviluppando l'Internet delle Cose molto rapidamente, senza la considerazione appropriata per le questioni di sicurezza coinvolte e i cambi regolamentari che potrebbero essere necessari.[21] Secondo il BI (Business Insider) Intelligence Survey condotto nell'ultimo quadrimestre del 2014, il 39% degli intervistati sostiene che la sicurezza sia il problema piu' pressante nell'adozione dell'Internet delle Cose.[22] In particolare, con la diffusione sempre piu' estesa dell'IoT, e' probabile che gli attacchi cibernetici diventino una minaccia reale, invece che solo potenziale. In un articolo di Forbes di gennaio 2014, il curatore della sezione di sicurezza cibernetica Joseph Steinberg ha elencato molte applicazioni connesse a Internet che possono gia' "spiare le persone in casa loro", inclusi televisori, strumenti per la cucina, macchine fotografiche e termostati.[23] E' stato dimostrato che dispositivi computerizzati inseriti nelle automobili come freni, motore, serrature, sistemi di apertura del cofano o rilascio del carrello, segnalatori acustici, riscaldamento e cruscotto sono vulnerabili da parte di soggetti che hanno accesso alla rete di bordo. In certi casi, i sistemi computerizzati di un veicolo sono connessi a Internet e cio' rende possibile l'intromissione con un collegamento remoto.[24]

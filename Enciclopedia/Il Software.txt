@@ -1,0 +1,78 @@
+Il Software
+Il software, in informatica ed elettronica, indica (per un sistema informatico) l'insieme delle componenti intangibili di elaborazione. Il significato è contrapposto a quello di hardware, che corrisponde alla parte materiale (strato fisico/tangibile) del detto sistema.[1]
+
+La creazione del concetto
+Il termine sarebbe stato creato durante la seconda guerra mondiale; tecnici del Royal Army britannico erano impegnati nella decrittazione dei codici tedeschi di Enigma, di cui già conoscevano la meccanica interna (detta hardware, componente dura, nel senso di ferraglia) grazie ai servizi segreti polacchi. La prima versione di Enigma sfruttava tre rotori per mescolare le lettere. Dopo il 1941, ad Enigma venne aggiunto un rotore, e il team di criptoanalisti inglesi, capitanati da Alan Turing, si dovette interessare non più alla sua struttura fisica, ma alle posizioni in cui venivano utilizzati i rotori della nuova Enigma. Dato che queste istruzioni erano scritte su pagine solubili nell'acqua (per poter essere più facilmente distrutte, evitando in tal modo che cadessero nelle mani del nemico) furono chiamate software (componente tenera), in contrapposizione all'hardware.
+
+Il senso moderno del termine deriva dalle istruzioni date ai computer, ed è stato utilizzato per la prima volta nel 1957 da John Wilder Tukey, noto statistico statunitense[2]. Dal 1950 l'analogia tra l'hardware ed il corpo umano e quella tra il software e la mente umana si è fatta molto forte, dal momento che Turing ha sostenuto che il progresso tecnologico sarebbe riuscito a creare, entro il 2000, delle macchine intelligenti (in grado cioè di «pensare» autonomamente) atte alla risoluzione dei problemi.
+
+L'evoluzione e l'applicazione delle leggi di Moore
+A partire dal secondo dopoguerra, con lo sviluppo dell'hardware sono aumentate le possibilità per gli sviluppatori; ai sensi della seconda legge di Moore, una minaccia alla velocità di elaborazione, oltre ai costi, proviene dal software. Infatti ciò che conta per un utente non è tanto la velocità di elaborazione del processore, quanto la velocità effettiva di elaborazione del codice, calcolata in base al tempo che occorre alla CPU per eseguire un'operazione (come la scrittura di un testo, la creazione di una cartella).
+
+Gli studi di Myhrvold
+Nathan Myhrvold, direttore dell'Advanced Technology Group della Microsoft, ha effettuato uno studio sui prodotti Microsoft calcolando le linee di codifica per le successive release dello stesso software:
+
+Basic: da 4 000 linee di codice nel 1975 a 500 000 nel 1995
+Word: da 27 000 linee di codice nel 1982 a 2 000 000 nel 2002
+La continua aggiunta di nuove funzionalità al software esistente giustifica la costante richiesta di processori più veloci, memorie sempre più grandi e più ampie capacità di I/O (Input/Output).
+
+Infatti, anche le altre tecnologie si sono evolute di pari passo:
+
+i dischi rigidi da 10 MB (1982) a 1 TB (2007);
+i modem analogici da 110 bit/s a 56 kbit/s.
+Myhrvold traccia un parallelismo con la legge di Moore: «abbiamo aumentato la dimensione e la complessità del software ancora più rapidamente di quanto non prevedeva la legge di Moore», «gli utenti del software hanno sempre consumato le maggiori capacità di elaborazione ad una velocità uguale o superiore a quella con cui i produttori di circuito integrato le mettevano a disposizione» (Stewart Brand, 1995).
+
+Descrizione
+Caratteri generali
+In particolare in informatica si intendono tali il semplice dato o informazione[3] oppure più propriamente le istruzioni di un programma codificate in linguaggio macchina o in linguaggio di programmazione (codice sorgente), memorizzate su uno o più supporti fisici, sotto forma di codice eseguibile. Riguardo all'invenzione del termine, lo statunitense Paul Ni quette sostiene di averlo coniato nel 1953,[4] tuttavia è invece ritenuta certa la prima apparizione in una pubblicazione scientifica del 1958 dell'American Mathematical Monthly da parte dello statistico John Wilder Tukey.[5]
+
+Genericamente si intende l’insieme dei programmi impiegati in un sistema di elaborazione dati[1] che gestisce il funzionamento di un elaboratore[6]; si distingue fra:
+
+software di sistema: quello relativo al sistema operativo dell’elaboratore elettronico;[1][6]
+software di base: insieme dei programmi e delle procedure di utilità generale impiegabili da altri programmi;[1]
+software applicativo: relativo ai programmi applicativi progettati per particolari funzioni che possono essere ad esempio la scrittura, l'elaborazione di immagini, la gestione dei dati e altro.[1][7]
+Il termine si contrappone tradizionalmente ad hardware (la componente fisica di un sistema di calcolo),[1] che rende possibile l'esecuzione del software (la componente logica dello stesso). Nel tempo sono entrati nell'uso altri termini che descrivono elementi di un computer, come il firmware. Il suffisso -ware (il cui significato è «componente») viene usato anche in altri termini che indicano particolari tipi di programmi: in funzione del ruolo che hanno in un sistema di calcolo (per esempio middleware), del tipo di licenza con cui sono distribuiti (freeware, shareware), dell'edizione e altro ancora. Software di tipo speciale si trovano sui più disparati dispositivi (p.es. un televisore, un'automobile, un cronotermostato, una lavatrice ma anche applicazioni produttive).
+
+Classificazione
+
+I software possono essere classificati in base a diverse loro caratteristiche:
+- grado di permissività della licenza (software libero o software proprietario);
+- da installare o portabile o fruibile come servizio (SaaS);
+- sistema operativo su cui possono essere utilizzati (OS ecc.);
+- tipo di interfaccia utente visiva[N 1] (testuale o grafica, modalità touch screen; vi sono tipologie di software in cui l'interfaccia utente è nascosta ovvero sostituita dall'ambiente di programmazione, come succede, ad esempio, nei SoC);
+- modalità di esecuzione, batch quando i lavori sono impostati in modo che possano essere eseguiti fino al completamento senza l'intervento umano, online (o programmi interattivi) che invece richiedono l'intervento umano per l'immissione dati ed il controllo del lavoro;
+- funzione (videoscrittura, foglio elettronico, database management system, grafica, sistema operativo, browser, lettore multimediale, posta elettronica e altre decine di migliaia, considerando la variabilità in termini di soluzioni applicative, piattaforme ed edizioni/versioni;
+- campo di applicazione: utilizzo casalingo (home) o professionale (business). In alcuni casi un prodotto vale per ambo le categorie, in molte altre un prodotto ha versioni specifiche (esempio un sistema operativo o una suite di produttività), in tantissime esiste solo per una delle due, spesso quella aziendale (ad esempio un sistema ERP);
+- stand alone (ovvero che possono girare completamente autonomi su sistemi isolati) oppure network (ovvero che funzionano in un ambito di rete): il secondo caso può essere a sua volta diviso in software in versione client-server (sul client può essere installato magari solo un agent oppure l'intero software che però si appoggia ad una base di dati installato su un server oppure ad un servizio server[N 2]), oppure in modalità terminal-server oppure cloud (applicazioni web) anche in modalità SaaS[N 3]. 
+Esempi classici di programma di rete, in ambito aziendale, è il sistema gestionale, la posta elettronica centralizzata (spesso associata ai moduli di pianificazione attività e risorse), il firewall della LAN.
+
+Dal punto di vista gerarchico[N 4] i software possono essere divisi in quattro[N 5] categorie principali:
+1) firmware;
+2) software di base (che a sua volta si divide in sistemi operativi, compilatori e interpreti, librerie);
+driver;
+3) programmi applicativi cioè tutti quei software che vengono utilizzati nel quotidiano (home), dai programmi per l'ufficio, ai videogiochi, ai browser per navigare in internet, ai client di posta, ai lettori audio-video, alle applicazioni chat nonché i numerosissimi prodotti specifici in ambito professionale/industriale (business) per le più disparate esigenze/attività. Anche un sistema anti malware è un'applicazione, così come un software di diagnostica (hardware o software), oppure uno strumento per gestire gli aggiornamenti. In ambiti professionali, il programma utente per gestire una macchina o un impianto è anch'esso un software così come, in applicazioni industriali (o, banalmente, nel quadro comandi di un comune ascensore), un PLC.
+4) Con il termine suite si designa un software strutturato in diversi programmi/moduli, solitamente configurabili (nel senso di installabili, attivabili) separatamente ma facenti parte di un'unica soluzione. Microsoft Office o AVG AntiVirus o SAP ERP sono esempi di suite software.
+
+Realizzazione
+
+Lo stesso argomento in dettaglio: Sviluppo software.
+Un software viene normalmente realizzato attraverso un processo di programmazione utilizzando uno o più linguaggi di programmazione ad opera di un programmatore. Se il progetto diventa complesso, è opportuno dividere il programma in uno o più moduli, che possono essere così affidati a diversi programmatori, modificati più semplicemente e riutilizzati in altri progetti. La realizzazione del software è un'attività complessa articolata in più fasi, per questo motivo spesso il software è associato ad un prodotto ingegneristico, ma se ne differenzia soprattutto per alcune caratteristiche:
+
+è molto «malleabile»;
+è un prodotto human intensive (e cioè un prodotto che richiede un considerevole sforzo in risorse umane perché si concentra soprattutto sulla progettazione e sull'implementazione).
+La fase detta di compilazione, traduce ogni file del codice sorgente, scritto nel o nei linguaggi di programmazione, in un file oggetto contenente il programma in linguaggio macchina adeguato all'architettura hardware di destinazione. In seguito tutti i file oggetto attraversano una fase di linking per giungere al prodotto finale: il file eseguibile.
+
+Alcuni software non vengono compilati in quanto le istruzioni contenute nel codice sorgente vengono eseguite utilizzando un software detto interprete.
+
+Il modello di sviluppo
+
+Lo stesso argomento in dettaglio: Modello di sviluppo del software.
+La gestione del processo di sviluppo è caratterizzato dalla scelta di un modello di sviluppo del software codificato nell'ambito dell'ingegneria del software (Software Engineering), esistono:
+
+il modello classico o a cascata (water-fall),
+il modello a spirale (object oriented),
+metodologia agile (agile software development, ASD). I metodi agili si contrappongono al modello a cascata (waterfall model) e altri modelli di sviluppo tradizionali, proponendo un approccio meno strutturato e focalizzato sull'obiettivo di consegnare al cliente, in tempi brevi e frequentemente (early delivery/frequent delivery), software funzionante e di qualità.
+Le versioni
+
+Lo stesso argomento in dettaglio: Controllo di versione.
+Molte volte i software realizzati vengono distribuiti sotto forma di versioni successive, ciascuna identificata da un numero intero progressivo con in aggiunta uno o più numeri decimali che identificano il codice di rilascio: tipicamente l'ordine di rilascio segue un andamento progressivo della numerazione per cui le versione successive rappresentano cambiamenti delle precedenti con modifiche o miglioramenti in termini di nuove caratteristiche e funzionalità aggiunte e/o bug corretti con opportune patch oppure ottimizzazioni prestazionali. L'edizione è il principale stadio di una evoluzione del prodotto nel tempo (una sorta di grande revisione o ristrutturazione), mentre le versioni ne rappresentano i minori cambiamenti. La cosiddetta build a volte accompagna un numero di versione. Alcuni produttori (ad esempio Microsoft nel caso di Windows 10 e successsivi) aggiungono, oltre a versione e/o build, anche il numero di esperienza, strato legato principalmente alle caratteristiche dell'interfaccia utente (user experience).

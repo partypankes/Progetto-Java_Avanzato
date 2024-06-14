@@ -1,0 +1,127 @@
+Teoria dei giochi
+La teoria dei giochi e' una disciplina che studia modelli matematici di interazione strategica tra agenti razionali.[1] La teoria dei giochi ha applicazioni in vari campi delle scienze sociali, cosi' come nella logica, nella teoria dei sistemi e nell'informatica. Sebbene originariamente si sia focalizzata sui giochi a somma zero, in cui i guadagni o le perdite di ogni partecipante sono perfettamente bilanciati da quelli degli altri, la teoria dei giochi contemporanea si applica ad una vasta gamma di relazioni comportamentali e indica ormai genericamente la scienza delle decisioni logiche negli esseri umani, negli animali e nei calcolatori.[2][3][4]
+
+La teoria dei giochi moderna nasce con l'idea di equilibri in strategie miste per giochi a somma zero a due giocatori e con la corrispondente dimostrazione di esistenza proposta da John von Neumann.[5] La dimostrazione originale di von Neumann utilizza il teorema del punto fisso di Brouwer per le mappe continue su insiemi convessi compatti; questo metodo di dimostrazione e' diventato standard nella teoria dei giochi e in economia matematica. L'articolo di von Neumann fu seguito dal suo libro del 1944, Theory of Games and Economic Behavior, scritto in collaborazione con Oskar Morgenstern, in cui vengono considerati anche giochi cooperativi a piu' giocatori. La seconda edizione di questo libro ha fornito una teoria assiomatica dell'utilita' attesa, che ha permesso a studiosi di statistica ed economia di modellare ed analizzare i comportamenti decisionali in situazioni di incertezza.[6]
+
+La teoria dei giochi e' stata sviluppata negli anni cinquanta da molti studiosi. e' stata esplicitamente applicata all'evoluzione naturale negli anni settanta, sebbene sviluppi simili risalgano gia' almeno agli anni trenta.[7] La teoria dei giochi e' stata riconosciuta come uno strumento importante in molti campi. Alla data del 2014, anno in cui il premio Nobel per l'economia e' stato assegnato al teorico dei giochi Jean Tirole, undici teorici dei giochi hanno vinto un premio Nobel per l'economia.[8] John Maynard Smith e' stato insignito del Premio Crafoord per la sua applicazione della teoria dei giochi all'evoluzione naturale.[9]
+
+Storia
+
+Le prime discussioni sulla matematica dei giochi risalgono a ben prima della nascita della moderna teoria matematica dei giochi. Girolamo Cardano elabora un trattato sui giochi d'azzardo nel Liber de ludo aleae (Libro sui giochi d'azzardo), scritto nel 1564 circa ma pubblicato postumo nel 1663. Negli anni 1650, Pascal e Huygens sviluppano il concetto di valore atteso ragionando sulla struttura dei giochi d'azzardo, e Huygens pubblica la sua analisi dei giochi d'azzardo nel De ratiociniis in ludo alea (Sul ragionamento nei giochi d'azzardo) nel 1657.
+
+Nel 1713, in una lettera attribuita a Charles Waldegrave, un giacobita, viene analizzato un gioco di carte chiamato le Her.[10][11] In questa lettera, Waldegrave fornisce una soluzione minimax in strategie miste per una versione a due giocatori di tale gioco.
+
+John von Neumann
+
+Nel 1838, nel suo Recherches sur les principes mathematiques de la theorie des richesses (Ricerche sui principi matematici della teoria delle ricchezze), Antoine Augustin Cournot considera una situazione di duopolio e ne presenta una soluzione che corrisponde ad un equilibrio di Nash del gioco.
+Nel 1913 Ernst Zermelo pubblica aber eine Anwendung der Mengenlehre auf die Theorie des Schachspiels (Su un'applicazione della teoria degli insiemi alla teoria del gioco degli scacchi), in cui dimostra che il gioco degli scacchi e' "strettamente determinato", cioe' che tale gioco ammette un equilibrio strategico.[12]
+
+L'espressione "teoria dei giochi" viene usata per la prima volta da Emil Borel negli anni venti. Borel si occupa nella Theorie des jeux di giochi a somma zero con due giocatori e cerca di determinare una soluzione poi divenuta nota come concetto di von Neumann di soluzione di un gioco a somma zero.
+
+La nascita della moderna teoria dei giochi puo' essere fatta coincidere con la pubblicazione dell'articolo On the Theory of Games of Strategy di John von Neumann nel 1928,[5] in cui von Neumann dimostra l'esistenza di equilibri per giochi a somma zero attraverso il teorema del punto fisso di Brouwer per mappe continue in insiemi convessi compatti, mettendo a punto un metodo che sarebbe poi diventato standard in teoria dei giochi e in economia matematica. L'articolo di von Neumann fu seguito nel 1944 dal libro Theory of Games and Economic Behavior di John von Neumann e
+
+John Nash
+
+Oskar Morgenstern[6]. La seconda edizione di questo libro fornisce una teoria assiomatica dell'utilita', una reincarnazione della vecchia teoria dell'utilita' di Daniel Bernoulli in una nuova disciplina. Il fondamentale lavoro di von Neumann e Morgenstern include un metodo per determinare soluzioni mutuamente consistenti per giochi a somma zero con due giocatori.
+
+Nel 1950 appaiono le prime discussioni del dilemma del prigioniero, uno scenario investigato dai matematici Merrill M. Flood e Melvin Dresher nell'ambito delle indagini della RAND Corporation sulla teoria dei giochi. La RAND intraprendeva questi studi per le loro possibili applicazioni alle strategie nucleari globali.[13] Piu' o meno contemporaneamente, John Nash elabora un criterio per la mutua consistenza delle strategie dei giocatori, noto come equilibrio di Nash, applicabile ad una gamma di giochi piu' ampia rispetto al criterio proposto da von Neumann e Morgenstern. Nash dimostra che ogni gioco non- cooperativo finito, con piu' giocatori, anche non a somma zero, ammette un cosiddetto equilibrio di Nash in strategie miste.
+La teoria dei giochi si sviluppa grandemente negli anni cinquanta, durante i quali vengono elaborati i concetti di nucleo, gioco in forma estesa, gioco ripetuto, e valore di Shapley. Gli anni cinquanta vedono anche le prime applicazioni della teoria dei giochi alle scienze politiche e alla filosofia.
+
+Risultati premiati
+Undici premi Nobel per l'economia sono stati assegnati a studiosi che si sono occupati di teoria dei giochi. Anche un Premio Crafoord e' stato assegnato a John Maynard Smith, illustre biologo e genetista, professore alla University of Sussex per lungo tempo, per il suo contributo in questo campo.
+Nel 1965, Reinhard Selten introduce il concetto di soluzione noto come equilibrio perfetto nei sottogiochi (subgame perfect equilibrium), che raffina ulteriormente il concetto di equilibrio di Nash. Piu' tardi, Selten introduce anche il concetto di equilibrio "della mano tremolante" (trembling hand equilibrium). Nel 1994, Nash, Selten e Harsanyi ricevono il premio Nobel per l'economia per i loro contributi alla teoria dei giochi.
+
+Negli anni settanta, la teoria dei giochi e' stata molto applicata in biologia, in gran parte come risultato dei lavori di John Maynard Smith e del suo concetto di strategie evolutivamente stabili. Vengono inoltre introdotti i concetti di equilibrio correlato, equilibrio della mano tremolante, e di conoscenza comune (common knowledge).
+
+Nel 2005, anche i teorici dei giochi Thomas Schelling e Robert Aumann ricevono un premio Nobel per l'economia. Schelling si e' occupato di modelli che anticipavano la teoria dei giochi evolutiva. Aumann ha introdotto il concetto di equilibrio correlato e ha sviluppato un'estesa analisi formale dell'assunzione della conoscenza comune e delle sue conseguenze.
+
+Nel 2007, Leonid Hurwicz, Eric Maskin, e Roger Myerson hanno ricevuto il premio Nobel per l'economia "per aver gettato le basi della teoria del progetto di meccanismi (mechanism design)". I contributi di Myerson includono la nozione di equilibrio proprio, e un importante testo monografico: Game Theory, Analysis of Conflict.[14]. Hurwicz ha introdotto e formalizzato il concetto di "compatibilità con gli incentivi" (incentive compatibility).
+Nel 2012, Alvin E. Roth e Lloyd S. Shapley hanno ricevuto il premio Nobel per l'economia "per la teoria delle allocazioni stabili e per la pratica della progettazione dei mercati". Nel 2014, il premio Nobel per l'economia e' andato al teorico dei giochi Jean Tirole.
+
+In Italia
+In Italia, un forte contributo allo sviluppo della teoria dei giochi e' stato dato dal "Centro Interuniversitario per la Teoria dei Giochi e le sue Applicazioni" ("CITG"), grazie all'organizzazione di convegni nazionali e internazionali, scuole estive e diffusione via rete di informazioni (tra cui il Pool Listing, elenco aggiornato di preprint in tema, precedentemente curato dalla Universita' di Bielefeld e pubblicato sullo International Journal of Game Theory). Il CITG, che era stato promosso dagli atenei di Bergamo, Firenze e Pavia, e' stato creato nel 1990[15] ed e' stato chiuso nel 2005 per avere raggiunto i suoi scopi istituzionali.
+
+Premesse
+Nel modello della teoria dei giochi la premessa indispensabile e' che l'obiettivo e' vincere; tutti devono essere a conoscenza delle regole del gioco, ed essere consapevoli delle conseguenze di ogni singola mossa. La mossa, o l'insieme delle mosse, che un individuo intende fare viene chiamata "strategia". In dipendenza poi delle strategie adottate da tutti i giocatori (o agenti), ognuno riceve un "pay-off" (che in inglese significa: compenso, vincita, pagamento, ma anche esito) secondo un'adeguata unita' di misura. Tale compenso puo' essere positivo, negativo o nullo. Un gioco si dice "a somma costante" se per ogni vincita di un giocatore vi e' una corrispondente perdita per altri. In particolare, un gioco che risulta "a somma zero" fra due giocatori rappresenta la situazione in cui il pagamento viene corrisposto da un giocatore all'altro. La strategia da seguire e' strettamente determinata se ne esiste una che e' soddisfacente per tutti i giocatori; altrimenti e' necessario calcolare e rendere massima la speranza matematica del giocatore o valore atteso, che e' la media ponderata dei possibili compensi (sia positivi sia negativi), ciascuno moltiplicato (pesato) per le rispettive probabilit  di essere assunto (ossia di verificarsi).
+
+Descrizione informale dei giochi
+In un gioco esistono uno o piu' contendenti che cercano di vincere, ovvero di massimizzare la propria vincita. La vincita e' definita da una regola (funzione) che stabilisce quantitativamente qual e' la vincita dei contendenti in funzione del loro comportamento. Tale funzione e' detta "funzione dei pagamenti". Ogni
+
+giocatore puo' intraprendere un numero finito (o infinito, nel caso piu' astratto possibile) di azioni o decisioni che determinano una strategia. Ogni strategia e' caratterizzata da una conseguenza per il giocatore che l'ha adottata e che puo' essere un premio o una penalita'. Il risultato del gioco e' completamente determinato infine dalla sequenza delle loro strategie e dalle strategie adottate dagli altri giocatori.
+
+Ma come caratterizzare il risultato del gioco per ogni giocatore? Se si misura la conseguenza di una strategia in "termini monetari", ogni strategia puo' essere messa in corrispondenza con un valore: un valore negativo indicher  un pagamento all'avversario, ossia una penalit ; mentre un valore positivo indicher  una vincita, ossia la riscossione di un premio. Il guadagno o la perdita spettante al generico giocatore associata alla sua strategia e alle strategie prese in un dato istante da tutti i restanti giocatori e' espresso dal valore monetario indicato dalla funzione dei pagamenti. Le decisioni prese da un giocatore naturalmente si scontrano o sono in accordo con le decisioni prese dagli altri giocatori e da simili situazioni nascono varie tipologie di giochi (ad es.: giochi cooperativi o non-cooperativi).
+
+Uno strumento utile per rappresentare le interazioni tra due giocatori, due imprese o due individui e' una matrice o tabella delle decisioni a doppia entrata. Questa tabella delle decisioni serve a mostrare le strategie e le vincite di un gioco condotto da due giocatori.
+La matrice delle decisioni e' quindi una rappresentazione attraverso la quale cataloghiamo tutti i possibili risultati delle interazioni fra giocatori e assegniamo il valore della vincita che in ciascuna situazione compete a ciascun giocatore. Altra forma di rappresentazione riguarda la sequenza con la quale ogni decisione viene assunta o le azioni vengono condotte. Questa caratteristica di ogni gioco puo' essere descritta mediante un grafo ad albero, rappresentando ogni possibile combinazione di giocate dei contendenti da uno stato iniziale sino agli stati finali dove vengono ripartite le vincite.
+
+
+Tipi di giochi
+
+I giochi possono essere classificati in base a diversi paradigmi:
+
+Cooperazione; Rappresentazione; Somma.
+
+Cooperazione
+Un gioco cooperativo si presenta quando gli interessi dei giocatori non sono in opposizione diretta tra loro, ma esiste una comunanza di interessi. I giocatori perseguono un fine comune, almeno per la durata del gioco, alcuni di essi possono tendere ad associarsi per migliorare il proprio "pay-off". La garanzia e' data dagli accordi vincolanti.
+
+Qual e' la rappresentazione matematica di una comunanza di interessi? Il concetto di unione di singoli interessi individuali in una coalizione o alleanza e' espresso dalla definizione di gioco essenziale; mentre il valore v di una generica coalizione G e' misurato da una funzione detta funzione caratteristica. Indicato con
+R= l'insieme degli n giocatori, possono esistere	arbitrari sottoinsiemi G?R che rappresentano una
+coalizione tali per cui G appaia agli effetti del gioco come un unico giocatore. La funzione caratteristica e'
+
+proprio definita sull'insieme delle parti di R, ossia sull'insieme di tutti i sottoinsiemi G?R ed associa ad ogni coalizione un numero: V(G):= v. Naturalmente V( ):= 0 in quanto e' nullo il pagamento per la coalizione vuota, quella costituita da nessun giocatore. Un gioco ad n-persone e' detto essenziale se
+
+    con k=1,..., e        per ogni i?j.
+
+In sostanza un gioco essenziale e' intrinsecamente di natura cooperativa quando tutte le possibili coalizioni costituibili tra gli n giocatori "vedono" che esiste un valore del gioco V(R) che domina la semplice unione dei pagamenti conseguibili dalle singole alleanze . In R tutti i giocatori interagiscono e dalle reciproche relazioni traggono il mutuo vantaggio V(R).
+
+Si possono avere due sottogeneri, i giochi NTU ed i giochi TU.
+
+
+Giochi NTU
+"Non Transferable Utility": a utilita' non trasferibile o senza pagamenti laterali. In questi casi, nel campo dell'economia industriale, in una situazione di oligopolio puo' insorgere il fenomeno della collusione.
+
+Giochi TU
+"Transferable Utility": a utilita' trasferibile o con pagamenti laterali, nei quali deve esistere un mezzo, denaro o altro, per il trasferimento dell'utilit .
+La suddivisione della vincita avviene in relazione al ruolo svolto da ciascun giocatore, secondo la sua strategia ed i suoi accordi (per i "giochi TU" vanno aggiunti i pagamenti o i trasferimenti ottenuti durante il gioco).
+Nei giochi a 2 persone con funzione dei pagamenti a somma costante, per definizione esistono due schieramenti G ed   , quest'ultima e' la coalizione avversa a G essendo  l'insieme complementare di G. I giochi a due persone sono tali per cui per ogni coalizione G?R si ha
+
+
+I giochi a due persone a somma costante mostrano quindi di non essere essenziali, ovvero la loro vera natura non e' di carattere cooperativo. Quest'ultima asserzione e' un teorema matematico per la cui dimostrazione formale si rimanda alla lettura del teorema 41 in E. Burger, Introduction to the Theory of Games. Nei giochi a somma costante se i giocatori si coalizzassero in R conseguirebbero il medesimo risultato se giocassero separatamente:   . Nei giochi essenziali, per i quali vale l'adagio "l'unione fa la forza", i giocatori collaborando si garantiscono un guadagno superiore a quello che otterrebbero giocando individualmente. In generale la cooperazione puo' essere richiesta esplicitamente dalle regole del gioco: e' il caso in cui e' il gioco stesso ad imporre per ogni giocatore la scelta di uno o piu' partner; oppure la cooperazione puo' sorgere in quanto la funzione dei pagamenti non ammette a priori un valore unico. La funzione caratteristica descrive semplicemente quanto una coalizione ottenga dai propri avversari, ma non dice nulla di come i guadagni vengano divisi tra gli alleati della coalizione stessa. John von Neumann e Oskar Morgenstern si sono avvicinati al problema dei giochi cooperativi caratterizzandoli per il fatto che una coalizione di individui ha ragione di esistere se e solo se verificano due condizioni relative alla distribuzione delle vincite tra i membri della coalizione. Le due condizioni sono:
+
+1) ogni spartizione dei "guadagni" conseguibili tra i giocatori non appartenenti alla coalizione e' inferiore alla spartizione dei "guadagni" effettuata tra i giocatori appartenenti alla coalizione;
+
+2) nessuna spartizione dei guadagni all'interno della coalizione e' superiore a qualche altra possibile distribuzione dei "guadagni" all'interno della coalizione.
+
+La proprieta' 1) afferma che la coalizione e' vincente perche' e' piu' remunerativa e, in conclusione, tutti vorrebbero entrarvi. In sintesi le soluzioni dei gioco devono essere efficienti: non esistono altre soluzioni che migliorano i risultati conseguibili dai membri della coalizione.
+La proprieta' 2) assicura che il credo (trust) adottato all'interno della coalizione e' libero da contraddizioni interne che minerebbero la fiducia reciproca tra i membri; in poche parole le vincite vengono distribuite equamente tra tutti i membri della coalizione senza preferenze o favoritismi di sorta.
+
+Giochi non cooperativi
+Nei giochi non cooperativi, detti anche giochi competitivi, i giocatori non possono stipulare accordi vincolanti (anche normativamente), indipendentemente dai loro obiettivi. A questa categoria risponde la soluzione data da John Nash con il suo Equilibrio di Nash, probabilmente la nozione piu' famosa per quel che riguarda l'intera teoria, grazie al suo vastissimo campo di applicabilit . Il criterio di comportamento razionale adottato nei giochi non-cooperativi e' di carattere individuale ed e' chiamato strategia del massimo.
+
+Una definizione di razionalita' siffatta caratterizza il comportamento di un individuo "intelligente ottimista" in quanto si prefigge l'obiettivo ottimista di prendere sempre la decisione che consegue il massimo guadagno possibile. In sostanza il comportamento di ogni giocatore e' tale da perseguire sempre la strategia piu' vantaggiosa per se stesso. Qualora nel gioco esista una strategia che presenta il massimo guadagno per tutti i giocatori si parla di punto di equilibrio.
+
+Un punto di equilibrio in un gioco in cui si attua la strategia del massimo esprime il fatto che tutti i giocatori conseguono si' il massimo guadagno individuale, ma anche quello collettivo. Il punto di equilibrio di Nash esprime in un certo senso un comportamento razionale socialmente utile dal momento che tutti i giocatori ottengono un pagamento che presenta la convergenza degli interessi di tutti i giocatori. John Nash ha dimostrato che ogni gioco finito ad n giocatori ammette almeno un punto di equilibrio in strategie miste, tale teorema faceva parte della sua tesi di dottorato.
+
+Wikiversit  contiene risorse sui Giochi non cooperativi
+
+
+Giochi ripetuti nel tempo
+
+Alcuni tipi di gioco che portano gli agenti a giocare piu' di una volta, trasformando i pay off tramite un vincolo intertemporale, pur considerando lo stesso schema di gioco iniziale. Nel caso di giochi ad informazione perfetta essi possono essere ricondotti alla forma normale di Borel, ossia a giochi sprovvisti della dimensione temporale.
+
+Un esempio di questi e' il dilemma del prigioniero ripetuto infinite volte.
+
+Giochi a informazione perfetta e completa
+
+Nei giochi a informazione perfetta, in ogni momento, si conosce con certezza la storia delle giocate precedenti. In termini piu' tecnici, si tratta di giochi in cui in ogni momento del gioco si puo' capire in quale nodo della rappresentazione ad albero del gioco (rappresentazione estesa) ci si trova. Un concetto molto simile e' quello di gioco a informazione completa, in cui ogni giocatore ha una conoscenza completa del contesto ma non necessariamente delle azioni degli altri giocatori, per esempio perche' le mosse dei diversi giocatori devono avvenire simultaneamente (vedi il dilemma del prigioniero).
+
+Giochi a somma zero
+I giochi a somma zero sono un caso particolare dei giochi a somma costante in cui la costante e' pari a zero. I giochi a somma zero modellano tutte quelle situazioni conflittuali in cui la contrapposizione dei due giocatori e' totale: la vincita di un giocatore coincide esattamente con la perdita dell'altro. La somma delle vincite dei due contendenti in funzione delle strategie utilizzate e' cioe' sempre zero. Negli scacchi ad
+
+esempio significa che i soli tre risultati possibili (rappresentando la vittoria con 1, la sconfitta con -1 e il pareggio con 0) possono essere: 1,-1 se vince il bianco; -1,1 se vince il nero; 0,0 se pareggiano[16]. Non esiste ad esempio il caso in cui vincono entrambi o perdono entrambi.
+
+Esempi a informazione imperfetta
+
+briscola poker
+Un gioco di strategia viene descritto da Von Neumann come un certo numero di scelte ed eventi ognuno dei quali determina un numero finito di risultati diversi. Gli eventi sono fortuiti, ossia sono frutto del caso e come tale nessun individuo e' in grado di determinarne il risultato o meglio di influenzarne l'esito. Al piu' gli individui conoscono le probabilit  con le quali i diversi risultati appaiono. Le scelte invece dipendono dal libero arbitrio degli individui, ossia dalle decisioni prese liberamente dai giocatori. La teoria dei giochi si concentra sull'effetto che la scelta di ogni giocatore ha su tutti gli altri, ossia esamina l'effetto congiunto originato da scelte individuali laddove la ratio dietro ogni scelta e' la ricerca del proprio vantaggio. Il destino di ogni giocatore appare cosi' dipendere non solo dalle proprie scelte/azioni, ma influenza ed e' influenzato dalle azioni degli altri individui allorquando tutti i giocatori sono guidati nel proprio agire unicamente dall'interesse personale. Von Neumann inoltre ritiene inaccettabile ipotizzare che un giocatore, prima di compiere la propria scelta, possa conoscere le scelte dei restanti giocatori ed il risultato dell'evento casuale. Al momento di prendere la decisione il giocatore non puo' prevedere o dire quali saranno le sue scelte nel corso del gioco in corrispondenza delle scelte prese dagli altri giocatori; se cosi' fosse tale eventualit  implicherebbe una restrizione al suo stesso libero arbitrio. Un giocatore infatti che conoscesse in anticipo le mosse degli altri, nel momento in cui dovesse effettuare la propria scelta, questa risulterebbe condizionata dalle scelte compiute dagli altri ed in ultima analisi dunque il giocatore non potrebbe fare altro che subire passivamente le scelte dei restanti giocatori e del caso. Ecco dunque motivata la ragione per cui si ipotizza che le scelte dei giocatori vengano prese simultaneamente.
+

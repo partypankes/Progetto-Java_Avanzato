@@ -1,0 +1,314 @@
+Informatica e storia del computer
+La storia del computer è l'evoluzione dell'apparecchio elettronico destinato all'elaborazione dei dati, privo di capacità decisionale o discrezionale, che compie determinate operazioni secondo procedure prestabilite o programmi.[1]
+
+Cronologia dei computer fino al 1950.
+
+Le prime importanti esigenze di calcolo riguardarono principalmente l'astronomia, disciplina legata da un verso a concezioni religiose o comunque spiritualiste, e per altro verso ad applicazioni estremamente pratiche come quelle per la navigazione marittima.
+
+A parte l'abaco, che è il più antico strumento di calcolo usato dall'uomo, le prime macchine costruite per effettuare operazioni di calcolo, tali che ad un variabile input dell'utente producessero un corrispondente output come effetto di un processo dei dati immessi determinato da una regola matematica o logica, sono molto antiche.
+
+L'esempio più antico conosciuto di calcolatore meccanico è quello della macchina di Anticitera (circa 200-100 a.C.) Era in grado di calcolare il calendario e la posizione dei corpi celesti. Recentemente sono stati ritrovati altri frammenti della macchina, nello stesso fondale marino dove erano stati trovati i 3 frammenti principali (in una zona ricoperta da rocce, cadute in un momento successivo all'affondamento della nave in seguito a un terremoto). Questi frammenti ampliano le possibilità di calcolo della macchina.
+
+Funzioni essenzialmente analoghe avevano alcuni strumenti della marineria, fra i quali va menzionato l'astrolabio, con il quale in pochi secondi era possibile ottenere risultati altrimenti assai faticosi da elaborare in ordine alla posizione (punto nave) ed all'ora del giorno, con istintiva e sottintesa applicazione della trigonometria nautica ai dati di base della posizione degli astri. Memorabile in proposito resta l'opera degli astrolabisti moreschi, soprattutto quelli della Scuola di Siviglia, che fra il Duecento ed il Trecento realizzarono macchine di estrema complessità e raffinatezza (anche estetica).
+
+Età Moderna
+Personaggio chiave del XVII secolo è Nepero, che non solo con i suoi bastoncini fornisce uno strumento di calcolo per le moltiplicazioni ma con le teorizzazioni sui logaritmi permette nel 1632 al matematico inglese William Oughtred di realizzare il regolo calcolatore, con il quale si resero immediate molte operazioni matematiche. Il primo a documentare l'uso di ruote dentate per la realizzazione di uno strumento di calcolo meccanico è Guidobaldo Dal Monte nel 1609[2]. La macchina calcolatrice di Wilhelm Schickard, del 1623, consente di sommare e sottrarre numeri fino a sei cifre. Le cifre da sommare sono immesse posizionando delle ruote che collegate a degli ingranaggi producono l'avanzamento di altre ruote che si posizioneranno sul risultato finale. Di questa macchina sono rimasti soltanto i progetti, la sua ideazione rimase infatti per lungo tempo non nota, non fornendo contributi al successivo sviluppo di strumenti meccanici di calcolo.
+
+
+Un esemplare di pascalina
+
+La Stepped Reckoner di Leibniz
+Poco dopo, sempre intorno al 1642 il filosofo francese Blaise Pascal realizzò la sua celebre pascalina, per operazioni di somma e sottrazione; sulla base di questa, non tardò Leibniz (1673) a realizzare una macchina capace di moltiplicare e dividere. Tra le prime macchine in grado di eseguire i calcoli in modo automatico attraverso ingranaggi meccanici mossi da contrappesi, figura anche quella inventata e realizzata nel 1709 dal veneziano Giovanni Poleni.[3]
+
+L'ingegnere tedesco J. H. Müller in un libro pubblicato nel 1786 descrisse l'idea di una macchina da calcolo in grado di effettuare le quattro operazioni fondamentali (addizione, sottrazione, moltiplicazione, divisione) impostando i valori di partenza e mettendola in funzione girando una manovella a mano, finché la macchina dava il risultato finale. Müller non poté mai realizzare la macchina per mancanza di fondi.
+
+Nell'Ottocento si svilupparono i rudimenti dell'elaborazione basata sul sistema numerico binario (0,1) e le schede perforate, e ne nacquero le prime applicazioni.
+
+Una parte della macchina differenziale di Charles Babbage
+Nel 1833 Charles Babbage (1791-1871) progettò la macchina analitica, il primo vero calcolatore programmabile, in senso moderno, della storia. Venne realizzato solo il mulino, la ALU, ma non ne fu mai realizzato un prototipo completo. Era il primo esempio di un progetto di macchina dotata di un'unità di memoria e un'unità di calcolo.
+
+Nel 1842 la contessa di Lovelace, Ada Byron (1815-1852), figlia del poeta Lord Byron, scrisse i primi programmi della storia pensati per la macchina analitica di Babbage.
+
+Nel 1854 il maestro di scuola elementare irlandese, George Boole (1815-1864), inventò l'algebra booleana basandosi sul codice binario.
+
+Nel 1858 la prima macchina differenziale mise piede sul territorio degli Stati Uniti, dato che l'Osservatorio astronomico Dudley di Albany (New York) importò il calcolatore automatico meccanico realizzato dagli svedesi Goerg ed Edward Scheutz, basato sul progetto di Babbage e da quel momento gli americani cercarono di sviluppare in proprio i filoni di ricerca scientifica e tecnologica.[4]
+
+Nel 1889 Herman Hollerith (1860-1929) brevettò l'utilizzo di schede perforate la cui lettura avveniva mediante l'analisi di circuiti elettrici (chiusi in corrispondenza dei fori della scheda) e fondò nel 1896 la società Tabulating Machine Company, che nel 1924 sarebbe divenuta la IBM. La macchina di Hollerith fu utilizzata per l'elaborazione del censimento degli Stati Uniti.
+
+Nel 1904 John Ambrose Fleming inventa il tubo a vuoto, progenitore delle valvole termoioniche.
+
+Vannevar Bush
+Tra gli "antenati" del personal computer, prima ancora dell'avvento dell'era digitale, è spesso citato anche il progetto Memex. Si trattava di un sistema di archiviazione ideato dallo scienziato e tecnologo statunitense Vannevar Bush negli anni trenta e mai realizzato.
+
+Il memex (dalla contrazione di memory expansion) era un sistema nel quale un singolo individuo avrebbe potuto registrare i propri libri, il proprio archivio e le proprie comunicazioni personali, meccanizzato in modo da poter essere consultato con eccezionali velocità e versatilità, una sorta di "estensione privata" della sua memoria. Le sue caratteristiche rivoluzionarie ne fanno un antenato dell'odierno personal computer. Era un dispositivo di tipo elettro-ottico, che all'epoca rappresentava la più avanzata e promettente forma di archiviazione delle informazioni. Il memex era descritto come una "scrivania" dotata di "schermi traslucidi", una tastiera, un set di bottoni e leve.
+
+La "Bomba" polacca (1938)
+Il calcolatore denominato Bomba venne progettato nel 1932 e realizzato nel 1938 dal matematico polacco Marian Rejewski per decifrare i messaggi tedeschi prodotti dalla macchina Enigma ideata da Arthur Scherbius. La bomba tuttavia era una "macinanumeri", ossia un calcolatore che usava il metodo forza bruta, e che non permetteva alcuna diversa programmazione, se non tramite riassemblaggio e modifiche al meccanismo. Tale calcolatore venne poi sfruttato come base di partenza per lo sviluppo e la realizzazione della macchina britannica Colossus nel 1944, dopo che il regime tedesco ebbe cambiato il sistema di codifica dei messaggi della macchina Enigma.
+
+Lo Z1 (1939)
+
+riproduzione dello Z1
+Nel 1939 Konrad Zuse (1910-1995) costruì lo Z1, primo di un'innovativa serie di calcolatori elettromeccanici basati sul sistema binario e programmabili, funzionanti prima a memorie elettromeccaniche e poi a relè (Z2, Z3). La macchina presentava una struttura già del tutto analoga a quella dei computer moderni, con la distinzione tra unità di memoria ed unità di calcolo, e funzionava alla velocità di clock di un solo Hertz, generata da un motore elettrico. Gli studi di Zuse e quelli di John Vincent Atanasoff, inventore della memoria rigenerativa, furono la base principale per l'elaborazione dell'architettura di von Neumann. Il convegno internazionale di Informatica del 1998 riconobbe a Konrad Zuse con il suo "Z1" il ruolo di inventore del primo computer programmabile funzionante della storia.
+
+L'ABC (1939)
+
+Atanasoff Berry Computer
+Nel 1939 il Dr. John Vincent Atanasoff e Clifford E. Berry dell'Iowa State University costruiscono l'Atanasoff Berry Computer (conosciuto come ABC), il primo computer digitale totalmente elettronico; rappresenta uno dei maggiori passi avanti della storia dei calcolatori. L'Atanasoff-Berry Computer introdusse molte innovazioni nel campo dei calcolatori. Introdusse i numeri binari in un computer digitale (lo Z3 utilizzava i numeri binari ma era un calcolatore elettromeccanico) e la loro gestione, il calcolo parallelo, le memorie rigenerative e una separazione tra dati e istruzioni.
+
+Un computer era considerato una specie di macchina per fare i conti molto velocemente, la naturale evoluzione delle calcolatrici usate durante la seconda guerra mondiale. Era normale perforare una serie di schede per fornire non solo l'input, ma anche i rudimenti di quello che oggi prende il nome di sistema operativo.
+
+Questi primi calcolatori erano molto lenti, ed era normale che il risultato del calcolo venisse presentato varie ore, se non giorni, più tardi. Tra un input e l'altro, inoltre, il computer rimaneva inattivo, proprio come una macchina calcolatrice.
+
+Lo Z3 (1941)
+
+Lo Zuse Z3 al Deutsches Museum di Monaco
+Il primo computer Turing-completo basato sul sistema numerico binario e totalmente programmabile fu lo Z3, costruito in Germania da componenti riciclati di telefonia dal già citato Konrad Zuse, che lo realizzò praticamente da solo, nel 1941. Lo Z3 venne poi distrutto in un bombardamento dagli Alleati, e per molti anni ne venne ignorata perfino l'esistenza; di conseguenza il primato di primo computer della storia era stato riconosciuto alla macchina statunitense "ENIAC".
+
+Harvard Mark I (1943)
+
+Porzione sinistra dell'Harvard Mark I
+L'Aiken-IBM Automatic Sequence Controlled Calculator Mark I (comunemente abbreviato ASCC, soprannominato Harvard Mark I) è uno dei primi computer digitali elettromeccanici della storia.
+
+L'Harvard Mark I è stato completato nel gennaio 1943, finanziato dall'IBM e progettato da Howard Hathaway Aiken, del dipartimento di fisica dell'Università di Harvard (Cambridge), che venne affiancato nel suo lavoro dagli ingegneri meccanici C. D. Lake, F. E. Hamilton e B. M. Durfee.
+
+Il Colossus (1944)
+
+Il Colossus Mark II. Il pannello di controllo a sinistra era utilizzato per regolare i settaggi del decodificatore di Lorenz.
+Abbiamo poi il citato Colossus, costruito nel 1944 presso il GCHQ di Bletchley Park nel Buckinghamshire come parte del programma condotto da Alan Turing con l'aiuto dell'esperto in centralini telefonici T. H. Flowers. Faceva parte del progetto bellico per decifrare i messaggi tedeschi prodotti da Enigma. A Bletchley Park, non lontano da Londra, erano stati raccolti centinaia di esperti di enigmistica, maestri di scacchi, matematici, meccanici di precisione ed elettrotecnici: lo scopo era di cercare di interpretare i circa 2.000 messaggi segreti intercettati ogni giorno al nemico, molti provenienti addirittura da Adolf Hitler. I risultati furono importanti, tanto che negli anni successivi si continuò a migliorare l'apparato e a costruirne di nuovi, fino ad avere ben 211 macchine operative nel maggio del 1945, con 2000 tecnici che le assistevano. Il progetto era talmente segreto, che Winston Churchill ne ordinò la distruzione alla fine della seconda guerra mondiale. Solo negli anni novanta, in seguito alla declassificazione dei relativi documenti, si è giunti a conoscenza della sua esistenza. Anche questa macchina era Turing-completa.
+
+Calcolatori per l'esercito
+
+L'ENIAC al Ballistic Research Laboratory
+Vennero poi gli enormi calcolatori a valvole realizzati a fini bellici dall'Esercito degli Stati Uniti tra il 1944 e il 1951, quali il già citato "ENIAC" e l'EDVAC (uno dei primi dotato di programma memorizzato). L'"ENIAC", che godette di una presentazione "hollywoodiana" che suscitò molto scalpore (anche per i grandi effetti luminosi), influenzò gran parte della cinematografia di fantascienza e diede origine alla definizione di "cervello elettronico".[4] Fu poi la volta dell'EDSAC, il primo dotato di caratteri alfabetici (ma privo di tastiera, che venne inventata nel 1926).
+
+Small Scale Experimental Machine (1948)
+
+replica della Small Scale Experimental Machine
+Lo Small Scale Experimental Machine (traducibile dall'inglese come "macchina sperimentale in scala ridotta", sigla SSEM, soprannominato Manchester Baby "bimbo di Manchester" o Baby) è, tra quelli di cui si ha notizia, il sesto computer elettronico digitale della storia, dopo l'IBM 603 Electronic Multiplier. L'importanza storica del SSEM è notevole in quanto è il primo computer elettronico a programma memorizzato della storia[5] e il primo computer della storia basato sull'architettura di von Neumann.
+
+Anni 1950-1980
+
+Lo stesso argomento in dettaglio: Cronologia dei computer dal 1950 al 1979.
+Nel 1950 venne realizzata la prima unità a nastro e venne concepita l'idea di interfaccia a schermo (che fu però prodotto la prima volta solo nel 1965). Nel 1954 la Texas Instruments iniziò a produrre in serie i transistor, che erano stati utilizzati in un computer per la prima volta nel 1947. Nel 1955, IBM iniziò ad utilizzare memorie a nuclei di ferrite, molto più economiche di qualunque altro metodo di immagazzinamento di dati binari dell'epoca, tanto che furono sostituite dai chip di memoria solo negli anni settanta, mentre il primo computer totalmente transistorizzato fu il TX-0 del 1956.
+
+UNIVAC I (1951)
+
+L'UNIVAC della Franklin Life Insurance Company
+L'UNIVAC I (UNIVersal Automatic Computer I) fu il primo computer commerciale creato negli Stati Uniti. Fu progettato da J. Presper Eckert e John Mauchly (già progettisti dell'ENIAC) i quali ne iniziarono lo sviluppo all'interno della loro società, l'Eckert-Mauchly Computer Corporation.
+
+Nel 1950 la società fu assorbita dalla Remington Rand, che creò una "divisione UNIVAC" con a capo gli stessi Eckert e Mauchly. Il progetto fu completato l'anno seguente e l'UNIVAC I venne consegnato all'United States Census Bureau il 31 marzo 1951 e messo in funzione il 14 giugno seguente[6].
+
+"Whirlwind", il simulatore di volo (1951)
+
+Il Whirlwind
+Fin dagli inizi, però, vi fu un'eccezione alla regola del "macinanumeri": la Marina Militare degli Stati Uniti finanziò nel 1944 un progetto del Massachusetts Institute of Technology volto a realizzare un simulatore di volo, completamente elettronico. Il risultato di questi sforzi fu Whirlwind, il primo computer che reagiva in tempo reale alle azioni dell'utente (il pilota), invece di attendere l'input e dare risposte. Jay Forrester, a capo del progetto, comprese che l'importanza di avere un computer che potesse reagire in tempo reale superava quella del simulatore di volo. Forrester convinse la Marina ad ampliare il progetto, nel 1948, per realizzare un computer general purpose. Ottenne un milione di dollari l'anno, tuttavia la Marina non era più interessata al progetto e minacciava di tagliare i fondi. Ciò che impedì la chiusura del progetto furono i test nucleari compiuti dall'Unione Sovietica, iniziati nell'agosto 1949. L'Aeronautica Militare degli Stati Uniti, temendo un attacco a sorpresa con bombardieri a largo raggio, commissionò al MIT un sistema di allarme interamente basato sulle tecnologie più avanzate, in cui computer come Whirlwind coordinassero la sorveglianza radar e il puntamento dei bersagli. Nel 1951 Jay Forrester presentò la versione definitiva di Whirlwind: otto armadi di valvole. Le prestazioni, per l'epoca, erano eccezionali, essendo paragonabili a quelle dei personal computer dei primi anni ottanta, quali ad esempio quelle del TRS-80. Fu anche il primo computer ad essere utilizzato, in qualche modo, come personal computer: si prenotava per 15 minuti di utilizzo e si potevano scrivere e poi lanciare dei programmi, compiere simulazioni e altro ancora. Il 20 aprile 1951 Whirlwind dimostrò la fattibilità del progetto, tracciando le rotte di tre aerei dai dati acquisiti tramite i radar e calcolando le traiettorie d'intercettazione in modo da portare l'aereo "difensore" entro un chilometro dagli "aggressori". La macchina divenne dunque il cardine del Progetto Lincoln, il quale portò nel 1956 alla nascita di SAGE: Semi-Automatic Ground Environment.
+
+BESM (1953)
+Il primo computer sufficientemente piccolo fu inventato nel 1953 in Unione Sovietica da Sergej Lebedev, e chiamato BESM[7]. Il progetto fu appoggiato dal Partito Comunista e mandato avanti, ma non fu prodotto in serie a causa dell'opposizione del Ministero della costruzione di macchine e strumenti. Nel 1965 con la riforma di Kosygin, definito l'inizio del passaggio all'economia Capitalista dell'URSS, il progetto fu lentamente abbandonato, e completamente fermato nel 1967[8].
+
+Nascita del SAGE (1956)
+
+Sala controllo del SAGE Sector. Lo schermo mostra la mappa degli Stati Uniti nel settore nord centrale.
+Il SAGE era un sistema dislocato su tutto il territorio continentale degli USA, con 23 centri operativi, ognuno dei quali era dotato di due computer, anche se poteva funzionare con uno solo, e poteva ospitare fino a 50 operatori. Il sistema non venne mai impiegato in combattimento e fu dismesso nel 1984.
+
+La creazione di SAGE portò alla nascita della Silicon Valley dell'Est, in quanto il Progetto Lincoln divenne il Laboratorio Lincoln e fu spostato a Lexington, vicino a Boston nel 1952: ben presto, altre organizzazioni high-tech lo seguirono. Inoltre, SAGE favorì l'inserimento della tecnologia resa disponibile da Whirlwind nel mondo degli affari: l'IBM, forte dell'esperienza derivante dall'essere il principale fornitore di computer del programma, creò un sistema di biglietteria nazionale in tempo reale per l'American Airlines.
+
+Il sistema divenne operativo nel 1964 col nome di SABRE, Semi-Automatic Business-Related Environment, che divenne il riferimento per tutti i sistemi successivi di transazioni sul punto vendita.
+
+CEP - la prima calcolatrice elettronica italiana
+
+Lo stesso argomento in dettaglio: Calcolatrice Elettronica Pisana.
+Nel 1957 il Centro Studi dell'Università di Pisa realizza la macchina pilota, in scala ridotta, della Calcolatrice Elettronica Pisana (CEP). Il progetto, interamente italiano, nacque dall'esigenza di disporre di una calcolatrice elettronica per la ricerca scientifica e dalla contemporanea difficoltà finanziaria di acquisto. Fu Enrico Fermi a lanciare l'idea di costruirne una in casa, sfruttando parte dei finanziamenti per il sincrotrone di Frascati. L'organizzazione e sviluppo del progetto è dovuto in particolare a Marcello Conversi, Direttore del Dipartimento di Fisica, e Alessandro Faedo, matematico, poi preside della facoltà di Scienze.
+Contribuì al progetto anche Olivetti, che da quel progetto trasse lo spunto per lo sviluppo del calcolatore ELEA.
+
+Il PDP-1 (1960)
+
+Immagine di un PDP 1
+I 15 minuti messi a disposizione su Whirlwind ispirarono tra i più giovani utilizzatori del sistema a realizzare macchine che permettessero a chiunque di sfruttare la potenza della nuova tecnologia. Fu così che due di loro, Kenneth Olsen e Harlan Anderson, nel 1957 costituirono una piccola società per commercializzare computer interattivi: la Digital Equipment Corporation (DEC). Il mercato, però, rimase diffidente: il primo elaboratore programmabile immesso sul mercato dalla DEC, il PDP-1 del 1960, vendette solo 49 esemplari. Un numero rispettabile per l'epoca, ma certo molto lontano da quello del boom dell'informatica che sarebbe giunto vent'anni dopo.
+
+Il PDP-1 tuttavia fu tecnicamente un successo: aveva un monitor a tubo catodico integrato, poteva trovare posto in una piccola stanza e forniva una rispettabile potenza di calcolo per il suo costo di "soli" 120.000 dollari. Ma, cosa molto più importante, lo standard del PDP-1 era "aperto": tutti i dettagli costitutivi erano a disposizione, in modo da fornire agli utenti "avanzati" la possibilità di personalizzare o migliorare la macchina in caso di necessità: cosa che, per inciso, avvenne puntualmente.
+
+Simbiosi uomo-macchina
+
+Spacewar!, uno dei primi videogiochi, girava su PDP-1
+Se nel 1958 vi erano 2.500 computer negli Stati Uniti, essi salirono a 6.000 nel 1960, per salire a 20.000 nel 1964 e 63.000 nel 1969.[senza fonte] Con un articolo del 1960 dal titolo Man-Computer Symbiosis, lo psicologo Joseph C.R. Licklider espone le sue idee sull'interazione tra la logica algoritmica dei computer e quella euristica umana. Licklider aveva partecipato al progetto SAGE, e riteneva che il vero SAGE dovesse comprendere una rete di "centri di pensiero", in cui al posto dei radar ci fossero terminali interattivi, in grado di interfacciarsi con dei computer contenenti vaste biblioteche.
+
+Con il Progetto MAC del MIT, cominciò a studiare gli effetti dell'impiego dei computer su vasta scala: anche se non era possibile affidare una macchina a chiunque, dato il costo, si potevano comunque installare terminali interattivi, che grazie al time-sharing consentivano a molti utenti in contemporanea l'accesso alle risorse del computer centrale. Assunto dall'Advanced Research Projects Agency (ARPA) nel 1962, Licklider continuò il suo progetto coi fondi del Pentagono, dando vita alla prima comunità virtuale intorno al 1965. Il progetto MAC aveva i suoi bulletin-board, uno scambio di freeware e naturalmente i suoi hacker.
+
+Nel 1962 viene creata la tastiera Teletype, con cui viene equipaggiato il CDC 3600. Nello stesso anno viene concepito il concetto di time sharing e creata la prima sketchpad. L'anno seguente viene ideato il codice ASCII
+
+Douglas Engelbart, all'epoca ingegnere in una società di Menlo Park, California, aveva sviluppato idee simili a quelle di Licklider, ma i suoi capi erano rimasti scettici. Dopo aver letto alcuni suoi scritti pubblicati nel 1963, Licklider cominciò a finanziare le ricerche di Engelbart, in quanto riteneva perseguissero i medesimi scopi. Grazie ai fondi dell'aeronautica, della NASA e dell'ARPA, Engelbart realizzò quanto mancava alla nascita del moderno personal computer: il mouse, le "finestre" di dialogo, la videoscrittura a tutto schermo, l'ipertesto, l'aiuto sensibile al contesto, e molto altro.
+
+Dalla stanza del computer al computer da tavolo (1965)
+
+PDP-8 (National Museum of American History a Washington)
+Dato il "successo" del PDP-1, a partire dal 1964 la DEC puntò a realizzare un computer usufruibile da parte di piccoli gruppi o da singole persone. Basandosi su LINC, un progetto sperimentale del Lincoln Laboratory, e sfruttando la rapida evoluzione delle componenti elettroniche e di archiviazione, nell'aprile del 1965 fu immesso sul mercato il primo esemplare del PDP-8.
+
+Incredibilmente piccolo e leggero per l'epoca, e con un prezzo di 18.000 dollari, il PDP-8 cominciò ben presto a fare bella mostra di sé in decine di laboratori e addirittura nelle scuole. Fu il capostipite della famiglia dei cosiddetti minicomputer, il cui nome fu coniato nei laboratori londinesi della DEC parafrasando l'indumento più in voga all'epoca: la minigonna.
+
+Il PDP-8 scatenò la corsa al computer sempre più piccolo e più potente, tanto che a metà degli anni settanta la DEC e le sue concorrenti cominciarono a penetrare nel dominio finora incontrastato della IBM: i mainframe.
+
+Nell'ottobre 1965 venne presentato al BEMA di New York il calcolatore Olivetti Programma 101, considerato da una parte della storiografia informatica il primo personal computer della storia.
+
+Nel 1969 vi erano 63.000 computer negli Stati Uniti. Nel 1973 il loro numero salì a 105.000; in Italia 4.400 (nel 1969 erano 2.500).
+
+I minicalcolatori europei
+
+Lo stesso argomento in dettaglio: Selenia Gp-16.
+Da questo versante dell'Oceano, l'Europa non stette a guardare: dalla metà degli anni sessanta l'azienda pubblica Selenia del gruppo STET progettò e produsse il Selenia Gp-16, uno dei primi (se non il primo) microcalcolatori europei di terza generazione. Concepito principalmente per usi industriali, trovò applicazioni nelle torri di controllo degli aeroporti e nella prima centrale telefonica elettromeccanica italiana (seconda in Europa per pochi mesi), i "Gruppi speciali" di CSELT.
+
+Lo Xerox Alto (1970)
+
+Xerox Alto
+Dai laboratori Xerox di Palo Alto nel 1970 nasce un progetto molto in avanti sui suoi tempi, che vedrà la prima luce due anni dopo, nel 1972: lo Xerox Alto. Prodotto dallo Xerox Palo Alto Research Center (Xerox PARC), è il primo computer nella storia ad essere dotato di un display bitmap a finestre con capacità di sovrapposizione, connesso alla prima stampante laser, collegato alla prima rete Ethernet in local area network (LAN), e dotato del primo linguaggio orientato ad oggetti: lo Smalltalk. Lo Xerox Alto rimarrà un concept computer, ma darà il via al progetto Xerox Star (1981), il primo computer in assoluto sul mercato dotato di interfaccia GUI a icone, con mouse, i cui concetti e le cui soluzioni ispireranno tutto il mondo dell'informatica di là da venire. Apple Lisa e poi il Macintosh, Microsoft Word e Microsoft Windows, Xerox Ventura, l'interfaccia GEM, eccetera, sono tutti debitori in vario modo dello Xerox Star, diretto discendente dello Xerox Alto.
+
+Il primo computer a microprocessore: il Micral N (1973)
+
+Lo stesso argomento in dettaglio: Micral N.
+
+Micral N
+Nel 1973 l'istituto francese INRA realizzò il primo microcomputer commerciale a fare uso del microprocessore (Intel 8008). L'istituto, che non aveva fondi per un calcolatore di grandi dimensioni, realizzò questo computer ad opera dei ricercatori Gernelle, Lacombe, Benchetrit e Beckmann.
+
+Computer fatti in casa: i microcomputer (1975)
+
+Altair 8800
+Contemporaneamente, il fascino del "fai da te" dell'elettronica venne contagiato dalla febbre dei computer: il numero ormai storico di Popular Electronics del gennaio 1975 mostrava in copertina una scatola celeste con sopra interruttori e led e il nome in basso a sinistra: Altair 8800.
+
+Il kit, del costo di 495 dollari, poteva essere ordinato presso la MITS di Albuquerque, ed era basato sul processore Intel 8080. L'8080 aveva tutta l'unità centrale di elaborazione (Central Processing Unit, CPU) in un solo chip, ed era dunque il primo microcomputer a prezzi accessibili alle fasce popolari, nonché il primo che avesse avuto un successo commerciale di massa. Tuttavia, Altair era concepito come un minicomputer: ne aveva l'aspetto, usava le stesse periferiche e soprattutto ne aveva l'architettura aperta.
+
+L'italiano MD 800 (1975 - 76)
+
+MD 800
+Nel corso del 1975 viene realizzato a Torino il primo microcomputer con tutte le funzioni tipiche dei futuri personal computer, il nome era MD 800 e venne realizzato da due giovani ingegneri dello CSELT che fondarono nel 1977 la società DMD Computers per produrre questi personal computer.[9] L'MD 800 era dotato di processore Intel 8080, 8 KB di RAM, 4 KB di EPROM, Monitor monocromatico con 25 righe da 80 caratteri, Tastiera estesa con 52 tasti alfanumerici 12 tasti numerici e 18 tasti funzione, Interfaccia per doppio floppy 8” da 256 K, Interfaccia per lettore e perforatore di nastri, Interfaccia seriale, Interfaccia stampante, Sistema operativo sviluppato in Assembler 8080 con gestione files compatibile Digital PDP-11.[10][11]
+
+Olivetti
+
+Un esemplare del calcolatore Olivetti P6060
+Nell'aprile 1975 alla fiera di Hannover, viene presentato il P6060, primo personal al mondo venduto come sistema pre-assemblato funzionante (ad esempio, con lettore di floppy disk già incorporato, per la prima volta al mondo).
+
+Era composto da una unità centrale su due piastre, nomi in codice PUCE1/PUCE2, realizzata con componenti TTL, driver per floppy disk da 8" singolo o doppio, display alfanumerico al plasma da 32 caratteri, stampante termica grafica a 80 colonne, 48 KB di RAM, linguaggio Basic, 40 chilogrammi di peso. Esso era in concorrenza con un prodotto IBM simile (l'IBM 5100), ma quest'ultimo era dotato di floppy disk esterno. Solo nel prodotto successivo, il P6040 l'azienda adottò per la prima volta il microprocessore.
+
+La nascita di Microsoft ed Apple (1975-1976)
+In seguito, la MITS sviluppò un linguaggio di programmazione ufficiale per l'Altair, ispirato al BASIC della DEC per il PDP-11. Ispirati dal numero di gennaio di PE, nella primavera del 1975, due giovani delle parti di Boston crearono il Basic di Altair. Uno di loro, Paul Allen, faceva il programmatore, mentre un suo compagno delle superiori, Bill Gates, era uno studente ad Harvard. Terminato il prodotto, Allen lasciò il lavoro, e insieme con Gates fondò una piccola società, la Microsoft, per commercializzare il Basic.
+
+Le oltre 10 000 copie vendute di Altair ispirarono la nascita di circoli di appassionati (hacker), come l'Homebrew Computer Club, la cui prima riunione si tenne a Palo Alto, in California, nel marzo 1975. Due dei membri del club erano fermamente convinti che per avere davvero successo, il computer dovesse diventare un elettrodomestico, in grado di funzionare appena tolto dalla scatola e inserita la spina. Fu così che nel 1976 Steve Wozniak, licenziatosi da Hewlett Packard, e Steve Jobs, amici di vecchia data, crearono l'Apple Computer. Entrambi venivano da Cupertino, in quella che dal 1971 è stata ribattezzata Silicon Valley.
+
+La congiunzione tra gli home computer e personal computer: l'Apple 2 (1977)
+
+Apple II
+Nel 1977 nasce l'Apple II, rivoluzionario modello di home computer e allo stesso tempo progenitore per il quale fu usata l'espressione personal computer e il primo modello di successo di tale categoria prodotto su scala industriale.[12]
+
+Steve Jobs e Steve Wozniak nel 1976 avevano già costruito nel loro garage l'Apple I, un computer che però poteva essere appetibile solo ad un pubblico di appassionati di elettronica. Jobs desiderava rendere l'informatica accessibile a tutti quindi, rielaborando il progetto dell'Apple I, misero tutta l'elettronica in una scatola di plastica beige comprensiva di tastiera, dando così forma al personal computer che utilizziamo ancora oggi.
+
+Apple II era dotato di un microprocessore MOS 6502 funzionante alla frequenza di 1 MHz, la memoria RAM ammontava a 4KB (espandibili fino a 48-64KB), 8 alloggiamenti di espansione, un interprete "Integer Basic" su ROM, i codici dei caratteri alfanumerici erano memorizzati in una EPROM. Come memorie di massa erano utilizzati un registratore a cassette oppure uno/due drive per floppy disk da 5" 1/4.
+
+Solo successivamente Apple Computer produsse il suo primo hard disk: il ProFile da 5 MB (il cui costo era inavvicinabile, il corrispondente di circa tremila euro). L'Apple II era interfacciabile con stampanti e modem.
+
+Il sistema operativo era l'Apple DOS (la versione più diffusa fu la 3.3), poi sostituito dal ProDOS, i primi programmi erano rivolti per un uso da ufficio: Visicalc, Apple Writer, ScreenWriter ed AppleWorks che fu il primo integrato. I linguaggi: BASIC, UCSD Pascal, Assembler.
+
+L'Apple II aveva un design accattivante, costava solo 1.195 dollari (escluso il monitor), ed era adatto anche per i videogiochi. Entro la fine del decennio la Apple sarebbe divenuta una società con crescite da record. L'adozione di componentistica standard unita alla relativa semplicità della scheda logica di questo modello, permise la nascita di vari cloni. Appassionati e hobbisti potevano assemblarsi da soli un modello identico, essendo in commercio il clone del circuito stampato anche privo di componenti.
+
+L'alfabetizzazione informatica: gli home computer (1977)
+Prendendo spunto dal successo commerciale dell'Altair 8800 e dell'Apple II, altre ditte cominciarono a costruire e vendere i primi home computer, ovvero la seconda generazione dei microcomputer, che viene fatta risalire al 1977 e che avrà notevole popolarità fino alla fine degli anni 1980. Tra i primi modelli di home computer possiamo elencare (in ordine cronologico):
+
+Olivetti P6040 (il primo basato sul microprocessore 8080 e dotato di floppy disk da 2.5 pollici, programmabile in Mini BASIC) e il citato Olivetti P6060 (aprile 1975)
+Tandy Radio Shack TRS-80 (agosto 1977) (il primo home computer acquistabile per meno di 600 dollari)
+Commodore PET (novembre 1977) (il primo computer integrato: tastiera/schermo/memoria di massa a nastro magnetico)
+Atari 400/800 (1979) (all'avanguardia per capacità grafiche, sonore e possibilità di espansione)
+Anni 1980-1989
+
+Lo stesso argomento in dettaglio: Cronologia dei computer dal 1980 al 1989.
+Continua l'alfabetizzazione
+informatica con gli home computer (1980-1990)
+
+Commodore 64 (1982)
+Tra i modelli di home computer più famosi, diffusi o innovativi possiamo elencare (in ordine cronologico):
+
+Sinclair ZX80 (1980) (il primo computer della Sinclair, venduto anche in kit da assemblare, con lo slogan "il primo personal computer al di sotto dei 200$" ha venduto oltre 5.000 unità contribuendo ad un inaspettato inserimento dei personal computer nelle case inglesi, e non solo, dell'epoca.)
+Commodore VIC-20 (1980) (il primo computer al mondo ad essere stato venduto in oltre un milione di unità)
+BBC Micro (1981) (il principale computer a scopo educativo nel Regno Unito per un decennio; BASIC avanzato)
+Sinclair ZX Spectrum (aprile 1982) (il più venduto home computer britannico; ha "creato" l'industria del software nel Regno Unito)
+Commodore 64 (settembre 1982) (il più venduto modello di computer di tutti i tempi: più di 17 milioni di unità)
+Apple Macintosh (1984) (il primo home/personal computer basato su un'interfaccia grafica; il primo a 16/32-bit)
+Atari ST (1985) (il primo home/personal computer con interfaccia MIDI integrata; anche con ½MB RAM a meno di 1000 dollari)
+Commodore Amiga (giugno 1985) (il primo home/personal computer basato su un'interfaccia grafica a colori che impiega il preemptive multitasking per la gestione dei processi e la prima implementazione di "Plug&Play" per ciò che concerne la gestione delle periferiche)
+Alcuni dei sistemi di questo tipo erano troppo limitati per essere definiti personal computer o microcomputer, tuttavia ebbero successo come console per i videogiochi. In particolare il Commodore 64 rimane nella storia per diffusione e quantità di programmi anche gestionali. La diffusione di questi sistemi è stata comunque enorme, contribuendo all'allargamento dell'alfabetizzazione informatica e fornendo la base per la successiva diffusione dei personal computer.
+
+Lo Xerox Star (1981)
+
+Monitor e tastiera di una workstation Xerox Star
+Diretto successore dello Xerox Alto, lo Xerox Star è stato il primo computer venduto sul mercato ad essere dotato di interfaccia grafica a icone guidata da mouse e dotato di hard disk di serie. Il mondo dell'informatica deve moltissimo a questo computer, su cui sono stati elaborati programmi che poi hanno ispirato quasi tutti gli sviluppatori di quella generazione e anticipato la maggior parte delle soluzioni e degli standard oggi comunemente adottati.
+
+Su Xerox Star nasce la metafora della scrivania virtuale con il paradigma di una GUI WIMP. L'utente dello Xerox Star già si trovava a manipolare unicamente i file di dati, perché le applicazioni di produttività erano già allora associate con i corrispondenti file. I documenti potevano essere posizionati sul desktop, archiviati o trascinati sul cestello in e out della posta elettronica. Si potevano addirittura organizzare le icone nel modo che si preferiva, ed era disponibile un set di comandi ridotto Star che poteva essere applicato a qualsiasi file di dati: Move, Copy, Open, Delete, Show, Properties e Same, cioè gli stessi comandi base, che compongono le principali voci di un odierno menu. Il sistema si caratterizzava anche per la coerenza grafica degli elementi a schermo. I designer dello Star infatti enfatizzarono l'aspetto grafico del desktop, delle icone e delle finestre.
+
+Il PC IBM (1981)
+
+IBM 5150
+Il 12 agosto 1981, IBM immette nel mercato il primo di una serie di personal computer che diventerà molto popolare: l'IBM 5150, meglio conosciuto come PC IBM.
+
+Nella sua prima versione era dotato di microprocessore Intel 8088 a 4,7 MHz, con 16 KByte di RAM, espandibili a 640, senza disco rigido, con massimo due drive per floppy disk da 5.25" a 160Kb, un monitor a fosfori verdi e sistema operativo PC-DOS 1.0, sviluppato dalla Microsoft e ceduto in licenza all'IBM.
+
+Il costo di questo PC era elevato (circa 3.000 dollari), la capacità di elaborazione bassa, la possibilità di gestire grosse moli di dati era legata all'acquisto di costosissimi dischi rigidi, o unità a nastro esterne. D'altra parte era una macchina solida e affidabile, che godeva di assistenza tecnica; era espandibile tramite un bus interno per schede di espansione, caratteristica che oltre al PC IBM solo l'Apple II allora possedeva. In una parola, mentre il resto degli home/personal computer di allora non riusciva a scrollarsi di dosso una certa immagine da "tecno-giocattoli", il PC IBM nasceva invece come una macchina "seria", con cui poter lavorare.
+
+All'epoca fece furore, vendendo 50.000 pezzi in un mese e 200.000 in un anno, cifre enormi per il mercato dei computer di allora: l'economicissimo e contemporaneo Sinclair ZX80 vendette 70.000 unità in un anno. Anche se non era la miglior macchina tecnologicamente avanzata disponibile (vedi Apple II), l'esperienza e il nome dell'IBM, assieme all'aspetto austero e professionale del 5150, ne fecero lo standard de facto nell'industria del personal computer.
+
+I cloni PC
+
+Lo stesso argomento in dettaglio: IBM compatibile.
+Il successo di IBM non passò inosservato: le industrie informatiche, incluse quelle delle "tigri orientale" (Taiwan, Singapore, ecc.), si misero subito al lavoro per clonare il PC IBM. La clonazione, cioè la duplicazione, fu possibile poiché IBM forniva assieme al PC anche gli schemi elettrici, e il listato del sistema operativo era facilmente ottenibile, i componenti utilizzati, chip di memoria, processore, unità a disco erano "standard" e disponibili per tutti.
+
+Il passo per la produzione industriale dei cloni fu brevissimo. In pochi anni il mondo fu invaso da enormi quantità di PC clonati, dalle prestazioni sempre più brucianti e dai costi sempre più bassi.
+
+Intel e Microsoft
+Al centro di questo business c'era e c'è ancora una ditta di semiconduttori: Intel. Fondata nel 1968 da Gordon Moore, famoso per la sua legge sull'evoluzione del numero di transistor integrati nei microprocessori, equipaggiava praticamente tutti i PC prodotti, fino a quando le CPU di società come AMD e Cyrix cominciarono ad insidiarne il mercato.
+
+La Microsoft controllava il mondo dei sistemi operativi per la famiglia dei microprocessori Intel, diventando nel tempo la più potente software house del mondo. Il duopolio Microsoft e Intel ha suggerito la coniazione del termine WinTel dall'unione di Windows e Intel. Questo duopolio controllava il 90% del mercato informatico mondiale nella fascia ufficio e privato, mentre per i server e la grafica ad alto livello (tipo IRIX della SGI) i vari Unix hanno sempre avuto buona diffusione, così come per l'editoria e l'education l'Apple e i Macintosh erano i preferiti.
+
+La seconda rivoluzione di Apple: il Macintosh (1984)
+
+Lo stesso argomento in dettaglio: Apple Macintosh e Mac OS Classic.
+
+Macintosh
+Nel 1984 l'Apple produce il secondo passaggio evolutivo che porta agli attuali personal computer. Dopo l'insuccesso dell'Apple Lisa, che, nel 1983 fu il primo computer (commerciale e su larga scala) dotato di serie di interfaccia grafica e di mouse, troppo costoso, e con un design poco appariscente, l'azienda di Cupertino (California) decide di ritentare l'impresa col Macintosh, decisamente più elegante nel design e nell'approccio all'interfaccia grafica. Nasceva così il concetto WIMP: Windows Icons Mouse and Pointer (o secondo altri Pull-down menu).
+
+Presentato con uno spettacolare spot televisivo che si ispirava al Grande Fratello di Orwell (ma alludendo anche all'azienda di computer dominante a quel tempo, IBM), il primo modello di Mac fu messo in vendita al prezzo di 2.495 dollari.
+
+Il Macintosh ottenne un successo di mercato senza precedenti, grazie al suo approccio amichevole (user-friendly) e alla facilità d'uso del suo sistema operativo, il macOS. L'interfaccia grafica (GUI) usava per la prima volta metafore facili da comprendere, quali il cestino, la scrivania, le finestre, gli appunti ecc. aprendo finalmente l'uso del computer anche a persone con limitate conoscenze informatiche.
+
+In seguito al successo mondiale del Macintosh, molte di queste caratteristiche innovative furono mutuate dalla Microsoft nella creazione del proprio sistema operativo Windows, scatenando una battaglia anche legale durata oltre un decennio.
+
+Amiga (1985)
+
+Lo stesso argomento in dettaglio: Amiga.
+
+L'Amiga 1000, il primo modello della famiglia Amiga
+Tra la metà degli anni ottanta e gli inizi dei novanta, uno degli home e personal computer più popolari e avanzati sulla piazza fu Amiga di Commodore. La piattaforma era stata originariamente ideata da Hi-Toro, una piccola compagnia statunitense, per creare una macchina da gioco dalle grandi capacità grafiche e sonore. In seguito, man mano che il progetto avanzava, Hi-Toro incorporò alla proto-console caratteristiche proprie di un personal computer multimediale coordinate da un elegante sistema operativo, AmigaOS che già allora offriva un reale multitasking preemptive (caratteristica che permette di eseguire più programmi contemporaneamente). Nacque così la piattaforma che fu soprannominata "Advanced Multitasking Integrated Graphics Architecture" (AMIGA).
+
+La Hi-Toro fu poi acquisita, insieme al progetto Amiga, da Commodore, una famosa casa produttrice di personal computer, che commercializzò il prodotto dall'ottobre del 1985. Era il 23 luglio 1985 quando venne mostrato al mondo l'Amiga 1000 da Andy Warhol. Si trattava del primo personal computer di serie dotato contemporaneamente di multitasking preemptive e di una shell con interfaccia grafica di tipo WIMP (caratteristica che permette un utilizzo user-friendly del computer).[13] Per di più l'interfaccia era a colori e la grafica e l'audio erano i più avanzati.
+
+Date le notevoli caratteristiche per l'epoca, la piattaforma raccolse un notevole seguito tra esperti e appassionati di informatica, che si distinsero per un notevole spirito di comunità. Per quasi un decennio rimase uno dei personal più diffusi, anzitutto in ambito videoludico pur essendo adatto anche all'uso professionale grazie alle sue prestazioni grafiche. La piattaforma Amiga ha reso la multimedialità alla portata dell'utente medio e a costi bassi.[13] Una serie di errori strategici di Commodore portarono tuttavia alla bancarotta l'azienda,[13] che andò in liquidazione volontaria nell'aprile del 1994, con conseguente vendita della tecnologia Amiga a una serie di aziende specializzate in personal computer, che malgrado vari tentativi non furono in grado di rivalutarla alle soglie del terzo millennio; la piattaforma Amiga rimane viva grazie a numerosi affezionati utenti, esperti e principianti.[13]
+
+Windows (1985)
+
+Lo stesso argomento in dettaglio: Storia di Microsoft Windows.
+
+Il logo di Windows nel tempo
+Nel 1984 Microsoft iniziò ad annunciare l'arrivo di Windows, un'interfaccia grafica che avrebbe applicato al suo sistema operativo MS-DOS che era venduto con i PC IBM e compatibili dal 1981. Microsoft aveva creato l'interfaccia utente, all'inizio conosciuta col nome Interface Manager, seguendo i prototipi di interfaccia grafica della Xerox e seguì la strada intrapresa dalla Apple con il suo Macintosh.
+
+L'azienda aveva potuto studiare questa macchina dal 1981 in quanto per lo sviluppo di software (come Excel) aveva avuto a disposizione parti di codice sorgente e la documentazione delle API.
+
+Anni 1990-1999
+
+Lo stesso argomento in dettaglio: Cronologia dei computer dal 1990 al 1999.
+Linux (1990)
+
+Lo stesso argomento in dettaglio: Linux.
+
+Tux, la mascotte di Linux.
+Il sistema operativo Unix era stato sviluppato a partire dal 1969 ai Bell Laboratories in linguaggio C, grazie anche a Dennis Ritchie, uno dei padri di questo linguaggio. Intorno al 1985 era ormai divenuto un fossile in mano alla AT&T, che ne deteneva i diritti ed i codici sorgenti; il costo della licenza era diventato con il tempo sempre maggiore, risultando di ostacolo alla sua stessa diffusione. Un inizio di cambiamento si ebbe nel 1987, quando fu distribuito un nuovo sistema operativo didattico, chiamato Minix, progettato dal professor Andrew S. Tanenbaum.
+
+Minix era un sistema operativo Unix-like, ne ereditava cioè la struttura e la sintassi, anche se non era molto sofisticato, né era gestito in modo standard. Nel 1991 Linus Torvalds, uno studente di informatica di Helsinki, discusse la sua tesi su una versione del kernel monolitico di Minix che poteva essere eseguito su un normale Intel 386, e distribuito gratuitamente insieme con i sorgenti. Il nuovo kernel inoltre era compatibile con lo standard POSIX. Il nuovo progetto si chiamò kernel Linux. Questo era quanto mancava al progetto GNU della Free Software Foundation per distribuire un sistema operativo completamente libero: GNU/Linux. Parallelamente prosegue lo sviluppo di GNU Hurd, il kernel della Free Software Foundation per il sistema GNU puro.
+
+Anni 2000-2010
+Entra in scena Lenovo (2005)
+Dopo oltre 25 anni di primato nell'industria dell'hardware, la IBM, pur essendo tra i leader del mercato, decide di abbandonare la fabbricazione dei personal computer di ogni tipo, dai computer desktop ai computer portatile, cedendo marchio e quote di mercato alla Lenovo, azienda cinese che detiene il primo posto per vendite in Asia escludendo il Giappone. L'accordo prevede la fornitura dei servizi da parte di IBM a Lenovo, che diviene così il terzo produttore mondiale. Precedentemente IBM aveva già ceduto alla Hitachi l'intero settore hard disk, nonostante la leadership tecnologica in questo prodotto. 2011-2020.

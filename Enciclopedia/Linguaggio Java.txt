@@ -1,0 +1,215 @@
+Linguaggio Java
+In informatica Java e' un linguaggio di programmazione ad alto livello, orientato agli oggetti e a tipizzazione statica, che si appoggia sull'omonima piattaforma software di esecuzione, specificamente progettato per essere il piu' possibile indipendente dalla piattaforma hardware di esecuzione (tramite compilazione in bytecode prima e interpretazione poi da parte di una JVM) (sebbene questa caratteristica comporti prestazioni in termini di computazione inferiori a quelle di linguaggi direttamente compilati come C e C++ ovvero dunque perfettamente adattati alla piattaforma hardware).
+
+James Gosling, autore di Java
+
+Java e' stato creato a partire da ricerche effettuate alla Stanford University agli inizi degli anni novanta. Nel 1992
+nasce il linguaggio Oak (in italiano 'quercia'), prodotto da Sun Microsystems e realizzato da un gruppo di esperti sviluppatori capitanati da James Gosling.[2] Questo nome fu successivamente cambiato in Java (una varieta' di caffe' indonesiana; il logo adottato e' una tazzina per tale bevanda) per problemi di copyright: il linguaggio di programmazione Oak esisteva gia'.[3]
+
+Per facilitare il passaggio a Java ai programmatori old-fashioned, legati in particolare a linguaggi come il C++, la sintassi di base (strutture di controllo, operatori ecc.) e' stata mantenuta pressoche' identica a quella del C++[4][5]; tuttavia a livello di linguaggio non sono state introdotte caratteristiche ritenute fonte di complessita' non necessaria e che favoriscono l'introduzione di determinati bug durante la programmazione, come l'aritmetica dei puntatori e l'ereditarieta' multipla delle classi.[6] Per le caratteristiche orientate agli oggetti del linguaggio ci si e' ispirati al C++ e soprattutto all'Objective C.[7]
+In un primo momento Sun decise di destinare questo nuovo prodotto alla creazione di applicazioni complesse per piccoli dispositivi elettronici; fu solo nel 1993 con l'esplosione di internet che Java inizio' a farsi notare come strumento per iniziare a programmare per internet. Contemporaneamente Netscape Corporation annuncio' la scelta di dotare il suo allora omonimo e celeberrimo browser della Java Virtual Machine (JVM). Questo segna una rivoluzione nel mondo di Internet: grazie agli applet le pagine web diventarono interattive a livello client, ovvero le applicazioni vengono eseguite direttamente sulla macchina dell'utente di internet e non su un server remoto. Per esempio gli utenti poterono utilizzare giochi direttamente sulle pagine web e usufruire di chat dinamiche e interattive.
+
+Java fu annunciato ufficialmente il 23 maggio 1995 a SunWorld. Il 13 novembre 2006 la Sun Microsystems ha distribuito la sua implementazione del compilatore Java e della macchina virtuale sotto licenza GPL. Non tutte le piattaforme Java sono libere. L'ambiente Java libero si chiama IcedTea.[8] L'8 maggio 2007 Sun ha pubblicato anche le librerie, tranne alcuni componenti non di sua proprieta', sotto licenza GPL, rendendo Java un linguaggio di programmazione la cui implementazione di riferimento e' libera.[9] Il linguaggio e' definito da un documento chiamato The Java Language Specification, spesso abbreviato JLS. La prima edizione del documento e' stata pubblicata nel 1996.[10] Da allora il linguaggio ha subito numerose modifiche e integrazioni, aggiunte di volta in volta nelle edizioni successive. A fine 2022 la versione piu' recente delle specifiche e' la Java SE 19 Edition.[10]
+
+Nome
+Sembra che il nome 'Oak' derivasse dal fatto che Gosling e i suoi colleghi, nel periodo in cui svilupparono il linguaggio, avessero avuto come unica compagnia quella di una quercia che si trovava proprio fuori dalla finestra dell'ufficio in cui lavoravano. Eliminato il nome 'Oak', gli ideatori del linguaggio si ispirarono al caffe' presso il quale discutevano del progetto, (Java e' una qualita' di caffe' dell'omonima isola dell'Indonesia), tanto che il magic number che identifica un file di bytecode ottenuto dalla compilazione di un file Java e' 0xCAFEBABE, che in inglese significa ragazza (babe) del caffe' (cafe)[11]. Una leggenda metropolitana - mai confermata - aggiunge che tale nome e' stato anche favorito, in un secondo momento e dagli stessi creatori, come acronimo per "Just Another Vacuum Acronym" ("Soltanto un altro vuoto Acronimo"), con riferimento ironico all'altissimo numero di abbreviazioni utilizzate in ambiente informatico.
+
+
+Descrizione
+
+
+Principi
+Java venne creato per cinque obiettivi primari:[12]
+
+1. essere "semplice, orientato agli oggetti e familiare";
+2. essere "robusto e sicuro";
+3. essere indipendente dalla piattaforma;
+4. contenere strumenti e librerie per il networking;
+5. essere progettato per eseguire codice da sorgenti remote in modo sicuro.
+
+
+Linguaggio
+
+Uno dei principi fondamentali del linguaggio e' espresso dal motto WORA (write once, run anywhere, ossia "scrivi una volta, esegui ovunque"): il codice compilato che viene eseguito su una piattaforma non deve essere ricompilato per essere eseguito su una piattaforma diversa; infatti il prodotto della compilazione e' in un formato chiamato bytecode che puo' essere eseguito da una qualunque implementazione di un processore
+
+class HelloWorld {
+  public static void main(String[] args) {
+   System.out.println("Hello World");
+  }
+}
+
+Un programma minimale in Java deve obbligatoriamente contenere la definizione di classe tramite la parola chiave class seguita dal nome_classe e il metodo main o metodo principale nonche' entry point del programma in cui vengono definite variabili, oggetti e richiamati metodi statici su variabili e/o dinamici sugli oggetti.
+
+Nell'esempio soprastante il main contiene l'istruzione per la stampa a video della stringa Hello World; pur essendo perfettamente funzionante e semplice da comprendere, non viene sfruttata la filosofia ad oggetti che viene normalmente applicata ad ogni programma scritto in Java. Segue il codice sorgente di un programma che svolge lo stesso compito del precedente usando la programmazione orientata agli oggetti.
+
+Il metodo main affida la stampa del messaggio a un oggetto creato apposta per questo compito, su cui e' invocato il metodo dinamico print definito prima del main assieme al costruttore della classe ovvero quel particolare metodo (con ugual nome della classe) che serve per inizializzare l'attributo della classe toPrint dell'oggetto creato/istanziato nel main. I metodi definibili possono essere dichiarati privati (contrassegnati dalla parola chiave private) se richiamabili solo all'interno della stessa classe oppure pubblici (contrassegnati dalla parola chiave public) se richiamabili anche da altre classi, di tipo statico (contrassegnati dalla parola chiave static) se invocabili liberamente all'interno della classe (ad es. su variabili globali), dinamici se invocabili su oggetti.
+
+Scrivendo nuove classi che supportano l'operazione print, si puo' adattare il programma per mostrare messaggi di tipi radicalmente diversi, lasciando il main pressoch  immutato, cambiando soltanto la meta' riga che segue il new. Per esempio si puo' considerare un messaggio la scritta in una finestra che appare sullo schermo del computer in uso, oppure una stringa inviata su connessione di rete per apparire sulla finestra di un computer client. Oppure il programma puo' dialogare con l'utente sulla riga di comando o in una finestra (considerando il dialogo come un "messaggio interattivo").
+
+Si puo' modificare radicalmente il comportamento del programma con modifiche circoscritte e in punti predisposti a priori (polimorfismo): il programma puo' resistere ad aggiornamenti ed esigenze non previste. Segue il codice sorgente di due programmi che mostrano lo stesso testo all'interno di una finestra. Il primo crea una finestra standard dove viene scritta la stringa inserita come parametro mentre il secondo programma crea una finestra rispettando i parametri (ad esempio la grandezza della finestra) inseriti nel codice.
+
+
+import  javafx.application.Application;
+import  javafx.event.ActionEvent;
+import  javafx.event.EventHandler;
+import  javafx.scene.Scene;
+import  javafx.scene.control.Button;
+import  javafx.scene.layout.StackPane;
+import  javafx.stage.Stage;
+
+
+public class HelloWorld extends Application {
+
+@Override
+public void start(Stage primaryStage) {
+  Button btn = new Button();
+  btn.setText("Say 'Hello World'");
+  btn.setOnAction(new  EventHandler<ActionEvent>()  {
+
+   @Override
+   public void handle(ActionEvent event) {
+    System.out.println("Hello  World!");
+   }
+  });
+
+  StackPane root = new StackPane();
+  root.getChildren().add(btn);
+
+  Scene scene = new Scene(root, 300, 250);
+  primaryStage.setTitle("Hello  World!");
+  primaryStage.setScene(scene);
+  primaryStage.show();
+}
+
+ public static void main(String[] args) {
+  launch(args);
+ }
+}
+
+Il codice proposto crea degli oggetti utilizzati per gestire l'interfaccia grafica. Viene inizialmente creata una finestra il cui titolo e' Hello World!; all'interno di questa finestra viene inserita un'etichetta che contiene al centro la scritta Hello World!. Infine viene stabilita la dimensione della finestra che, finalmente, viene resa visibile assieme all'etichetta che porta la scritta da visualizzare. Anche in questo codice si fa uso della
+
+programmazione a oggetti, ma in un modo diverso: il main non conosce i meccanismi necessari per creare una interfaccia grafica sullo schermo e questi sono decisi dalle classi JFrame e JLabel che sono state predisposte a priori (incapsulamento).
+
+
+Type system
+Java e' un linguaggio type safe, a tipizzazione statica, con un nominative type system, e dotato di manifest typing. In virtu' di queste caratteristiche, viene generalmente considerato un linguaggio a tipizzazione forte. Il linguaggio distingue chiaramente i tipi primitivi che definiscono valori atomici dai tipi strutturati che definiscono strutture dati composte.
+I tipi primitivi sono detti anche tipi atomici e tipi base e sono definiti nelle specifiche di linguaggio: di ognuno sono noti l'insieme esatto dei valori ammessi e gli operatori supportati.
+I tipi strutturati sono anche tipi riferimento, cioe' definiscono oggetti, e sono classi o interfacce. Tra queste, le classi degli array sono definite nelle specifiche di linguaggio; tutti gli altri tipi strutturati sono "definiti dall'utente" (user- defined), cioe' dal programmatore. I tipi definiti dall'utente che sono legati al linguaggio per qualche motivo sono riuniti nel package java.lang e nei suoi sottopackage; il linguaggio stabilisce per alcuni di essi (Object, String, Iterable, e altri) delle regole sintattiche o semantiche aggiuntive.
+
+I tipi riferimento includono le classi per la gestione delle stringhe, gli array e le collezioni (liste, mappe, ecc.).
+
+I valori dei tipi base non sono oggetti. Tuttavia per ogni tipo base e' definita una corrispondente classe, definita in gergo tipo wrapper o tipo contenitore, nel package java.lang, classe che permette di incapsulare dentro un oggetto un valore di tipo primitivo. Opportuni metodi della classe wrapper permettono di ottenere l'oggetto che incapsula un certo valore, e il valore incapsulato da un certo oggetto.
+
+Dalla versione 5.0 in poi sono supportati l'autoboxing e l'unboxing che permettono di convertire da tipo primitivo a corrispondente classe wrapper e viceversa. Il compilatore, "dietro le quinte", traduce la conversione in una opportuna invocazione a metodo sulla classe contenitore; quindi non si tratta di una vera conversione, ma di una sintassi comoda che "nasconde" la creazione di un oggetto della classe wrapper. Come molti altri linguaggi di programmazione anche Java possiede tra le strutture dati gli array (vedi array in Java).
+
+Costanti
+Valori costanti in Java si identificano con la parola chiave: final seguita dal tipo, nome della costante e dal valore assegnato:
+
+Inoltre e' possibile dichiarare final anche un metodo oppure una classe quando si vuole impedire che si faccia overriding del metodo in una sottoclasse nel primo caso oppure impedire che venga creata un classe figlia a partire dalla classe in questione nel secondo caso
+
+Strutture dati
+
+Strutture di controllo
+Sono supportate le seguenti strutture di controllo:
+
+Strutture selettive: if ... else e switch, come in C Strutture iterative:
+while e do ... while come in C
+for mutuato dal C
+for each che agisce su un array o collezione[16]
+La gestione delle eccezioni in Java viene gestita dalla sintassi try ... catch ... finally simile a quella del C++.
+Al di la' dei costrutti per la programmazione ad oggetti il resto della sintassi di Java e' detta like C, cioe' derivata o simile a quella del linguaggio C.
+
+Orientamento agli oggetti
+
+
+Java e' un linguaggio object-oriented. L'idea che sta alla base della OOP e' di rappresentare le entita' reali o astratte che determinano le dinamiche del problema risolto dal software sotto forma di entita' unitarie, dotate di specifiche d'uso e di funzionamento definite a priori. Queste entita' sono chiamate oggetti. Le specifiche che definiscono le caratteristiche di queste unita' e in base a cui le stesse vengono create o in gergo istanziate, sono chiamate classi.
+Java tuttavia non e' un linguaggio ad oggetti puro, ma solamente object oriented (orientato agli oggetti): per esempio i valori dei tipi primitivi non sono oggetti.
+
+Nel linguaggio Java gli oggetti sono dotati di campi (definiti anche attributi o variabili di istanza o di esemplare) e di metodi. I metodi sono abitualmente usati per implementare agevolmente molti altri costrutti che alcuni altri linguaggi forniscono nativamente, come la gestione degli eventi (implementata attraverso i listener) o delle proprieta', implementate tramite gli accessor method e, piu' in generale, con oggetti JavaBeans.
+In Java non esistono le funzioni: i blocchi di codice che "non appartengono a nessun oggetto" sono implementati come metodi statici di una certa classe e quindi sono sempre dei metodi. In Java si pone un forte accento sulla distinzione tra interfaccia e implementazione di una classe o oggetto: la prima e' l'insieme delle specifiche pubbliche di cui gli utilizzatori di un certo oggetto possono servirsi, mentre la seconda e' l'insieme delle strutture interne e delle istruzioni eseguibili che, nel complesso, adempiono a tali specifiche. Il termine interfaccia e' usato anche in un'altra accezione, spiegata nel seguito.
+
+Ereditarieta'
+
+e' supportata l'ereditarieta' tra tipi. Questo permette di stabilire la gerarchia delle classi che compongono un programma. Il linguaggio impone che a capo della gerarchia ci sia la nota classe java.lang.Object.[17]
+In Java non esiste ereditarieta' multipla tra classi.[18] Da un lato questo vincolo permette di avere una gerarchia di classi lineare e previene gli svantaggi introdotti dall'ereditarieta' multipla. Dall'altro esso viene agevolmente superato facendo ricorso alle interfacce, ovvero a tipi analoghi alle classi, ma progettati apposta per essere estesi e soggetti a determinate restrizioni imposte dal linguaggio.[19][20] Di conseguenza esse forniscono alcuni vantaggi dell'ereditarieta' multipla, come la possibilita' che uno stesso oggetto appartenga a tipi diversi tra loro, senza gli svantaggi come l'ambiguita' introdotta dal fatto che una classe possa ereditare implementazioni diverse di uno stesso metodo.
+
+L'ereditarieta' multipla in java si puo' anche simulare tramite il pattern decorator, che se implementato correttamente, permette di "estendere" a runtime metodi e caratteristiche ad un oggetto.
+
+Dopo l'avvento di Java l'ereditarieta' singola si e' gradualmente affermata come modello standard di ereditarieta' nelle tecnologie object-oriented ed e' stata abbracciata anche dai linguaggi del framework .NET Microsoft. Dal Java 8 e' possibile sfruttare i default method delle interfacce per costruire una seppur limitata
+
+ereditarieta' multipla. Questa non intacca la linea ereditaria principale che rimane singola, ma permette di ereditare metodi da piu' interfacce allo stesso tempo.[21]
+
+
+Ambienti di sviluppo
+
+Per sviluppare programmi in Java e' teoricamente sufficiente un qualsiasi editor di testo; in pratica, se si vuole scrivere qualcosa di piu' del classico hello world, occorre un ambiente di sviluppo integrato (IDE): esistono diversi IDE (Integrated Development Environment, ambiente di sviluppo integrato), alcuni gratuiti ed altri a pagamento.
+
+Java Development Kit
+Sun (ora Oracle) mette a disposizione un software development kit specifico, chiamato Java Development Kit (o JDK), che include un certo numero di tool di uso comune, fra cui javac, javadoc, jar, e altri, atti ad elaborare (compilare) i file sorgenti e/o gia' compilati, includendo dunque il Java Runtime Environment (JRE). Inoltre, nel 2019, Oracle ha rilasciato un nuovo interprete e compilatore dinamico chiamato GraalVM, che dal 2023 vedra' alcune sue porzioni integrate all'interno di OpenJDK.[22][23] Essi lavorano sul codice gia' scritto e salvato sul sistema: nessuno di essi fornisce un ambiente visivo di scrittura con quelle caratteristiche che tornano utili nella realizzazione di programmi complessi come l'evidenziazione della sintassi tramite colori diversi, l'autocompletamento, o la possibilita' di navigare tra i sorgenti tramite il click del mouse.
+
+
+Ambienti di sviluppo integrato
+La Oracle stessa ha promosso lo sviluppo di un ambiente di sviluppo gratuito e open source chiamato NetBeans, che puo' essere scaricato da solo[24], oppure (facoltativamente) con il JDK[25].
+Un ambiente di sviluppo integrato open-source largamente utilizzato e' Eclipse, donato alla comunita' di sviluppatori da IBM e il cui sviluppo e' seguito da una enorme comunita' di utenti.
+Uno degli ambienti di sviluppo integrato commerciali piu' diffusi e' JBuilder prodotto dalla Borland.
+
+
+Eclipse, un IDE per lo sviluppo in Java
+
+Un ambiente di sviluppo integrato che ha vinto diversi premi[26] e' IntelliJ IDEA.
+Un ambiente di sviluppo per Java gratuito, e soprattutto leggero, e' BlueJ, di chiara impostazione didattica.
+Un altro ambiente di sviluppo integrato per Java e' JCreator, i cui pregi sono soprattutto la semplicita' dell'interfaccia e la leggerezza.
+
+Un ambiente di sviluppo per Java (e altri linguaggi di programmazione) e' Visual Studio Code: software libero e gratuito, anche se la versione ufficiale e' sotto una licenza proprietaria.
+
+Ambiente di esecuzione : piattaforma Java
+
+I programmi scritti in linguaggio Java, dopo una fase iniziale di compilazione con ottenimento del cosiddetto bytecode, sono destinati all'esecuzione sulla piattaforma Java attraverso una fase di interpretazione (per questo motivo il linguaggio Java e' detto anche semi-interpretato) ad opera di una Java Virtual Machine e in esecuzione hanno accesso alle API della libreria standard. Questi due passi forniscono un livello di astrazione che permette alle applicazioni di essere interamente indipendenti dal sistema hardware su cui esse saranno eseguite. Un'implementazione della piattaforma java e' il Java Runtime Environment (JRE), necessario per l'esecuzione del programma compilato, mentre per lo sviluppo dei programmi in Java a partire dal codice sorgente e' necessario il Java Development Kit (JDK) che include anche il JRE.
+
+
+Portabilita'
+
+L'esecuzione di programmi scritti in Java deve avere un comportamento simile in contesti di esecuzione diversi. Per raggiungere questo obiettivo si lavora su livelli diversi e il primo di essi e' naturalmente il linguaggio che e' stato progettato appositamente proprio per questo scopo. Ad esempio esso fornisce una sintassi unificata per definire le sezioni critiche, compito che in altri linguaggi si svolge tipicamente ricorrendo a librerie di terze parti o primitive di sistema.[27] Inoltre praticamente non lascia spazio ai comportamenti non definiti (undefined behavior) o dipendenti dall'implementazione dell'ambiente di esecuzione.
+
+Le specifiche di linguaggio richiedono un ambiente di esecuzione che  vigila  sull'esecuzione  del  programma  e  che  proibisce determinate operazioni che altrimenti risulterebbero insicure. Esse fanno riferimento esplicito alla Java Virtual Machine, indicandola come il destinatario tipico del bytecode prodotto dalla compilazione iniziale di un programma Java, e infatti il compilatore javac incluso nel JDK compila proprio in bytecode. Tuttavia e' possibile la compilazione verso architetture diverse, infatti e' possibile produrre codice oggetto specifico di un certo sistema operativo servendosi di un compilatore apposito, ad esempio il GNU Compiler Collection.
+
+In linea di principio si dovrebbe essere in grado di scrivere il programma una sola volta e di farlo eseguire dovunque, di qui il famoso slogan di Sun: "write once, run everywhere". La portabilita' e' un obiettivo tecnicamente difficile da raggiungere e il successo di Java in questo ambito e' materia di alcune controversie. Sebbene in effetti sia possibile scrivere in Java programmi che si comportano in modo coerente attraverso molte piattaforme hardware diverse, questi dipendono dalle macchine virtuali che sono programmi a s  e che hanno inevitabilmente i loro bug, diversi l'una all'altra: per questo e' nata una parodia dello slogan di Sun "Write once, run everywhere" ("Scrivi una volta, esegui ovunque"), che e' diventato "Write once, debug anywhere" ("Scrivi una volta, correggi ovunque").[28]
+
+Librerie
+
+Il linguaggio in s  definisce solo una minima parte delle librerie utilizzabili in combinazione con il linguaggio stesso. La parte restante e' definita dalla piattaforma su cui il programma e' eseguito. La Oracle mette a disposizione tre piattaforme ufficiali, ciascuna destinata ad ambiti diversi:
+
+Java Platform, Standard Edition Java Platform, Micro Edition Java EE
+
+Librerie di terze parti
+In aggiunta il programmatore puo' utilizzare un numero arbitrario di librerie di terze parti. Queste librerie, contenute in vari package, vengono utilizzate dal programmatore per utilizzare determinati metodi o attributi comuni per semplificare e uniformare i programmi e renderli maggiormente leggibili ai programmatori. Esistono numerosissimi package utilizzabili dai programmatori nel linguaggio Java. Ad esempio esistono package:
+
+di input e output (java.io);
+per i metodi e le costanti matematiche (java.Math); per la creazione di applet (java.applet);
+per creare applicazioni di rete (javax.net); per la stampa (javax.print);
+per la sicurezza (java.security e javax.security). per la creazione di GUI (java.awt)
+
+Documentazione
+
+Le specifiche di linguaggio non impongono una determinata sintassi per la documentazione dei sorgenti, tuttavia nel tempo si e' imposto come formato standard quello riconosciuto dal tool Javadoc e regolato da specifiche ufficiali ben definite (seppure esterne al linguaggio)[29]. Questo standard prevede che la documentazione sia fornita all'interno di commenti inseriti direttamente nei sorgenti e dotati di una speciale formattazione, che viene ignorata dal compilatore, ma riconosciuta da tool specializzati. Cio' rende facile aggiornare la documentazione, in quanto essa accompagna direttamente l'elemento sintattico da essa marcato; inoltre, durante la lettura dei sorgenti di un programma, cio' permette di avere sott'occhio insieme le specifiche e l'implementazione dell'elemento di programma preso in considerazione.
+
+Un altro strumento utilizzabile per la documentazione sono le annotazioni, introdotte nella terza versione delle specifiche di linguaggio[30]. Pur avendo una sintassi formalmente differente dai commenti Javadoc, esse sono usate per lo stesso scopo, cioe' fornire metadati che descrivono le entita' di programma marcate. Tuttavia, mentre i commenti riportano le specifiche in maniera discorsiva (seppure strutturata), le annotazioni per loro stessa natura sono ideali per l'elaborazione tramite i tool, piu' che per la lettura da parte di esseri umani. Inoltre, sotto opportune condizioni[31], le informazioni che forniscono sono compilate insieme al codice e possono essere lette perfino a tempo di esecuzione, cosa che i commenti non possono fare.
+
+
+Versioni
+
+Nel settembre 2017, Mark Reinhold, chief Architect della piattaforma Java, ha proposto di modificare il piano di pubblicazione, da una versione ogni due anni agli attuali sei mesi. Non tutte le versioni pero' hanno un supporto prolungato (LTS - Long Term Support), quest'ultime vengono pubblicate ogni 3 anni, attualmente sono LTS la versione 17, 11 e la 8.
+
+Java fu inizialmente distribuito come Java Development Kit 1.0 (JDK 1.0). Questo comprende il runtime Java (la virtual machine e le librerie di classi), e gli strumenti di sviluppo (il compilatore Java e altri strumenti). Successivamente, Sun forni' un pacchetto che comprendeva solo il runtime, chiamato Java Runtime Environment (JRE). Normalmente le persone si riferiscono ad una particolare versione di Java attraverso la versione del JDK (es. JDK 1.4) Le versioni JDK 1.2 e successive sono spesso chiamate Java
+2. Per esempio, il nome ufficiale del JDK 1.4 e' Java (TM) 2 Platform, Standard Edition 1.4.
+
+Il linguaggio e' rimasto stabile dal JDK 1.0 al JDK 1.4.x, con la J2SE 5.0 sono state introdotte nuove funzionalita' nel linguaggio. La libreria di classi che viene fornita con JDK e' stata progressivamente ampliata e modificata in alcune parti.
+
+Nel settembre 2017 Mark Reinhold, responsabile capo per la piattaforma Java ha proposto di pubblicare una nuova versione di Java ogni 6 mesi, invece di ogni 2 anni come avveniva precedentemente.
+Versioni delle specifiche di linguaggio
+
+I cambiamenti nel linguaggio sono formalizzati nelle specifiche di linguaggio. Ogni nuova edizione delle specifiche integra i cambiamenti richiesti fino a quel momento tramite le Java Specification Request e conseguentemente implementati nel compilatore javac.
+
+The Java Programming Language, First Edition The Java Programming Language, Second Edition The Java Programming Language, Third Edition
+The Java Programming Language, Java SE 7 Edition The Java Programming Language, Java SE 8 Edition The Java Programming Language, Java SE 9 Edition
+

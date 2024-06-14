@@ -1,0 +1,80 @@
+Il sequenziamento del DNA 
+Il sequenziamento del DNA è la determinazione dell'ordine dei diversi nucleotidi (quindi delle quattro basi azotate che li differenziano, cioè adenina, citosina, guanina e timina) che costituiscono l'acido nucleico.
+
+La sequenza del DNA contiene tutte le informazioni genetiche ereditarie del nucleo, plasmidi, mitocondri e cloroplasti che sono alla base per lo sviluppo di tutti gli organismi viventi. All'interno di questa sequenza sono codificati i geni di ogni organismo vivente, nonché le istruzioni per esprimerli nel tempo e nello spazio (regolazione dell'espressione genica). Determinare la sequenza è dunque utile nella ricerca del perché e come gli organismi vivono.
+
+La conoscenza del genoma risulta quindi utile in ogni campo della biologia e l'avvento di metodi per il sequenziamento del DNA ha accelerato significativamente la ricerca. In medicina, ad esempio, il sequenziamento è usato per identificare e diagnosticare malattie ereditarie e per sviluppare nuovi trattamenti. In modo simile, il genoma degli agenti patogeni può portare allo sviluppo di medicine contro malattie contagiose. Inoltre, la rapidità del processo di sequenziamento oggi è stato di grande aiuto per il sequenziamento su larga scala del genoma umano. Allo stesso modo, è stato completato il sequenziamento del genoma di diversi organismi animali e vegetali, nonché di molti microrganismi.
+
+La determinazione di sequenze di DNA è risultata utile anche in diversi campi applicativi, come le scienze forensi e quelle alimentari.
+
+Uno dei primi sequenziatori automatici: il 370A di Applied Biosystems (1987)
+Sono state ideate diverse strategie per ottenere la sequenza nucleotidica del DNA. I primi metodi, tra cui quello ideato da Allan Maxam e Walter Gilbert nel 1973[1] erano piuttosto complicati; una svolta si ebbe nel 1975 con la prima pubblicazione di una strategia enzimatica tuttora diffusissima, sviluppata da Frederick Sanger e collaboratori (il cosiddetto metodo dei terminatori di catena, chain termination method o metodo Sanger, dal nome del suo scopritore)[2][3], che ricevette per questo il suo secondo premio Nobel. Un'altra strategia inizialmente molto popolare ed utilizzata fu sviluppata dagli stessi Maxam e Gilbert nel 1977 ed è conosciuta sotto il nome di metodo di Maxam e Gilbert[4][5].
+
+Più recentemente sono stati sviluppati nuovi metodi caratterizzati dalla capacità di sequenziare molti frammenti di DNA contemporaneamente (anche se con efficienza minore in termini di numero di basi sequenziate per frammento) aprendo una nuova era del sequenziamento. Queste metodiche vanno sotto il nome di sequenziamento ad elevato parallelismo.
+
+Metodo Maxam-Gilbert
+Il metodo sviluppato da Allan Maxam e Walter Gilbert si basa su modificazioni chimiche del DNA e sul conseguente taglio in posizioni specifiche [1].
+
+In questo metodo, il filamento di DNA da sequenziare, lungo fino a circa 500 nucleotidi[6], deve essere purificato e marcato radioattivamente ad una estremità (generalmente si usa 32P). Il campione di DNA da sequenziare viene denaturato in presenza di DMSO e viene diviso in quattro aliquote uguali, ciascuna delle quali viene trattata con dei reagenti chimici che ne causano la metilazione o la rottura in corrispondenza di basi specifiche (G, A+G, C, C+T) (vedi tabella 1). Utilizzando i reagenti a basse concentrazioni si può fare in modo che i tagli non avvengano per ognuna delle basi, ma più raramente (idealmente, solo una volta per copia di frammento di DNA): in questo modo viene generata una serie di frammenti marcati (dalla fine della molecola al primo sito di taglio della stessa) di dimensione specifica i quali vengono fatti correre su gel di poliacrilammide-urea per separarli in base alla dimensione. A corsa ultimata il gel viene posto a contatto con una pellicola radiografica sulla quale lascia impressa la disposizione delle bande che riporterà i frammenti generati tramite i quali è possibile determinare l'ordine dei nucleotidi e quindi la sequenza di partenza.
+
+Il dimetilsolfato (DMS) è in grado di metilare (aggiungere un gruppo -CH3) la guanosina, ed in maniera minore l'adenina. La piperidina invece provoca due cose: la perdita della base metilata e la rottura dello scheletro di fosfato-deossiribosio in corrispondenza della stessa. L'acido formico serve invece per "allentare" il legame glicosidico, e la successiva addizione di piperidina provoca depurinazione seguita da rottura dello scheletro. L'idrazina invece è in grado di rompere l'anello pirimidinico; la successiva addizione di piperidina provoca la rimozione della base e la rottura del filamento. L'addizione di NaCl 2M rende la reazione dell'idrazina specifica per la citosina.
+
+Il metodo sviluppato da Maxam e Walter Gilbert viene comunemente descritto come metodo chimico per differenziarlo dal metodo enzimatico di Sanger. Questo metodo originò da studi sulle interazioni DNA-proteine (footprinting), sulla struttura degli acidi nucleici e su modificazioni epigenetiche, e in questi campi la metodica ha tuttora applicazioni importanti. Sebbene i due pubblicarono questa tecnica due anni dopo la pubblicazione di Sanger[7][8], il loro metodo divenne immediatamente popolare e preferito rispetto a quello dei colleghi, poiché il DNA purificato poteva essere utilizzato direttamente, senza passare per un intermedio a singolo filamento, come invece richiesto dal metodo dei terminatori di catena. Comunque, con il successivo miglioramento del metodo Sanger, il Maxam-Gilbert venne progressivamente accantonato a causa della complessità tecnica e dell'uso estensivo di sostanze tossiche, oltre al fatto che si è dimostrato piuttosto difficile poter sviluppare un kit da laboratorio pronto all'uso.
+
+Metodo Sanger
+
+Gel di sequenziamento del DNA. Dal basso verso l'alto il frammento di DNA ha questa sequenza: TACGAGATATATGGCGTTAATA CGATATATTGGAACTTCTATTGC
+T=Timina A=Adenina G=Guanina C=Citosina
+Il metodo Sanger è un metodo cosiddetto enzimatico, poiché richiede l'utilizzo di un enzima; il principio della tecnica sviluppata da Frederick Sanger si basa sull'utilizzo di nucleotidi modificati (presentano lo zucchero desossiribosio privo del gruppo ossidrilico in posizione 3', ddNTPs) per interrompere la reazione di sintesi in posizioni specifiche. I nucleotidi dideossitrifosfato sono molecole artificiali corrispondenti ai nucleotidi naturali, ma si differenziano per l'assenza del gruppo idrossilico sul carbonio 2' e 3' della molecola. I dideossinucleotidi, a causa della loro struttura, impediscono che un altro nucleotide si leghi ad essi, in quanto non si possono formare legami fosfodiesterici.
+
+
+Confronto tra deossiadenosina (sopra) e dideossiadenosina (sotto). Notare la mancanza del gruppo -OH che impedisce il legame di un altro nucleotide, provocando la terminazione della polimerizzazione.
+Il protocollo classico richiede un templato di DNA a singolo filamento, un primer per iniziare la reazione di polimerizzazione, una DNA polimerasi, deossinucleotidi e dideossinucleotidi per terminare la reazione di polimerizzazione.
+I nucleotidi modificati (ddNTPs) o il primer devono essere marcati (radioattivamente o per fluorescenza) in modo da poter visualizzare le bande dei frammenti di DNA neosintetizzato dopo aver effettuato l'elettroforesi.
+
+Il campione di DNA da sequenziare viene diviso in quattro reazioni separate, ognuna delle quali contiene la DNA polimerasi e tutti e 4 i deossiribonucleotidi (dATP, dCTP, dGTP, dTTP). Ad ognuna di queste reazioni viene poi aggiunto solo uno dei quattro nucleotidi dideossi (ddATP, ddCTP, ddGTP, ddTTP) in quantità stechiometricamente inferiore per permettere una elongazione del filamento sufficiente per l'analisi. L'incorporazione di un dideossinucleotide lungo il filamento di DNA in estensione ne causa la terminazione prima del raggiungimento della fine della sequenza di DNA stampo; questo dà origine ad una serie di frammenti di DNA di lunghezza diversa interrotti in corrispondenza dell'incorporazione del dideossinucleotide, che avviene casualmente quando esso è utilizzato dalla polimerasi in luogo di un nucleotide deossi.
+
+I frammenti generati da queste reazioni vengono poi fatti correre su gel di poliacrilammide-urea che permette la separazione dei vari frammenti con una risoluzione di un nucleotide. Ognuna delle 4 reazioni è corsa su pozzetti vicini, dopodiché le bande sono visualizzate su lastra autoradiografica o sotto luce UV, e la sequenza viene letta direttamente sulla lastra o sul gel, a seconda del tipo di marcatura dei nucleotidi dideossi.
+
+Nell'immagine qui accanto i ddNTPs sono stati marcati radioattivamente e le bande scure corrispondono ai vari frammenti di lunghezza diversa. Le posizioni relative delle bande nelle quattro corsie sono utilizzate per leggere la sequenza (dal basso verso l'alto).
+
+Basandosi su questa procedura, la metodica è stata affinata per facilitare la reazione, e con l'avvento dell'automatismo la reazione di sequenziamento è diventata molto più veloce. Attualmente è possibile effettuare, anziché quattro reazioni distinte per ogni nucleotide modificato, una sola reazione utilizzando i 4 ddNTPs marcati fluorescentemente in modo diverso tra loro ed utilizzando lettori ottici appropriati. In questo modo ogni filamento di DNA emetterà una luce di colore diverso in base al nucleotide (ddNTP) col quale terminerà.
+
+
+Visualizzazione di una sequenza di DNA ottenuta tramite metodo di Sanger ottenuta con la chimica del dye terminator.
+
+Serie di sequenziatori che utilizzano il metodo Sanger.
+Sequenziamento ad elevato parallelismo
+Nei primi anni del 2000 sono iniziate ad apparire innovative tecnologie che, per la loro elevata capacità produttive, dovute anche alla possibilità di effettuare un elevatissimo numero di sequenziamenti contemporaneamente (anche dell'ordine di miliardi) sono state denominate tecnologie ad elevato parallelismo. Questa evoluzione ha determinato la nascita e lo sviluppo di molteplici tecnologie dotate di alta processività raggruppate sotto la denominazione di Next Generation Sequencing.
+
+Pirosequenziamento
+Tra le prime tecniche ricadenti nella tipologia vi è quella detta pirosequenziamento, estremamente rapida ma in grado di sequenziare inizialmente sole 100 basi per volta, ma arrivando, nella sua ultima evoluzione, ad arrivare a 1000 basi [9], eguagliando le lunghezze dei frammenti sequenziati utilizzando metodologia Sanger. Il pirosequenziamento è stato usato nel 2007 per determinare la sequenza del genoma di James Watson[10]. È un metodo enzimatico completamente automatizzato, che permette il sequenziamento della catena complementare.
+
+Prevede 5 passaggi principali:
+
+1. La sequenza da analizzare, previa amplificazione con PCR, viene incubata come singola elica insieme a:
+- primers adeguati: dNTP, adenosinsolfofosfato (ASP), luciferina
+- enzimi: DNA polimerasi, ATP solforilasi, luciferasi, apirasi.
+
+2. Un solo tipo di dNTP alla volta viene aggiunto alla reazione. Per ogni tipo di dNTP aggiunto si verificano due possibilità esclusive: in caso di non complementarità al templato presso la prima posizione che fa seguito al primer, l'allungamento non avviene e il nucleotide mismatching viene degradato dalla apirasi; in caso di complementarità, la DNA polimerasi ne catalizza l'aggiunta con liberazione allo stesso tempo di pirofosfato inorganico PPi.
+
+3. Il PPi così prodotto viene quindi rivelato da un'apposita camera fotosensibile (CCD, charge coupled device) mediante la produzione di un segnale luminoso: partendo dall'ASP come substrato, la solforilasi catalizza la trasformazione del PPi in ATP, il quale fornisce energia per la conversione della luciferina ad ossiluciferina (ad opera della luciferasi). Il segnale luminoso così generato viene rilevato e registrato in un apposito "pirogramma". La presenza del segnale ci conferma l'appartenenza del nucleotide alla tal posizione della catena, mentre l'intensità del segnale sarà proporzionale al numero di ripetizioni della base lungo lo stesso filamento: un impulso doppio o triplo, per esempio, è indice dell'inglobamento nello stesso ciclo di 2 dNTP (ripetizione della stessa base per 2 o 3 volte sul templato); viceversa un segnale nullo indica che il dNTP aggiunto in quel ciclo non è complementare.
+
+4. L'enzima apirasi, già nominato, degrada in continuazione l'eccesso di dNTP che non è stato incorporato, e l'eccesso di ATP prodotto dalla solforilasi. Solo quando l'eccesso è stato eliminato completamente si può aggiungere un secondo dNTP per far progredire la reazione di polimerizzazione (ritornando allo step 1).
+
+5. Si aggiungono quindi ciclicamente tutti e 4 i dNTP fino al completamento della sequenza. Da sottolineare è il fatto che per l'aggiunta dell'adenina non si può utilizzare ATP, ma si utilizza l'adenosin-α-tio-trifosfato, che è un analogo riconosciuto dalla DNA polimerasi come se fosse ATP, ma non dalla luciferasi. In questo modo è possibile verificare l'effettiva complementarità dell'adenina senza produrre un continuo segnale luminoso che non deriverebbe dalla reazione di conversione del pirofosfato, ma dall'aggiunta tal quale di ATP, utilizzato direttamente dalla luciferasi.
+
+Altri metodi di sequenziamento
+Esistono altri metodi di sequenziamento inventati recentemente: esistono metodi di seconda generazione, come il pirosequenziamento appena visto, ma anche Solexa-Illumina e Solid. Esistono poi sistemi di terza generazione: Ion Torrent, Oxford Nanopore e SMRT, presentati nel 2011. Questi metodi sono molto più rapidi del metodo di Sanger nel sequenziare i genomi, ma il Sanger è utilizzato ancora oggi per sequenziare frammenti di DNA.
+
+Nel metodo Solexa-Illumina il DNA viene frammentato fisicamente (per nebulizzazione) in modo che questa frammentazione sia il più casuale possibile. È necessaria una PCR per amplificare i frammenti: essa avviene su un supporto solido sul quale il DNA viene attaccato grazie a raggi UV. Grazie all'utilizzo di oligonucleotidi adattatori le molecole di DNA vengono legate con entrambe le estremità al supporto solido, come dei "ponti" e solo a questo punto si procede con la PCR. Un estremo della molecola viene liberato e sul supporto solido vengono aggiunti i 4 deossiribonucleotidi (dNTP) marcati ognuno con un gruppo fluorescente di colore diverso: a seconda di quale nucleotide viene inserito in ogni frammento, si sviluppa una fluorescenza di colore diverso che viene letta da un'apposita telecamera, sequenziando così molti frammenti contemporaneamente. I frammenti sequenziabili sono lunghi circa 200 basi, contro le 400 delle nuove versioni del 454 (pirosequenziamento) e le circa 1000-1500 del Sanger; quest'ultimo genera però molte meno sequenze in un'unità di tempo.
+
+Il metodo Solid è un metodo molto accurato di sequenziamento che sequenzia frammenti di 30-35 basi: spesso infatti non è utilizzato per sequenziare genomi ma per studi come i SNP (Polimorfismo a singolo nucleotide) umani.
+
+Sequenziamento di un genoma
+
+Il sequenziamento di un genoma richiede in generale questi passaggi:
+- L'allestimento di una libreria genomica, ovvero una collezione di organismi (generalmente il batterio Escherichia coli) che contengano un frammento del genoma da studiare. Nel 2005 erano molto diffuse le librerie di BAC, in cui in ogni batterio viene inserito un grande inserto di DNA da sequenziare, detto appunto Bacterial Artificial Chromosome (BAC). A tutt'oggi (2011) sono diffuse le librerie di YAC, Yeast Artificial Chromosome, cioè un cromosoma artificiale di lievito (organismo eucariote).
+- La produzione di una mappa fisica, che permetta di capire ciascun clone della libreria (BAC) a che porzione di genoma corrisponda.
+- Il sequenziamento dei cloni con una strategia shot-gun, ovvero sequenziamento di sub-porzioni dell'inserto del BAC che poi vengono assemblate. Questo è necessario in quanto le attuali tecnologie non permettono di sequenziare più di 1000/1400 basi per volta.
+- Assemblaggio delle sequenze dei BAC, e finishing, ovvero chiusura di eventuali buchi rimasti.
