@@ -88,8 +88,13 @@ public class DocumentStatisticsService extends Service<String> {
                 if (corrispondenzaSimiliarita.get(document) == null) {
                     statsMessage.append("\n • ").append("Percentuale di similaritá rispetto \n  alla query: non definita\n");
                 } else {
-                    double percentuale = corrispondenzaSimiliarita.get(document) * 100;
-                    statsMessage.append("\n • ").append("Percentuale di similaritá rispetto \n  alla query: ").append(Math.round(percentuale)).append("%\n");
+                    double percentuale = Math.round(corrispondenzaSimiliarita.get(document) * 100);
+                    if(percentuale == 0){
+                        statsMessage.append("\n • ").append("Percentuale di similaritá rispetto \n  alla query: ").append("molto piccola\n");
+                    } else {
+                        statsMessage.append("\n • ").append("Percentuale di similaritá rispetto \n  alla query: ").append(percentuale).append("%\n");
+                    }
+
                 }
 
                 return statsMessage.toString();
